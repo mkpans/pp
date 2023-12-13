@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolokwium próbne</title>
+    <link rel="stylesheet" href="css/pp.css">
+</head>
+
+<body>
+
+    <h1>Podstawy programowania &mdash; kolokwium próbne</h1>
+
+    <p>
+        Liczba punktów za każde zadanie podana jest na początku jego treści w nawiasach.
+    </p>
+    <p>
+        <strong>Uwaga: programy nie muszą sprawdzać poprawności danych jeżeli nie jest to jawnie powiedziane
+            w treści konkretnego zadania.</strong>
+    </p>
+
+    <p>
+        Proszę
+        o przesłanie wszystkich rozwiązanych zadań na adres
+        <a href="mailto:mklisowski@nauka.panschelm.edu.pl">mklisowski@nauka.panschelm.edu.pl</a>.
+    </p>
+    <p>
+        Rozwiązanie każdego zadania powinno być w osobnym pliku nazwanym tak, żeby
+        było jasne, którego zadania dotyczy, np. <samp>zad01.cpp</samp>, <samp>zad02.cpp</samp>,
+        itd. Można wysłać pliki spakowane w jedno archiwum <samp>.zip</samp> (ale proszę nie używać
+        innych typów archiwów).
+    </p>
+
+    <p>
+        Kolokwium próbne nie będzie przeze mnie bardzo dokładnie sprawdzane i nie będzie oceniane, ale postaram się
+        przekazać jakąś informację zwrotną na temat wysłanych rozwiązań.
+        Zadania zostaną omówione bezpośrednio po kolokwium.
+    </p>
+
+    <p class="czytelne">
+        <span><a href="kolokwium-probne-zadania.html">Treść zadań</a></span>
+    </p>
+
+    <h2>Uwagi do rozwiązań:</h2>
+
+    <ul>
+
+        <li>
+            <p>
+                Proszę na kolokwium przesyłać każde zadanie w osobnym pliku z numerem zadania w nazwie i z rozszerzeniem
+                <samp>cpp</samp>, np. <samp>zad01.cpp</samp>, <samp>zad02.cpp</samp>. Przed kolokwium będzie można
+                wypróbować i w razie potrzeby poprawić ustawienia w CodeBlocks.
+            </p>
+        </li>
+
+        <li>
+            <p>
+                Zdecydowanie lepiej jest nazywać zmienne tak, żeby ich nazwy mówiły o ich roli w programie. Znacząco poprawia
+                to czytelność programu. Jeżeli np. zmienna ma przechowywać informację o przebytej drodze (zadania 1 i 2), to
+                lepiej nazwać ją po prostu <code>droga</code>, (lub <code>distance</code>) niż <code>liczba</code> (lub
+                <code>number</code>). Oczywiście <code>liczba</code> też może
+                być dobrą nazwą, jeżeli nie mamy precyzyjniejszej informacji o tym, czym jest ta liczba (np. w zadaniu 3). W
+                przypadku poprawnych programów nazwy zmiennych nie będą raczej miały wpływu na ocenę. Natomiast w przypadku
+                programów, które nie działają poprawnie, na pewno lepiej oceniony zostanie program, w którym widać pomysł na
+                rozwiązanie. Dobrze dobrane nazwy zmiennych z mogą pomóc dostrzec ten pomysł. Jeszcze gorszym pomysłem niż
+                użycie niewystarczająco precyzyjnych nazw, jest użycie nazw mylących, np. zmienna <code>suma</code> do przechowywania
+                iloczynu.
+            </p>
+        </li>
+
+        <li>
+            <p>
+                Tak jak było to napisane na stronie z treścią zadań, nie trzeba sprawdzać poprawności danych. Np. w zadaniu 3
+                nie ma potrzeby sprawdzania, czy liczba jest nieujemna. Założenie jest takie, że program ma działać dla
+                poprawnych danych i nie ma dla nas znaczenia co będzie się działo, jeżeli dane nie są poprawne &mdash; program może
+                dawać dziwne wyniki, zapętlić się lub po prostu &bdquo;wywalić&rdquo;. Oczywiście w prawdziwych programach nie jest to dobre
+                podejście, ale na kolokwium lepiej nie tracić czasu. Poza tym jest też ryzyko, że niepoprawnie zaimplementowane
+                sprawdzenie błędu spowoduje, że program będzie źle działał dla poprawnych danych. W części zadań było np.
+                założenie, że pewne dane pobrane od użytkownika są liczbami nieujemnymi (np. w zadaniach 3 i 5). Niektóre osoby
+                sprawdzały wartość wczytanej liczby. U części osób sprawdzenie to nie wpływało na działanie programu dla
+                poprawnych danych, ale u części sprawdzenie to nie było poprawne. Zamiast sprawdzać, czy liczba jest nieujemna w
+                programie było sprawdzenie, czy liczba jest dodatnia. W związku z tym dla wartości zero program zgłaszał błąd
+                zamiast wyświetlić wyniki. Podsumowując &mdash; na kolokwium lepiej nie robić tego sprawdzenia, bo:
+            </p>
+            <ul>
+                <li>szkoda czasu,</li>
+                <li>zwiększa to prawdopodobieństwo błędnego działania programu dla poprawnych danych.</li>
+            </ul>
+        </li>
+
+        <li>
+            <p>
+                Należy uważać na typy danych, w szczególności na dzielenie wartości typu <code>int</code>, jeżeli oczekujemy wyniku, który
+                ma nie być wartością całkowitą. Np. w zadaniu 11 wyrażenie <code>j / (j+i)</code> będzie oznaczało dzielenie całkowite
+                (zmienne <code>i</code> i <code>j</code> są całkowite). Wyrażenie to będzie miało wtedy zawsze wartość zero. Żeby wymusić dzielenie
+                zmiennoprzecinkowe możemy np. napisać <code>1.0 *j / (j+i)</code>.
+            </p>
+        </li>
+
+        <li>
+            <p>
+                Nie należy również przechowywać wartości, które możemy traktować jak wartości całkowite, w zmiennych typów
+                zmiennoprzecinkowych (<code>float</code>, <code>double</code>). Zwłaszcza jeżeli potrzebujemy dokładnych porównań tych wartości. W
+                szczególności w zadaniu 6 przeliczanie ceny na pojedynczą wartość w złotych (typu <code>double</code>) nie jest dobrym
+                pomysłem. Lepiej przeliczać cenę na grosze (typu <code>int</code>).
+            </p>
+        </li>
+
+        <li>
+            <p>
+                Jeżeli zadanie polega na napisaniu funkcji (jak np. w zadaniu 12), to ocenie podlega funkcja. Tutaj będzie to
+                funkcja o nagłówku <code>double f(double x, double y)</code> (oczywiście nazwa funkcji może być inna). Dla sprawdzenia
+                dobrze jest dopisać prosty program wywołujący funkcję. Natomiast napisanie programu, który pobiera od
+                użytkownika wartości, wykonuje obliczenia i wyświetla wynik nie jest rozwiązaniem zadania.
+            </p>
+        </li>
+
+        <li>
+            <p>
+                Błędy składniowe takie jak np. literówki w nazwach typów, brakujące operatory arytmetyczne bądź logiczne w
+                wyrażeniach, brak średników, itp. są błędami bardzo łatwymi do wyłapania i poprawienia dla osoby, która choć
+                trochę umie programować w C++. Nieumiejętność znalezienia i poprawienia tego typu błędów i pozostawienie dużej
+                ich liczby w wysłanym rozwiązaniu niestety świadczy zazwyczaj o braku zrozumienia wysyłanego rozwiązania.
+            </p>
+        </li>
+    </ul>
+
+
+
+</body>
+
+</html>

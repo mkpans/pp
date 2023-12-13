@@ -1,0 +1,95 @@
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    background-color: white;
+}
+
+@media (min-width: 600px) {
+    body {
+        width: 70%;
+        margin-left: 15%;
+    }
+}
+
+dt, dfn {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.czytelne {
+    font-size: 2.5em;
+    padding: 2em;
+    text-align: center;
+}
+
+.biezace {
+    font-size: x-large;
+    display: inline-block;
+    padding: 0.5em 0em 0.5em 0em;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+h5 {
+    font-size: 1.17em;
+}
+
+h4 {
+    font-size: 1.33em;
+}
+
+h3 {
+    font-size: 1.58em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+code, samp {
+    font-family: monospace;
+    font-size: inherit;
+    background-color: rgb(235, 235, 235);
+}
+
+code.block, samp.block {
+    display: block;
+    white-space: pre;
+    padding: 1em;
+    background-color: rgb(235, 235, 235);
+    min-width: 100%;
+    width: fit-content;
+}
+
+ul {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+li.img {
+    margin: 1em;
+}
+
+ol.zadania > li {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+samp.block kbd {
+    font-weight: bold;
+}
+
+img.equation {
+    vertical-align: middle;
+}
+
+li.odnosnik {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}

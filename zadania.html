@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8">
+  <title>Zadania</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/pp.css">
+</head>
+
+<body>
+  <ol class="zadania">
+    <li>
+      <p>Napisz program wyświetlający dowolny &mdash; wybrany napis.
+        Skompiluj ten program i uruchom.</p>
+    </li>
+
+    <li>
+      <p>Wypróbuj reakcję kompilatora na różnego rodzaju błędy &mdash;
+        spróbuj np. usunąć średnik z wiersza zawierającego instrukcję
+        wyświetlającą napis. Spróbuj zmienić nazwę funkcji wyświetlającej
+        napis na nieprawidłową.
+    </li>
+
+    <li>
+      <p>Napisz program pobierający od użytkownika dwie liczby całkowite i
+        wyświetlający ich sumę oraz iloczyn.
+    </li>
+
+    <li>
+      <p>Niech zmienne <code>a</code>, <code>b</code>, <code>c</code> i
+        <code>d</code> przechowują wartości całkowite dodatnie. Napisz
+        następujące wyrażenia w języku C:
+      </p>
+      <ol type="a">
+        <li class="img"><img src="img/01.gif" alt="a^2+b^2"></li>
+        <li class="img"><img src="img/02.gif" alt="(a+b)^2"></li>
+        <li class="img"><img src="img/03.gif" alt="ab+cd"></li>
+        <li class="img"><img src="img/04.gif" alt="\frac{a-b}{c+d}"></li>
+        <li class="img"><img src="img/05.gif" alt="\frac{a}{b}d"></li>
+        <li class="img"><img src="img/06.gif" alt="\frac{ab}{cd}"></li>
+        <li class="img"><img src="img/07.gif" alt="\lfloor\frac{a}{4}\rfloor"></li>
+        <li class="img"><img src="img/08.gif" alt="(\frac{a}{b})^3"></li>
+        <li class="img"><img src="img/09.gif" alt="\sqrt{|a-b|}"></li>
+      </ol>
+      <p>Napisz program deklarujący takie zmienne, podstawiający pod nie
+        wybrane wartości oraz wyświetlający kolejno wartości podanych wyrażeń.
+    </li>
+
+    <li>
+      <p>Dla liczby całkowitej nieujemnej przechowywanej w zmiennej <code>n</code> napisz wyrażenia w języku
+        C przyjmujące następujące wartości:</p>
+      <ul>
+        <li>cyfra jedności liczby <code>n</code>,</li>
+        <li>cyfra dziesiątek liczby <code>n</code>,</li>
+      </ul>
+      <p>Napisz program pobierający od użytkownika liczbę całkowitą i
+        zapisujący jej wartość w zmiennej <code>n</code> i wyświetlający
+        jej cyfrę jedności i dziesiątek.</p>
+    </li>
+
+    <li>
+      <p>Niech kolejne dni tygodnia będą ponumerowane kolejnymi liczbami od zera do sześciu. W zmiennej <code>dt</code>
+        przechowywany jest numer pewnego dnia tygodnia. Napisz wyrażenie, którego wartość będzie</p>
+      <ul>
+        <li>numerem dnia następującego po zadanym</li>
+        <li>numerem dnia poprzedzającego zadany</li>
+      </ul>
+      <p>Napisz podobne wyrażenia, ale przy założeniu, że dni tygodnia ponumerowane są od jednego do siedmiu.</p>
+    </li>
+
+    <li>
+      <p>W zmiennych <code>h</code>, <code>m</code> i <code>s</code>
+        podany jest czas w godzinach, minutach i sekundach.
+        Napisz wyrażenie, którego wartość jest czasem w samych sekundach. Np.
+        dla wartości zmiennych odpowiednio 5, 40 i 12 wartością wyrażenia
+        powinna być liczba 20412.
+      </p>
+      <p>Napisz program pobierający od użytkownika odpowiednie wartości
+        (godziny, minuty, sekundy), zapisujący je w zmiennych oraz
+        wyświetlający
+        czas w samych sekundach.</p>
+    </li>
+
+    <li>
+      <p>W zmiennej <code>s</code> zadana jest liczba sekund. Napisz wyrażenie, którego wartością jest pełna liczba dni,
+        które miną przez zadaną liczbę sekund. Np. dla zmiennej <code>s</code> równej 1000000 wyrażenie ma mieć wartość
+        11.</p>
+      <p>Napisz odpowiedni program sprawdzający.</p>
+    </li>
+
+    <li>
+      <p>Współrzędne geograficzne mogą być wyrażone w stopniach, minutach
+        i sekundach (np. 50&#x00b0;15&#x2032;13&#x2033;) lub w stopniach
+        dziesiętnych (np. 22,7386&#x00b0;).</p>
+      <p>Napisz program, który na
+        podstawie umieszczonej w zmiennych <code>d</code>, <code>m</code> i
+        <code>s</code> współrzędnej w stopniach, minutach i sekundach obliczy
+        współrzędną w stopniach dziesiętnych i podstawi ją pod zmienną
+        <code>dd</code>.
+      </p>
+      <p>Napisz program, który na podstawie zadanej w
+        zmiennej <code>dd</code> współrzędnej w stopniach dziesiętnych umieści w
+        zmiennych <code>d</code>, <code>m</code> i <code>s</code> tę samą
+        współrzędną w stopniach, minutach i sekundach (z dokładnością do
+        sekundy).</p>
+      <p>Napisz odpowiedni program sprawdzający.</p>
+    </li>
+
+    <li>
+      <p>Napisz program wyświetlający numer dnia i miesiąca Wielkanocy w
+        roku zadanym przez zmienną użytkownika (z zakresu 1900-2099). Odpowiednie
+        wzory można znaleźć <a href="http://www.tondering.dk/claus/cal/easter.php#evensimp" target="_blank">tutaj</a>.</p>
+    </li>
+
+    <li>
+      <p>Napisz dwa programy. Jeden z nich pobiera od użytkownika
+        temperaturę w stopniach Fahrenheita i wyświetla w stopniach Celsjusza, a
+        drugi &mdash; na odwrót. Odpowiednie wzory można znaleźć <a
+          href="https://pl.wikipedia.org/wiki/Skala_Fahrenheita#Przeliczanie" target="_blank">tutaj</a>.</p>
+    </li>
+
+    <li>
+      <p>Napisz program wyświetlający sumę ostatnich czterech cyfr pobranej
+        od użytkownika dodatniej liczby całkowitej. Możesz założyć, że liczba ma
+        zawsze cztery cyfry &mdash; jeżeli ma mniej, to brakujące są
+        zerami.</p>
+    </li>
+
+    <li>
+      <p>Napisz program, który pobierze od użytkownika roczną stopę zwrotu
+        (w procentach) dla pewnej inwestycji, zainwestowaną kwotę oraz czas
+        trwania inwestycji w latach. Program wyświetli kwotę końcową.</p>
+      <p>Np.
+        dla pobranych wartości 5, 200 i 2 wynikiem będzie 220,5.</p>
+    </li>
+
+    <li>
+      <p>Napisz program pobierający od użytkownika współrzędne trzech
+        wierzchołków trójkąta (sześć liczb), a następnie wyświetlający pole tego
+        trójkąta. Różne wzory na pole powierzchni trójkąta można znaleźć <a
+          href="https://pl.wikipedia.org/wiki/Tr%C3%B3jk%C4%85t#Pole_powierzchni" target="_blank">tutaj</a>.</p>
+    </li>
+
+    <li>
+      <p>Napisz fragment programu, który wymieni wartości zmiennych <code>a</code> i <code>b</code>.</p>
+      <p>Np. poniższy program</p>
+
+<code class="block">int a = 3;
+int b = 7;
+
+// tutaj należy wstawić instrukcje wymieniające wartości zmiennych
+
+cout &lt;&lt; a &lt;&lt; " " &lt;&lt; b &lt;&lt endl;</code>
+
+      <p>powinien wyświetlić</p>
+
+<samp class="block">7 3</samp>
+    </li>
+
+    <li>
+      <p>Napisz fragment programu, który dla pary zmiennych <code>a</code>
+        i <code>b</code> spowoduje, że w zmiennej <code>a</code> zostanie
+        zapisana wartość sumy wartości zmiennych <code>a</code> i
+        <code>b</code>, a w zmiennej <code>b</code> &mdash; oryginalna
+        wartość zmiennej <code>a</code>. Np. dla wartości 7 i 8 przechowywanych
+        odpowiednio w zmiennych <code>a</code> i <code>b</code> napisane
+        instrukcje spowodują, że w zmiennej <code>a</code> będzie wartość 15, a
+        w zmiennej <code>b</code> &mdash; wartość 7.
+      </p>
+    </li>
+
+    <li>
+      <p>Napisz program, który pobiera od użytkownika dwie liczby
+        zmiennoprzecinkowe &mdash; współrzędne punktu, a następnie wyświetli ten
+        punkt oraz jego odległość od początku układu współrzędnych. Punkt
+        wyświetlany jest w postaci <code>(<i>x</i>,<i>y</i>)</code>, gdzie
+        <code><i>x</i></code> i <code><i>y</i></code> są pobranymi
+        liczbami.
+      </p>
+      <p>Przykład działania programu:</p>
+
+<samp class="block">Podaj pierwszą współrzędną: <kbd>3.4</kbd>
+Podaj drugą współrzędną: <kbd>-4.1</kbd>
+Punkt: (3.4, -4.1)
+Odległość punktu od początku układu współrzędnych: 5.33</samp>
+    </li>
+
+    <li>
+      <p>Napisz program, który sprawdza czy wpisana liczba jest liczbą
+        parzystą i wypisujący informację czy jest czy nie.</p>
+    </li>
+
+    <li>
+      <p>Napisz program, który pobiera liczbę całkowitą. Jeśli liczba mieści
+        się w przedziale od 0 do 9999, program wypisze kolejno liczbę jej tysięcy,
+        setek, dziesiątek i jedności. W przeciwnym razie wypisze komunikat o
+        błędzie.</p>
+    </li>
+
+    <li>
+      <p>Napisz program wczytujący trzy zmienne i wyświetlający komunikat,
+        czy z odcinków o podanych długościach da się zbudować trójkąt. Ponadto,
+        jeśli mogą one tworzyć trójkąt, to oblicza i wyświetla jego pole (<a
+          href="https://pl.wikipedia.org/wiki/Wz%C3%B3r_Herona" target="_blank">wzór Herona</a>) i
+        obwód.</p>
+    </li>
+
+    <li>
+      <p>Trójkąt (domknięty) ma wierzchołki w punktach (0, 0), (5, 0) i (5,
+        5). Napisz program, który dla punktu wczytanego od użytkownika
+        (współrzędne kartezjańskie) zwróci informację o tym, czy punkt należy do
+        tego trójkąta.</p>
+      <p>Wyświetlona informacja ma być dokładnie postaci:
+        &bdquo;<samp>Punkt (7.2, -8.3) nie należy do zadanego trójkąta.</samp>&rdquo;
+        lub &bdquo;<samp>Punkt (2.2, 1.2) należy do zadanego
+          trójkąta.</samp>&rdquo;</p>
+    </li>
+
+    <li>
+      <p>Wykład zaczyna się o godzinie 8:15. Napisz program, który pobierze
+        od użytkownika godzinę i minutę, a następnie wyświetli informację o tym
+        czy wykład już się zaczął.</p>
+    </li>
+
+    <li>
+      <p>Śniadania w stołówce wydawane są w godzinach 8:45&ndash;11:30.
+        Napisz program, który pobierze od użytkownika godzinę i minutę, a
+        następnie wyświetli informację czy można o tej porze dostać
+        śniadanie.</p>
+    </li>
+
+    <li>
+      <p>W pewnej restauracji od poniedziałku do czwartku w godzinach
+        12:30&ndash;17:15 oraz w niedzielę po godzinie dziewiętnastej rabat na
+        wszystkie dania wynosi 20&percnt;.</p>
+      <p>Napisz program, który pobierze od użytkownika cenę (osobno złote i
+        grosze), numer dnia tygodnia (niedziela to zero, poniedziałek &mdash; 1,
+        &hellip;, sobota &mdash; 6), godzinę i minutę. Następnie program wyświetli
+        cenę po ewentualnym rabacie (zakrągloną w dół do pełnych groszy).</p>
+    </li>
+
+    <li>
+      <p>Na basenie dostępne są dwa rodzaje biletów: 75-minutowy kosztuje 16
+        złotych, a 180-minutowy &mdash; 32 złote. Dopłata za przekroczony czas
+        wynosi 35 groszy za minutę. Napisz program, który pobierze od użytkownika
+        czas pobytu na basenie w pełnych minutach, a następnie wyświetli całkowity
+        koszt (w złotych i groszach) pobytu w przypadku kupienia biletu
+        75-minutowego oraz koszt w przypadku kupienia biletu 180-minutowego oraz
+        wyświetli informację, który bilet bardziej opłaca się kupić.</p>
+    </li>
+
+    <li>
+      <p>Napisz program, który pobierze od użytkownika dwie daty. Data
+        pobierana jest jako trzy liczby całkowite: rok, miesiąc i dzień. Następnie
+        program wyświetla informację o tym, czy osoba urodzona w dniu zadanym
+        pierwszą datą jest pełnoletnia w dniu zadanym drugą datą.</p>
+      <p>Można założyć, że użytkownik podał prawidłowe daty (nie trzeba tego
+        sprawdzać).</p>
+    </li>
+
+    <li>
+      <p>Napisz program, który pobierze od użytkownika:</p>
+      <ul>
+        <li>spalanie samochodu (w litrach na 100 kilometrów),</li>
+        <li>ilość paliwa w baku (w litrach),</li>
+        <li>dystans do przejechania (w kilometrach).</li>
+      </ul>
+      <p>Jeżeli wystarczy paliwa, to samochód przejeżdża tyle kilometrów ile
+        zostało zadane przez użytkownika. Jeżeli nie wystarczy, to tyle ile się
+        uda (samochód jedzie aż się skończy paliwo).
+        Program wyświetla przejechaną odległość i ilość paliwa pozostałego w baku.
+        Należy założyć, że spalanie jest stałe przez całą jazdę.
+      </p>
+    </li>
+
+    <li>
+      <p>Napisz program obliczający należny podatek dochodowy od
+        osób fizycznych. Program ma pobierać od użytkownika dochód (osobno złote i
+        grosze) i po obliczeniu wypisywać na ekranie należny podatek (w złotych i
+        groszach). Podatek obliczany jest wg. następujących reguł:</p>
+      <ul>
+        <li>do 85528,00 PLN podatek wynosi 18% podstawy minus 556,02 PLN (przy
+          czym podatek nie może być ujemny!),</li>
+        <li>od 85528,00 PLN podatek wynosi 14839,02 PLN + 32% nadwyżki ponad
+          85528,00 PLN.</li>
+      </ul>
+    </li>
+
+    <li>
+      <p>Napisz program, który przyjmuje od użytkownika współczynniki
+        prostej danej równaniem <var>y</var> = <var>ax</var> + <var>b</var> i wyświetla informację przez które
+        ćwiartki układu współrzędnych przechodzi dana prosta.</p>
+    </li>
+
+    <li>
+      <p>Napisz program, który pobierze od użytkownika cenę w pełnych
+        złotych, a następnie wyświetli ją razem ze słowem &bdquo;złoty&rdquo; w
+        odpowiedniej formie.
+        Np. <samp>0 złotych</samp>, <samp>1 złoty</samp>, <samp>2 złote</samp>,
+        &hellip;</p>
+    </li>
+
+    <li>
+      <p>Napisz program pobierający od użytkownika wartości liczb
+        <var>a</var> i
+        <var>b</var>, a następnie rozwiązujący równanie <var>ax</var> +
+        <var>b</var> = 0 (pamiętaj o
+        różnych przypadkach szczególnych).
+      </p>
+    </li>
+
+    <li>
+      <p>Napisz program pobierający od użytkownika wartości liczb
+        <var>a</var>,
+        <var>b</var> i <var>c</var>, a następnie rozwiązujący równanie
+        <var>ax</var><sup>2</sup> + <var>bx</var> + <var>c</var> = 0
+        (pamiętaj o różnych przypadkach szczególnych).
+      </p>
+    </li>
+
+    <li>
+      <p>Napisz program, który pobierze od użytkownika rok i numer miesiąca
+        (1&ndash;12), a następnie wyświetli liczbę dni w danym miesiącu (bez
+        sprawdzania poprawności roku i miesiąca).</p>
+    </li>
+
+    <li>
+      <p>Napisz program, który pobierze od użytkownika trzy liczby całkowite
+        rok, numer miesiąca i numer dnia, a następnie wyświetli informację o tym
+        czy podane liczby stanowią poprawną datę tzn. rok jest dodatni, numer
+        miesiąca mieści się w zakresie (1&ndash;12), a numer dnia w zakresie
+        (1&ndash;liczba dni w danym miesiącu danego roku).</p>
+      <p>Jeżeli data jest
+        poprawna, to jest ona wyświetlana w postaci <samp>DD/MM/RRRR</samp>, np.
+        <samp>23/03/2017</samp>, <samp>01/10/2010</samp>, <samp>12/12/0034</samp> (pamiętaj o
+        wiodących zerach).
+      </p>
+    </li>
+
+    <li>
+      <p>Napisz program, który pobiera od użytkownika współczynniki układu
+        równań z dwiema niewiadomymi i wyświetla rozwiązanie tego układu. W
+        przypadku gdy układ nie ma rozwiązań lub gdy ma ich nieskończenie wiele,
+        program powinien wyświetlić odpowiednią informację.</p>
+      <p>Układ możesz rozwiązać <a
+          href="https://www.naukowiec.org/wiedza/matematyka/metoda-wyznacznikow_1320.html" target="_blank">metodą wyznaczników</a>
+        (wzory Cramera).
+      </p>
+    </li>
+
+    <li>
+      <p>Napisz program, który pobiera od użytkownika kolejne liczby całkowite i oblicza ich sumę.
+        Program kończy działanie i wyświetla obliczoną sumę po podaniu przez użytkownika liczby 0.
+      </p>
+      <p>Przykład pracy z programem może wyglądać tak:</p>
+
+<samp class="block">Podaj kolejną liczbę: <kbd>5</kbd>
+Podaj kolejną liczbę: <kbd>-1</kbd>
+Podaj kolejną liczbę: <kbd>10</kbd>
+Podaj kolejną liczbę: <kbd>0</kbd>
+Suma: 14</samp>
+    </li>
+
+    <li>
+      <p>Napisz program, który działa tak jak program z poprzedniego zadania, ale sumuje wyłącznie podane przez
+        użytkownika liczby dodatnie. Liczby ujemne ignoruje.
+      </p>
+      <p>Przykład pracy z programem może wyglądać tak:</p>
+
+<samp class="block">Podaj kolejną liczbę: <kbd>5</kbd>
+Podaj kolejną liczbę: <kbd>-1</kbd>
+Podaj kolejną liczbę: <kbd>10</kbd>
+Podaj kolejną liczbę: <kbd>0</kbd>
+Suma: 15</samp>
+
+    </li>
+
+    <li>
+      <p>Napisz program, który sumuje pobrane od użytkownika liczby, ale przed pobraniem każdej liczby
+        program pyta się czy kontynuować pobieranie liczb. Użytkownik powinien wpisać znak <code>t</code> (kontynuacja)
+        lub <code>n</code> (wyświetlenie sumy i zakończenie programu programu).
+      </p>
+      <p>Przykład pracy z programem może wyglądać tak:</p>
+
+<samp class="block">Czy kontynuować (t/n)? <kbd>t</kbd>
+Podaj kolejną liczbę: <kbd>1</kbd>
+Czy kontynuować (t/n)? <kbd>t</kbd>
+Podaj kolejną liczbę: <kbd>2</kbd>
+Czy kontynuować (t/n)? <kbd>t</kbd>
+Podaj kolejną liczbę: <kbd>-5</kbd>
+Czy kontynuować (t/n)? <kbd>n</kbd>
+Suma: -2</samp>
+
+    </li>
+
+    <li>
+      <p>Napisz program obliczający iloczyn liczb pobranych od użytkownika.
+        Program najpierw pobiera od użytkownika liczbę całkowitą <var>n</var>, a następnie
+        pobiera <var>n</var> liczb i wyświetla ich iloczyn.</p>
+      <p>Przykład pracy z programem może wyglądać tak:</p>
+
+<samp class="block">Ile liczb chcesz podać? <kbd>5</kbd>
+Podaj kolejną liczbę: <kbd>2</kbd>
+Podaj kolejną liczbę: <kbd>3</kbd>
+Podaj kolejną liczbę: <kbd>4</kbd>
+Podaj kolejną liczbę: <kbd>1</kbd>
+Podaj kolejną liczbę: <kbd>2</kbd>
+Iloczyn: 48</samp>
+    </li>
+    <li>
+      <p>Zmodyfikuj program z poprzedniego zadania tak, żeby w przypadku wpisania przez
+        użytkownika zera jako jednego z czynników program od razu kończył działanie bez
+        pobierania kolejnych liczb. Program ma w tej sytuacji wyświetlić komunikat o tym,
+        że niezależnie od kolejnych czynników wynik będzie wynosił zero.</p>
+    </li>
+
+    <li>
+      <p>Napisz program obliczający sumę i iloczyn liczb pobranych od użytkownika.
+        Program najpierw pobiera od użytkownika liczbę całkowitą <var>n</var>, a następnie
+        pobiera <var>n</var> liczb i wyświetla ich sumę i iloczyn.</p>
+      <p>Przykład pracy z programem może wyglądać tak:</p>
+
+<samp class="block">Ile liczb chcesz podać? <kbd>3</kbd>
+Podaj kolejną liczbę: <kbd>2</kbd>
+Podaj kolejną liczbę: <kbd>3</kbd>
+Podaj kolejną liczbę: <kbd>4</kbd>
+Suma: 9
+Iloczyn: 24</samp>
+
+  <p>Zastanów się jak będzie działał program jeżeli użytkownik jako <var>n</var>
+        poda liczbę ujemną. Popraw program tak, żeby w przypadku podania liczby ujemnej program
+        prosił użytkownika aż do skutku o podanie liczby nieujemnej.</p>
+      <p>Przykład pracy z programem może wyglądać tak:</p>
+
+<samp class="block">Ile liczb chcesz podać? <kbd>-3</kbd>
+Podałeś liczbę ujemną.
+Ile liczb chcesz podać? <kbd>-2</kbd>
+Podałeś liczbę ujemną.
+Ile liczb chcesz podać? <kbd>3</kbd>
+Podaj kolejną liczbę: <kbd>2</kbd>
+Podaj kolejną liczbę: <kbd>3</kbd>
+Podaj kolejną liczbę: <kbd>4</kbd>
+Suma: 9
+Iloczyn: 24</samp>
+
+  </li>
+
+    <li>
+      <p>Napisz program znajdujący największą spośród liczb pobranych od użytkownika.
+        Program najpierw pobiera od użytkownika liczbę całkowitą <var>n</var>, a następnie
+        pobiera <var>n</var> liczb i wyświetla największą spośród nich.</p>
+      <p>Przykład pracy z programem może wyglądać tak:</p>
+
+<samp class="block">Ile liczb chcesz podać? <kbd>3</kbd>
+Podaj kolejną liczbę: <kbd>2</kbd>
+Podaj kolejną liczbę: <kbd>3</kbd>
+Podaj kolejną liczbę: <kbd>4</kbd>
+Największa: 4</samp>
+
+      <p>Napisz podobny program znajdujący najmniejszą spośród liczb.</p>
+
+      <p>Napisz program znajdujący zarówno najmniejszą jak i największą spośród liczb podanych
+        przez użytkownika.
+      </p>
+    </li>
+
+    <li>
+      <p>Napisz program pobierający od użytkownika liczbę całkowitą dodatnią (program ma wymuszać
+        podanie liczby dodatniej), a następnie wyświetlający wszystkie jej dzielniki naturalne
+        (każdy w osobnym wierszu).</p>
+    </li>
+
+    <li>
+      <p>Napisz program pobierający od użytkownika liczbę całkowitą dodatnią (program ma wymuszać
+        podanie liczby dodatniej), a następnie wyświetlający informację o tym, czy jest to liczba
+        pierwsza.</p>
+    </li>
+
+    <li>
+      <p>Napisz program wyświetlający <a href="https://pl.wikipedia.org/wiki/%C5%9Arednia_arytmetyczna" target="_blank">
+          średnią arytmetyczną</a>, <a href="https://pl.wikipedia.org/wiki/%C5%9Arednia_geometryczna" target="_blank">geometryczną</a>
+        i <a href="https://pl.wikipedia.org/wiki/%C5%9Arednia_harmoniczna" target="_blank">harmoniczną</a> <var>n</var>
+        liczb pobranych od użytkownika. Program najpierw pobiera od użytkownika liczbę całkowitą <var>n</var>
+        (wymusza na użytkowniku podanie liczby dodatniej). Możesz założyć, że użytkownik podaje liczby,
+        z których da się policzyć wszystkie średnie (program nie musi tego sprawdzać).</p>
+    </li>
+
+    <li>
+      <p>Napisz program pobierający od użytkownika liczbę całkowitą nieujemną (program ma wymuszać
+        podanie liczby nieujemnej), a następnie wyświetlający sumę jej cyfr.</p>
+    </li>
+
+    <li>
+      <p>
+        Napisz program pobierający od użytkownika liczbę całkowitą nieujemną i
+        wyświetlający wszystkie liczby pierwsze niewiększe od tej liczby.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Pierwiastek kwadratowy z liczby dodatniej <var>a</var> można znaleźć jako miejsce zerowe funkcji
+        <var>f</var>(<var>x</var>)=<var>x</var><sup>2</sup>&minus;<var>a</var>.
+        Napisz dwa programy obliczające pierwiastek kwadratowy z zadanej liczby &mdash; pierwszy robi to metodą
+        bisekcji (obliczenia należy zakończyć jeżeli długość przedziału będzie mniejsza od pewnej ustalonej &mdash;
+        odpowiednio małej &mdash; wartości),
+        a drugi metodą stycznych (obliczenia należy zakończyć jeżeli wartość bezwzględna funkcji
+        w danym punkcie będzie mniejsza od pewnej ustalonej &mdash; odpowiednio małej &mdash; wartości).
+        <ul>
+          <li><a target="_blank" href="https://pl.wikipedia.org/wiki/Metoda_r%C3%B3wnego_podzia%C5%82u">Metoda bisekcji</a></li>
+          <li><a target="_blank" href="https://pl.wikipedia.org/wiki/Metoda_Newtona">Metoda stycznych</a></li>
+        </ul>
+      </p>
+    </li>
+
+    <li>
+    <p>
+      Napisz funkcję o nazwie <code>f</code> mającą jeden parametr typu <code>double</code>. Funkcja zwraca
+      wartość funkcji:</p>
+    <img src="img/10.gif" alt="f(x)=\sqrt{|x|}+\frac{x^3}{1+x^2}">.
+    <p>
+      Napisz prosty program pobierający od użytkownika wartość <var>x</var> i wyświetlający wartość
+      <i>f(x)</i>.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      Napisz funkcję o nazwie <code>g</code> dostającą jeden argument typu <code>double</code>.
+      Funkcja zwraca wartość następującej funkcji:
+    </p>
+    <img src="img/11.gif"
+      alt="g(x)=\left\{\begin{array}{lcl}f(x),&\quad&x>0\-\sqrt[3]{|f(x)|},&&-1\le x\le 0\0,&&x<-1\end{array}\right.">.
+    <p>Funkcja <var>f</var> opisana jest w poprzednim zadaniu.</p>
+    <p>
+      Napisz prosty program pobierający od użytkownika wartość <var>x</var> i wyświetlający wartość
+      <i>g(x)</i>.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      Napisz funkcję <code>pobierz_calkowita</code> wyświetlającą prośbę do użytkownika o podanie liczby całkowitej,
+      pobierającą od użytkownika tę liczbę oraz zwracającą ją.
+    </p>
+    <p>
+      Napisz funkcję <code>wyswietl_wynik</code>, która dla zadanej liczby całkowitej wyświetla napis
+      w postaci:
+    </p>
+    <p><samp>wynik: <i>liczba</i></samp></p>
+    <p>
+      Użyj powyższych funkcji do napisania programu, który pobiera od użytkownika dwie liczby i wyświetla
+      ich sumę.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      Funkcję pobierającą liczbę z poprzedniego zadania zmodyfikuj tak, żeby pobierała od użytkownika liczbę
+      rzeczywistą (typu <code>double</code> dodatnią. Jeżeli użytkownik poda liczbę równą zero lub ujemną,
+      to funkcja powinna wyświetlać odpowiedni
+      komunikat i prosić o podanie liczby aż do skutku (do podania przez użytkownika liczby dodatniej).
+    </p>
+    <p>
+      Używając zmodyfikowanej funkcji napisz odpowiednio zmodyfikowany program &mdash; liczący sumę
+      liczb rzeczywistych dodatnich.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      Napisz program szukający przybliżenia miejsca zerowego funkcji
+      <var>f</var>(<var>x</var>) = <var>x</var><sup>7</sup> &plus; <var>x</var><sup>3</sup> &minus; 4. Program szuka miejsca zerowego metodą
+      <a href="https://pl.wikipedia.org/wiki/Metoda_r%C3%B3wnego_podzia%C5%82u" target="_blank">bisekcji</a>.
+      Wiemy, że <var>f</var>(0)</var> &lt; 0 i <var>f</var>(2) &gt; 0 oraz, że funkcja jest rosnąca
+      w przedziale (0, 2).
+    </p>
+    <p>
+      Napisz dwie wersje programu. Obie pobierają najpierw od użytkownika wartość &epsilon; (epsilon
+      &mdash; wartość dodatnia typu <code>double</code>) oznaczającą dokładność obliczeń. Pierwsza wersja kończy działanie
+      kiedy znalezione przybliżenie jest odległe od faktycznego miejsca zerowego o nie więcej niż &epsilon;.
+      Druga wersja kończy działanie kiedy wartość funkcji <var>f</var> w miejscu znalezionego przybliżenia
+      różni się w od zera o nie więcej niż &epsilon;.
+    </p>
+    <p>
+      Do pobrania wartości &epsilon; użyj funkcji z poprzedniego zadania.  Napisz funkcję służącą do obliczenia
+      wartości funkcji <var>f</var>. Do obliczenia miejsca zerowego
+      napisz dwie funkcje (po jednej dla każdej wersji programu) z jednym parametrem (&epsilon;).
+    </p>
+  </li>
+
+  <li>
+    <p>
+      Napisz funkcję, która dla parametrów <var>m</var> i <var>n</var> (typu <code>int</code>) zwróci
+      wartość wyrażenia <img class="equation" src="img/12.gif" alt=""> .
+    </p>
+    <p>
+      Napisz program pobierający od użytkownika wartości <var>m</var> i <var>n</var> i wyświetlający
+      wartość podanego wyrażenia.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      Napisz funkcję, która dla parametrów <var>m</var>, <var>n</var> (typu <code>int</code>) i
+      &vartheta; (theta &mdash; typu <code>double</code>) zwróci
+      wartość wyrażenia <img class="equation" src="img/13.gif" alt=""> .
+    </p>
+    <p>
+      Napisz program pobierający od użytkownika wartości <var>m</var>, <var>n</var> oraz &vartheta;
+      i wyświetlający wartość podanego wyrażenia.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      Napisz funkcję, która dla parametrów <var>m</var> i <var>n</var> (typu <code>int</code>) zwróci
+      wartość wyrażenia <img class="equation" src="img/14.gif" alt=""> .
+    </p>
+    <p>
+      Napisz program pobierający od użytkownika wartości <var>m</var> i <var>n</var> i wyświetlający
+      wartość podanego wyrażenia.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      Napisz funkcję obliczającą przybliżenie całki oznaczonej wybranej funkcji w przedziale (<var>a</var>, <var>b</var>)
+      za pomocą
+      <a href="https://pl.wikipedia.org/wiki/Ca%C5%82kowanie_numeryczne#Metoda_prostok%C4%85t%C3%B3w" target="_blank">metody prostokątów</a>.
+      Całka oznaczona dla funkcji przyjmującej wartości dodatnie jest polem obszaru ograniczonego przez
+      wykres danej funkcji, oś OX oraz proste <var>x</var> = <var>a</var> i <var>x</var> = <var>b</var>.
+    </p>
+    <p>
+      Zastanów się jakie parametry powinna mieć funkcja obliczająca przybliżenie całki.
+    </p>
+    <p>
+      Napisz drugą funkcję obliczającą przybliżenie całki używającą
+      <a href="https://pl.wikipedia.org/wiki/Ca%C5%82kowanie_numeryczne#Metoda_trapez%C3%B3w" target="_blank">metody trapezów</a>.
+    </p>
+    <p>
+      Napisz program umożliwiający obliczenie całki w zadanym przez użytkownika przedziale używający
+      napisanych funkcji.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      Zdefiniuj typ <code>Cena</code> służący do przechowywania ceny w złotych
+      i w groszach. Zdefiniuj odpowiednie funkcje tak, żeby następujący kod
+      kompilował się i poprawnie działał:
+    </p>
+<code class="block">Cena cena_1 = utworz_cene(2, 99);   // 2 zł, 99 gr
+Cena cena_2 = utworz_cene(2, 150);  // 3 zł, 50 gr
+
+wyswietl_cene(cena_1);
+cout << endl;
+wyswietl_cene(cena_2);
+cout << endl;
+
+
+Cena c1 = pobierz_cene();
+Cena c2 = pobierz_cene();
+
+Cena suma_cen = c1 + c2;
+
+cout << "suma cen: ";
+wyswietl_cene(suma_cen);
+cout << endl;
+
+// Podwyżka o 20%. Wynik zaokrąglony do pełnych groszy w dół
+Cena cena_po_podwyzce = c1 * 1.2;
+
+cout << "cena po podwyzce o 20%: ";
+wyswietl_cene(cena_po_podwyzce);
+cout << endl;
+
+if (c1 < c2) {
+    cout << "Pierwsza cena jest niższa.\n";
+} else if (c1 == c2) {
+    cout << "Ceny sa równe.\n";
+} else {
+    cout << "Druga cena jest niższa.\n";
+}
+</code>
+    <ul>
+      <li>
+        <p>
+          Funkcja <code>Cena utworz_cene(int zl, int gr)</code> &mdash; zwraca cenę dla zadanej liczby złotych i groszy.
+          Jeżeli liczba groszy jest większa niż 99, to cena jest odpowiednio poprawiana. Np. cena 2 złote i 756 groszy
+          powinna być poprawiona na 9 złotych i 56 groszy. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Funkcja <code>Cena pobierz_cene()</code> &mdash; zwraca cenę pobraną od użytkownika. Funkcja osobno pobiera
+          złote i grosze wymuszając na użytkowniku podanie liczb nieujemnych.
+        </p>
+      </li>
+      <li>
+        <p>
+          Funkcja <code>void wyswietl_cene(Cena cena)</code> &mdash; wyświetla cenę w postaci np. <samp>5 zł i 35 gr</samp>.
+        </p>
+        <ul>
+          <li>
+            <p>
+              Spróbuj napisać funkcję tak, żeby nie wyświetlała składnika ceny jeżeli jest on równy zero, np. <samp>5 zł</samp>
+              zamiast <samp>5 zł i 0 gr</samp> lub <code>99 gr</code> zamiast <code>0 zł i 99 gr</code>. W przypadku ceny
+              <samp>0 zł i 0 gr</samp> funkcja powinna wyświetlić <samp>0 zł</samp>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Spróbuj poprawić funkcję tak, żeby wyświetlała pełną i poprawną formę słów <samp>złoty</samp> i <samp>grosz</samp>
+              (patrz zadanie 30), np. <samp>5 złotych i 32 grosze</samp>, <samp>3 złote i 1 grosz</samp>.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Funkcja <code>bool poprawna_cena(Cena c)</code> &mdash; sprawdza, czy cena jest
+          poprawna (liczba złotych jest nieujemna, liczba groszy jest z zakresu 0&ndash;99),
+        </p>
+      </li>
+    </ul>
+    </p>
+  </li>
+  <li>
+    <p>
+      Napisz program, który najpierw pobiera od użytkownika liczbę cen, a następnie pobiera te ceny.
+      Liczba cen musi być większa niż 1 (ma to być wymuszone na użytkowniku).
+      Program wymusza również podanie poprawnych cen (możesz użyć funkcji <code>poprawna_cena</code> z poprzedniego
+      zadania). Po pobraniu cen program wyświetla ich sumę oraz najwyższą i najniższą z podanych cen.
+    </p>
+    <p>
+      Przykładowa sesja z programem może wyglądać tak:
+    </p>
+<samp class="block">Podaj liczbę cen: <kbd>0</kbd>
+Musisz podać liczbę dodatnią: <kbd>3</kbd>
+Podaj cenę.
+zł: <kbd>-3</kbd>
+gr: <kbd>5</kbd>
+To nie jest poprawna cena. Podaj ponownie.
+zł: <kbd>3</kbd>
+gr: <kbd>50</kbd>
+Podaj cenę.
+zł: <kbd>5</kbd>
+gr: <kbd>95</kbd>
+Podaj cenę.
+zł: <kbd>3</kbd>
+gr: <kbd>170</kbd>
+To nie jest poprawna cena. Podaj ponownie.
+zł: <kbd>4</kbd>
+gr: <kbd>70</kbd>
+Suma cen: 14 zł i 15 gr
+Najniższa cena: 3 zł i 50 gr
+Najwyższa cena: 5 zł 95 gr
+</samp>
+  </li>
+<!--
+  <li>
+    <p>Napisz program, który pobiera od użytkownika liczbę <var>n</var> oraz <var>n</var> liczb rzeczywistych
+    (<var>n</var> &le; 100 &mdash; program ma to wymusić), a następnie oblicza wartość wyrażenia
+    <img class="equation" src="img/15.gif" alt="">
+    (<var>a</var><sub>i</sub> jest <var>i</var>-tą liczbą pobraną od użytkownika).</p>
+  </li>
+-->
+  </ol>
+</body>

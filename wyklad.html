@@ -1,0 +1,1699 @@
+<!doctype html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <title>Notatki z wykładu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pp.css">
+</head>
+
+<body>
+    <header>
+        <h1>Wstęp do programowania &mdash; notatki z wykładu</h1>
+        <section>
+            <h2>Polecana literatura</h2>
+            <ul>
+                <li class="odnosnik">B.W. Kernighan, D.M. Ritchie, <a
+                        href="https://helion.pl/ksiazki/jezyk-ansi-c-programowanie-wydanie-ii-brian-w-kernighan-dennis-m-ritchie,jansiv.htm"
+                        target="_blank"><i>Język
+                            ANSI C. Programowanie.
+                            Wydanie II</i></a>, Helion 2010 </li>
+                <li class="odnosnik">S. Prata, <a
+                        href="https://helion.pl/ksiazki/jezyk-c-szkola-programowania-wydanie-vi-stephen-prata,cppr6v.htm"
+                        target="_blank"><i>Język
+                            C++. Szkoła programowania. Wydanie VI</i></a>,
+                    Helion 2016</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Zasoby internetowe</h2>
+            <ul>
+                <li class="odnosnik">
+                    <a href="https://en.cppreference.com/" target="_blank"><code>cppreference.com</code></a>
+                    <ul>
+                        <li>
+                            <a href="https://en.cppreference.com/w/cpp" target="_blank">C++ reference</a>
+                        </li>
+                        <li>
+                            <a href="https://en.cppreference.com/w/c" target="_blank">C reference</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="odnosnik"><a href="https://cplusplus.com/" target="_blank"><code>cplusplus.com</code></a>
+                </li>
+                <li class="odnosnik"><a href="https://cpp0x.pl/kursy/Kurs-C++/1" target="_blank">Kurs C++</a></li>
+            </ul>
+        </section>
+        <hr>
+    </header>
+    <nav>
+        <ol>
+            <li><a href="#wstep">Wstęp i omówienie cech języka</a></li>
+            <li><a href="#kompilacja">Zasady kompilacji, preprocesor, testowanie i usuwanie błędów</a></li>
+            <li><a href="#wyrazenia">Wyrażenia, instrukcje, typy zmiennych i stałych</a></li>
+            <li><a href="#if">Warunki i instrukcja selekcji</a></li>
+            <li><a href="#while">Pętle</a></li>
+            <li><a href="#funkcje">Funkcje</a></li>
+            <li><a href="#struktury">Struktury</a></li>
+        </ol>
+        <hr>
+    </nav>
+    <main>
+        <h2>Materiał omówiony na wykładzie</h2>
+        <ol>
+            <li>
+                <h3 id="wstep"> Wstęp i omówienie cech języka</h3>
+
+                <h4>Pojęcie algorytmu</h4>
+                <p>
+                    <dfn>Algorytm</dfn> &mdash; skończony ciąg dokładnie
+                    zdefiniowanych czynności koniecznych do wykonania pewnej klasy
+                    zadań. Algorytmem może być np. przepis w książce kucharskiej
+                    (poszczególne kroki muszą być zrozumiałe dla osoby czytającej
+                    przepis). Może to być np. znany ze szkoły średniej sposób
+                    rozwiązywania równania kwadratowego (obliczenie delty, sprawdzenie
+                    jej znaku, itd.). Algorytm może być przedstawiony
+                    graficznie (schemat blokowy). Program komputerowy jest algorytmem
+                    przedstawionym w języku programowania.
+                </p>
+                <h4>Etapy powstawania programu</h4>
+                <ul>
+                    <li>zadanie programistyczne,</li>
+                    <li>specyfikacja,</li>
+                    <li>algorytm,</li>
+                    <li>program,</li>
+                    <li>testowanie i poprawianie,</li>
+                    <li>utrzymywanie (rozszerzanie, modyfikacja)</li>
+                </ul>
+
+                <p>Często z danego kroku wraca się do poprzednich (np. po wykryciu błędów
+                    podczas testowania należy poprawić program).</p>
+
+                <h4>Składowe specyfikacji zadania programistycznego</h4>
+                <ul>
+                    <li>co jest dane</li>
+                    <li>skąd wziąć dane</li>
+                    <li>co ma być wynikiem</li>
+                    <li>co zrobić z wynikiem</li>
+                    <li>reakcja na błędy (nieoczekiwane sytuacje)</li>
+                </ul>
+
+                <h4>Co to są języki programowania? Pojęcie kodu źródłowego</h4>
+
+                <dl>
+                    <dt>Kod maszynowy</dt>
+                    <dd>&mdash; zapis w postaci liczb binarnych &mdash; tzw. języki
+                        pierwszej generacji,</dd>
+                    <dt>Język asemblera</dt>
+                    <dd>nazywany też po prostu asemblerem
+                        &mdash; język zawierający pojedyncze operacje procesora &mdash; tzw. języki drugiej
+                        generacji,
+                    <dt>Języki niskopoziomowe</dt>
+                    <dd>niski poziom abstrakcji, nacisk na łatwość
+                        realizacji języka na komputerze &mdash; instrukcje języka są łatwo
+                        przekładalne na instrukcje procesora,</dd>
+                    <dt>Języki wysokopoziomowe</dt>
+                    <dd>wyższy poziom abstrakcji, z naciskiem na
+                        łatwiejsze zrozumienie kodu źródłowego przez człowieka, a nie na
+                        łatwość jego realizacji na komputerze &mdash; języki trzeciej i
+                        czwatej generacji.</dd>
+                </dl>
+
+                <p>Pojęcia języków niskiego i wysokiego poziomu nie są ścisłe
+                    i poprawność ich użycia zależy od kontekstu.</p>
+
+                <p>Język C w momencie powstania uważany był za język wysokiego poziomu.
+                    Obecnie po powstaniu wielu języków z o wiele wyższym poziomem
+                    abstrakcji często spotyka się z określeniem języka C jako języka
+                    niskopoziomowego.</p>
+
+
+                <p>Język programowania jest określony przez:</p>
+                <dl>
+                    <dt>alfabet</dt>
+                    <dd>zbiór znaków, z których konstruuje się kod
+                        źródłowy,</dd>
+                    <dt>składnię</dt>
+                    <dd>zasady wg których można łączyć znaki alfabetu w celu
+                        utworzenia poprawnego programu</dd>
+                    <dt>semantykę</dt>
+                    <dd>znaczenie programu.
+                </dl>
+
+                <h4>Sposoby realizacji języków programowania</h4>
+
+                <ul>
+                    <li>
+                        <p><strong>Interpretacja</strong> (Python, JavaScript, R).
+                            Interpreter odczytuje i wykonuje kod źródłowy programu.</p>
+                    </li>
+
+                    <li>
+                        <p><strong>Kompilacja</strong> (C, C++).
+                            Kompilator czyta kod źródłowy i na jego podstawie tworzy plik
+                            wykonywalny. Plik wykonywalny (ang. <i>executable</i>) (jego format
+                            zależy od konkretnego systemu operacyjnego, np. pliki
+                            <samp>.exe</samp> dla systemu Windows) może być uruchomiony
+                            bezpośrednio przez system operacyjny. Zazwyczaj zawiera instrukcje
+                            możliwe do wykonania bezpośrednio przez procesor (tzw. kod
+                            maszynowy) oraz wywołania tzw. funkcji systemowych &mdash; instrukcje do
+                            wykonania przez system operacyjny.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>Teoretycznie każdy język może być zarówno interpretowany jak i
+                            kompilowany, ale różne cechy języka powodują, że zazwyczaj realizuje
+                            się go w jeden z tych sposobów.</p>
+                    </li>
+
+                    <li>
+                        <p>Niektóre techniki realizacji języków programowania powodują, że nie
+                            da się ich jednoznacznie zaliczyć do interpretowanych lub
+                            kompilowanych:</p>
+                        <ul>
+                            <li>
+                                <p>Kompilacja do tzw. <b>kodu bajtowego</b> (ang. <i>bytecode</i>) i interpretacja
+                                    kodu
+                                    bajtowego przez tzw. maszynę wirtualną (Java, C#). Kod bajtowy
+                                    jest podobny do kodu maszynowego &mdash; zawiera proste instrukcje
+                                    przypominające instrukcje procesora, ale interpretowane są one nie
+                                    przez procesor, a przez <b>maszynę wirtualną</b> (program; interpreter kodu
+                                    bajtowego). Program skompilowany do kodu bajtowego może być
+                                    wykonany w dowolnym systemie, dla którego istnieje maszyna
+                                    wirtualna.</p>
+                            </li>
+                            <li>
+                                <p><b>JIT</b> (ang. <i>just-in-time compilation</i>) &mdash; maszyna wirtualna
+                                    decyduje
+                                    o
+                                    kompilacji odpowiednich fragmentów kodu bajtowego do kodu
+                                    maszynowego bezpośrednio przed ich wykonaniem.</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <p>IDE &mdash; zintegrowane środowisko programistyczne (ang. <i>integrated development
+                        environment)</i></p>
+
+                <h4>Dlaczego warto uczyć się C/C++?</h4>
+
+                <p>Języki C i C++ zostały zaprojektowane jako język dla programistów (nie jako
+                    języki do nauki).
+                    C++ pozwala na dobre zrozumienie wielu ważnych mechanizmów, które w
+                    przypadku użycia większości języków są ukryte przed programistą
+                    (np. zarządzanie pamięcią operacyjną).
+                    Dzięki temu ułatwia efektywne używanie tych mechanizmów i zrozumienie
+                    &bdquo;jak to działa&rdquo; również w innych językach. Kosztem tego
+                    niestety jest łatwość popełniania niektórych błędów, np. właśnie błędów
+                    związanych z zarządzaniem pamięcią.
+                </p>
+
+                <p>Przykłady zastosowań języków C i C++:</p>
+                <ul>
+                    <li>Systemy operacyjne (Windows, jądro Linuksa)</li>
+                    <li>Interpretery, kompilatory, maszyny wirtualne</li>
+                </ul>
+
+                <h4>Standardy języka</h4>
+
+                <p>Języki programowania zazwyczaj nie są niezmienne. Jeżeli język jest
+                    powszechnie używany, to zazwyczaj pojawiają się kolejne jego wersje,
+                    często oficjalnie ustandaryzowane.</p>
+
+                <p>Wersje (standardy) języków C i C++:</p>
+                <ul>
+                    <li>Tzw. K&amp;R C (1978) &mdash; książka &bdquo;<i>The C Programming
+                            Language</i>&rdquo; wyznaczyła pierwszy nieoficjalny standard języka
+                    <li>ANSI C, C89, C90 &mdash; pierwsza ustandaryzowana wersja
+                        języka</li>
+                    <li>C99</li>
+                    <li>C11, C17, &hellip;</li>
+                </ul>
+                <ul>
+                    <li>1990 &mdash; książka &bdquo;<i>The Annotated C++ Reference Manual</i>&rdquo; &mdash;
+                        pierwszy
+                        nieoficjalny standard języka</li>
+                    <li>C++98 &mdash; pierwsza ustandaryzowana wersja</li>
+                    <li>C++03</li>
+                    <li>C++11, C++14, C++17, C++20, &hellip;</li>
+                </ul>
+            </li>
+            <li>
+                <h3 id="kompilacja">Zasady kompilacji, preprocesor, testowanie i usuwanie błędów</h3>
+
+                <h4>Najważniejsze fazy kompilacji (język C)</h4>
+                <ul>
+                    <li>preprocesor,</li>
+                    <li>właściwa kompilacja (tworzenie tzw. plików obiektowych),</li>
+                    <li>łączenie (łączenie wielu części programu ze sobą, dołączanie
+                        bibliotek) &mdash; wykonywane jest przez konsolidator (ang.
+                        <i>linker</i>).
+                    </li>
+                </ul>
+
+                <p>Na dowolnych etapach mogą być sygnalizowane błędy związane z tymi
+                    etapami.</p>
+
+                <p>Preprocesor:</p>
+                <ul>
+                    <li>dyrektywa <code>#include</code></li>
+                    <li>dyrektywa <code>#define</code></li>
+                </ul>
+
+                <p>Podstawy składni &mdash; komentarze, użycie tzw. białych znaków (spacje,
+                    tabulatory, znaki końca wiersza), tokeny, średniki</p>
+
+                <p>Najprostszy poprawny program w języku C++:</p>
+
+                <code class="block">int main() {
+}
+</code>
+
+
+                <p>Prosty program wyświetlający komunikat:</p>
+
+                <code class="block">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello, World!\n";
+}</code>
+                <h4>Zachowanie kompilatora w przypadku błędów składniowych.</h4>
+
+                <p>Przykładowy program pobierający dane od użytkownika (wypróbuj działanie
+                    kompilatora po wprowadzeniu błędów do programu, np. usuń średnik):</p>
+
+                <code class="block">#include &lt;iostream&gt;
+using namespace std;
+
+/*
+    To jest przykładowy program
+    dodający dwie liczby.
+*/
+
+int main()
+{
+    int a;
+    int b;
+
+    cout &lt;&lt; "Podaj dwie liczby: ";
+    cin &gt;&gt; a &gt;&gt; b;   // Pobranie danych od użytkownika
+    cout &lt;&lt; "suma " &lt;&lt; a &lt;&lt; " i " &lt;&lt; b &lt;&lt; " wynosi " &lt;&lt; a + b &lt;&lt; endl;
+
+}</code>
+            </li>
+            <li>
+                <h3 id="wyrazenia">Wyrażenia, instrukcje, typy zmiennych i stałych</h3>
+
+                <p>Nazwy (<b>identyfikatory</b>) &mdash; np. nazwy zmiennych, mogą zawierać litery
+                    alfabetu angielskiego (duże i małe &mdash;- są rozróżniane), cyfry dziesiętne i
+                    znak podkreślenia. Nie mogą zaczynać się od cyfry.</p>
+
+                <h4>Typy danych</h4>
+
+                <p>C jest językiem statycznie typowanym co oznacza, że każda zmienna musi
+                    mieć zadeklarowany typ danych, którego wartości może przechowywać.</p>
+
+                <h5>Typy arytmetyczne</h5>
+
+
+                <ul>
+                    <li>
+                        <p>Typ znakowy (<code>char</code>) &mdash; pojedyncze znaki zapisane w apostrofach, np.
+                            <code>'a'</code>, <code>'1'</code>, <code>'B'</code>, <code>'&amp;'</code> &mdash; zazwyczaj
+                            wartością jest kod ASCII znaku
+                            (jest tak praktycznie zawsze, ale standard języka tego nie wymaga).
+                            Znaki specjalne, m.in.: <code>'\n'</code> &mdash; znak końca
+                            wiersza, <code>'\t'</code> &mdash; tabulator.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>Typ całkowity (<code>int</code>) &mdash; wartości całkowite z pewnego zakresu, np. 5,
+                            -6, szesnastkowo: <code>0x34fd</code>, ósemkowo: <code>034</code>.</p>
+                    </li>
+
+                    <li>
+                        <p>Typ logiczny (<code>bool</code>), wartości <code>true</code> i <code>false</code> jako prawda
+                            i fałsz
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>Typy zmiennoprzecinkowe (<code>float</code>,
+                            <code>double</code>, <code>long double</code>) &mdash; komputerowa
+                            reprezentacja (przybliżenie) liczb rzeczywistych. Jako separatora
+                            dziesiętnego używa się kropki: <code>45.12</code>,
+                            <code>13.0</code>, <code>34e5</code> (34 * 10<sup>5</sup>),
+                            <code>34e-5</code> (32 * 10<sup>-5</sup>).
+                        </p>
+                    </li>
+                </ul>
+                <p>
+                    Typ znakowy i całkowity może być poprzedzony kwalifikatorem
+                    <code>signed</code>
+                    (może przechowywać również wartości ujemne) lub
+                    <code>unsigned</code>
+                    (wyłącznie wartości nieujemne). Typ znakowy jest po prostu typem
+                    liczbowym, ale traktowanym w niektórych sytuacjach w specjalny
+                    sposób.
+                </p>
+                <p>
+                    Typ całkowity może być również poprzedzony jednym z kwalifikatorów
+                    <code>short</code> (co najmniej 16 bitów), <code>long</code> (co najmniej 32 bity) lub
+                    <code>long long</code> (co najmniej 64 bity). Sam <code>int</code> musi mieć co najmniej
+                    16 bitów (ale zazwyczaj ma więcej).
+                </p>
+
+                <h4>Operatory i funkcje matematyczne</h4>
+                <ul>
+                    <li>Podstawowe operatory arytmetyczne:
+                        <ul>
+                            <li><code>+</code> (dodawanie),</li>
+                            <li><code>-</code> (odejmowanie),</li>
+                            <li><code>*</code> (mnożenie),</li>
+                            <li><code>/</code> (dzielenie) &mdash; jeżeli oba argumenty są
+                                całkowite, to jest to dzielenie całkowite (część ułamkowa wyniku
+                                jest pomijana), np. <code>23 / 6</code> da w wyniku <code>3</code>, jeżeli
+                                którykolwiek argument jest wartością zmiennoprzecinkową, to wynik
+                                jest zmiennoprzecinkowy, np. <code>23.0 / 6</code> da w wyniku
+                                <code>3.833333</code>,
+                            <li><code>%</code> (reszta z dzielenia całkowitego, operacja
+                                &bdquo;modulo&rdquo;), np
+                                <code>23 % 5</code> da w wyniku <code>3</code>.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <p>Nawiasy okrągłe służą do wymuszania kolejnosci działań.
+                            Operatory matematyczne mają standardowy priorytet (najpierw
+                            mnożenie, dzielenie i operacja modulo, potem dodawanie i
+                            odejmowanie) i kolejność działań (od lewej do prawej). Np. wyrażenie
+                            <code>3 + 4 * 5 % 7 - 2 / 4</code> zostanie zinterpretowane jako
+                            (3 &plus; ((4 &times; 5) mod 7)) &minus; (2 / 4). W celu wymuszenia
+                            wykonania w powyższym wyrażeniu najpierw dodawania i odejmowania
+                            możemy napisać <code>(3 + 4) * 5 % (7 - 2) / 4</code>.
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>Podstawowe funkcje matematyczne (plik nagłówkowy
+                            <a target="_blank" href="https://en.cppreference.com/w/cpp/header/cmath"><code>cmath</code></a>).
+                        </p>
+
+                        <ul>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/cos" target="_blank"><code>double cos(double x)</code></a> &mdash; sinus</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/sin" target="_blank"><code>double sin(double x)</code></a> &mdash; cosinus</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/tan" target="_blank"><code>double tan(double x)</code></a> &mdash; tangens</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/exp" target="_blank"><code>double exp(double x)</code></a> &mdash; <var>e</var><sup>x</sup></li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/log" target="_blank"><code>double log(double x)</code></a> &mdash; logarytm naturalny</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/log10" target="_blank"><code>double log10(double x)</code></a> &mdash; logarytm dziesiętny</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/pow" target="_blank"><code>double pow(double x, double y)</code></a> &mdash; x do potęgi y</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/sqrt" target="_blank"><code>double sqrt(double x)</code></a> &mdash; pierwiastek kwadratowy</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/ceil" target="_blank"><code>double ceil(double x)</code></a> &mdash; tzw. &bdquo;sufit&rdquo; z x</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/floor" target="_blank"><code>double floor(double x)</code></a> &mdash; tzw. &bdquo;podłoga&rdquo; z x</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/round" target="_blank"><code>double round(double x</code></a> &mdash; zakrąglenie do najbliższej wartości całkowitej</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/fabs" target="_blank"><code>double fabs(double x)</code></a> &mdash; wartość bezwględna z <var>x</var></li>
+                        </ul>
+                        <p>
+                            Składnia <code><i>typ1</i> nazwa_funkcji(<i>typ2</i>, <i>typ3</i>)</code> oznacza, że
+                            funkcja zwraca wartość typu <code><i>typ1</i></code> i ma dwa parametry typów
+                            <code><i>typ2</i></code> i <code><i>typ3</i></code>. Np. funkcji <code>pow</code> można użyć
+                            tak:
+                        </p>
+                        <code class="block">double x = pow(3.4, 2.5);</code>
+                        <p>Przykład użycia</p>
+                        <code class="block">#include &lt;cmath&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    double x, y;
+    cout &lt;&lt; "x = ";
+    cin &gt;&gt; x;
+    cout &lt;&lt; "y = ";
+    cin &gt;&gt; y;
+    cout &lt;&lt; sqrt(pow(sin(x), 2) + pow(cos(x), 2)) &lt;&lt; endl;
+}
+
+</code>
+
+                    </li>
+
+                </ul>
+
+
+
+                <h4>Operator podstawienia: <code>=</code></h4>
+
+                <p>Instrukcja podstawienia:</p>
+
+                <code class="block"><var>zmienna</var> = <var>wyrażenie</var></code>
+
+                <p>Najpierw obliczana jest wartość wyrażenia, a następnie zmienna
+                    przyjmuje obliczoną wartość.</p>
+
+                <p>Przykład (zwiększenie wartości zmiennej x o 1):</p>
+
+                <code class="block">x = x + 1</code>
+
+                <h4>Więcej o deklarowaniu zmiennych:</h4>
+
+                Podstawowa składnia:
+
+                <code class="block"><var>typ-zmiennej</var> <var>nazwa-zmiennej</var>;</code>
+
+                <p>np.</p>
+
+
+                <code class="block">int liczba_osob;
+double wysokosc_w_kg;</code>
+
+                <p>Zmienne tego samego typu można grupować w jednej deklaracji:</p>
+
+                <code class="block">double x1, x2;</code>
+
+                <p>Zmiennym można nadać wartość od razu podczas deklaracji:</p>
+
+                <code class="block">int liczba_osob = 10;
+double x1 = 0.0, x2, x3 = 4.2;  // x1 i x3 mają nadaną wartość, x3 - nie.</code>
+
+                <p>
+                    Zmienne niezainicjowane podczas deklaracji mają przypadkową wartość
+                    &mdash; programy korzystające z takiej wartości mają tzw. &bdquo;niezdefiowane zachowanie&rdquo;
+                    (ang. UB &mdash; <i>undefined behaviour</i>).
+                </p>
+
+
+                <h4>Zasięg zmiennej</h4>
+                <p>
+                    Zmienna zadeklarowana wewnątrz bloku (pary nawiasów klamrowych) ma zasięg
+                    (tzn. można jej używać) od miejsca deklaracji do końca bloku. Dostępna jest
+                    również w blokach zagnieżdżonych w tym bloku, np.
+                </p>
+                <code class="block">{
+    // Tutaj x nie jest dostępne
+    {
+        // Tutaj x nie jest dostępne
+        double x = 3.2;
+        // Tutaj x jest dostępne
+        {
+            // Tutaj x jest dostępne
+        }
+        // Tutaj x jest dostępne
+    }
+    // Tutaj x nie jest dostępne
+}</code>
+                <p>
+                    Dobrą praktyką jest deklarowanie zmiennej dopiero wtedy kiedy ma sens
+                    nadanie jej jakiejś wartości.
+                </p>
+                <h4>Różne instrukcje podstawienia w języku C (<code>+=</code>, <code>-=</code>, <code>*=</code>,
+                    <code>/=</code>, <code>%=</code>)
+                </h4>
+                <code class="block">x += y;   // skrót od x = x + y
+x -= y;   // skrót od x = x - y</code>
+
+                <h4>Operatory inkrementacji (zwiększenia o 1) i dekrementacji (zmniejszenia o 1)</h4>
+                <ul>
+                    <li><code>i++</code>, <code>++i</code></li>
+                    <li><code>i--</code>, <code>--i</code></li>
+                </ul>
+
+                <h5>Różnice między nimi:</h5>
+
+                <p>Wyrażenie używające operatora postinkrementacji (i++) najpierw przyjmuje
+                    wartość zmiennej przed zmianą, a następnie zmienia wartość
+                    zmiennej.</p>
+
+                <code class="block">int m = 5;
+int n = m++; // n przyjmuje wartość 5, m przyjmuje wartość 6</code>
+
+                <p>Wyrażenie używające operatora preinkrementacji (++i) najpierw zmienia wartość
+                    zmiennej, a następnie przyjmuje wartość zmiennej po zmianie.</p>
+
+                <code class="block">int m = 5;
+int n = ++m; // n przyjmuje wartość 6, m przyjmuje wartość 6</code>
+
+                <h4>Jawne i niejawne konwersje typów.</h4>
+
+                <p>Konwersje pomiędzy różnymi typami całkowitymi.
+                    Konwersje pomiędzy typami całkowitymi z zmiennoprzecinkowymi.</p>
+
+                <h5>Operacja rzutowania typów:</h5>
+
+                <code class="block">double x = 3.45;
+int n1 = int(x);    // ucięcie wartości z 3.45 do 3
+</code>
+
+                <p>lub tak jak w języku C:</p>
+                <code class="block">int n2 = (int)x;</code>
+
+                <p>W takim przypadku konwersja byłaby wykonana i tak automatycznie:</p>
+
+                <code class="block">int n3 = x;</code>
+
+                <p>ale czasem jawna konwerjsa jest konieczna, np. dzielenie w poniższym kodzie jest dzieleniem
+                    całkowitym:</p>
+
+                <code class="block">int a = 3;
+int b = 4;
+cout &lt;&lt; (a / b) &lt;&lt; endl;
+</code>
+                <p>Wynikiem będzie 0. Jeżeli chcemy mieć dzielenie zmiennoprzecinkowe (i wynik 0.75), to przynajmniej
+                    jeden z argumentów dzielenia musi być typu zmiennoprzecinkowego, np.:</p>
+                <code class="block">cout &lt;&lt; double(a) / b &lt;&lt; endl;</code>
+
+
+
+                <h4>Literały liczbowe, znakowe i napisowe. Przykłady</h4>
+
+
+                <ul>
+                    <li><code>1234</code> &mdash; typ <code>int</code></li>
+                    <li><code>1234u</code> &mdash; typ <code>unsigned int</code></li>
+                    <li><code>1234U</code> &mdash; to samo</li>
+                    <li><code>1234l</code> &mdash; <code>long int</code></li>
+                    <li><code>1234L</code> &mdash; to samo</li>
+                    <li><code>0x4d2</code> &mdash; <code>int</code>, szesnastkowo (początek <code>0x</code> lub
+                        <code>0X</code>)
+                    </li>
+                    <li><code>0X4D2</code> &mdash; to samo &mdash; wielkość liter (np. cyfr szesnastkowych nie ma
+                        znaczenia w literałach liczbowych</li>
+                    <li><code>02322</code> &mdash; <code>int</code>, ósemkowo (początek <code>0</code>)</li>
+                    <li><code>1234ul</code> &mdash; <code>unsigned long int</code></li>
+                    <li><code>1234ll</code> &mdash; <code>long long int</code></li>
+                    <li><code>1234ull</code> &mdash; <code>unsigned long long int</code></li>
+                </ul>
+                <ul>
+                    <li><code>1234.0</code> &mdash; <code>double</code></li>
+                    <li><code>1234.0f</code> &mdash; <code>float</code></li>
+                    <li><code>1234.0F</code> &mdash; to samo</li>
+                    <li><code>1234.0l</code> &mdash; <code>long double</code></li>
+                </ul>
+                <ul>
+                    <li><code>'a'</code>, <code>'\n'</code> &mdash; <code>char</code> &mdash; znak</li>
+                    <li><code>"abc"</code> &mdash; napis (ciąg znaków)</li>
+                </ul>
+
+
+            </li>
+            <li>
+                <h3 id="if">Warunki i instrukcja selekcji</h3>
+
+                <p>Operatory porównań:</p>
+
+                <p><code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&gt;=</code>,
+                    <code>&lt;</code>, <code>&lt;=</code>
+                </p>
+
+                <p>Operatory logiczne:</p>
+                <ul>
+                    <li><code>!</code> &mdash; zaprzeczenie</li>
+                    <li><code>&amp;&amp;</code> &mdash; koniunkcja (logiczne &bdquo;i&rdquo;)</li>
+                    <li><code>||</code> &mdash; alternatywa (logiczne &bdquo;lub&rdquo;)</li>
+                </ul>
+
+                <p>
+                    Operator zaprzeczenia ma z nich najwyższy priorytet.
+                    Operator koniunkcji ma wyższy operator niż alternatywy.
+                </p>
+
+                <p>Np.</p>
+                <code class="block">(<var>warunek1</var> || <var>warunek2</var> &amp;&amp; <var>warunek3</var>)</code>
+
+                <p>oznacza to samo co</p>
+
+                <code class="block">(<var>warunek</var> || (<var>warunek2</var> &amp;&amp; <var>warunek3</var>))</code>
+
+                <p>Składnia:</p>
+
+                <code class="block">if (<var>warunek</var>)
+        <var>instrukcja-lub-blok-instrukcji</var>   // wykonuje się jeżeli warunek jest prawdziwy</code>
+
+                <p>Składnia <code>if</code>-<code>else</code>:</p>
+
+                <code class="block">if (<var>warunek</var>)
+        <var>instrukcja-lub-blok-instrukcji</var>   // wykonuje się jeżeli warunek jest prawdziwy
+    else
+        <var>instrukcja-lub-blok-instrukcji</var>   // wykonuje się jeżeli warunek nie jest prawdziwy</code>
+
+                <p>
+                    Niezależnie od tego, czy mamy jedną instrukcję, czy blok dobrą praktyką jest
+                    zapis bloku instrukcji (nawiasy klamrowe) nawet jeżeli zawiera on jedną instrukcję.
+                    Np.
+                </p>
+
+                <code class="block">if (x &lt; 3) {
+    x += 1;
+} else {
+    x -= 1;
+}</code>
+
+                <p><strong>Uwaga:</strong> co oznacza poniższa instrukcja?</p>
+
+                <code class="block">if (x &lt; 3)
+    x += 1;
+    y += 1;</code>
+
+                <p>
+                    Przykład: wyświetlenie napisu &bdquo;Jest weekend&rdquo; jeżeli zmienna dt
+                    ma wartość sobota lub niedziela:
+                </p>
+
+                <code class="block">if (dt == 6 || dt == 7) {
+    cout &lt;&lt; "Jest weekend.\n";
+}</code>
+
+                <p>To samo, ale z wyświetleniem napisu &bdquo;Jest dzień roboczy&rdquo; w przeciwnym razie:</p>
+
+                <code class="block">if (dt == 6 || dt == 7) {
+    cout &lt;&lt; "Jest weekend.\n";
+} else {
+    cout &lt;&lt; "Jest dzień roboczy.\n";
+}</code>
+
+                <p>Zagnieżdżone instrukcje <code>if</code>:</p>
+
+                <code class="block">if (dt == 6 || dt == 7) {
+    cout &lt;&lt; "weekend\n";
+    if (dt == 7) {
+        cout &lt;&lt; "jutro do pracy\n";
+    }
+} else {
+    if (dt == 1) {
+        cout &lt;&lt; "poniedziałek\n");
+    } else {
+        if (dt == 2) {
+            cout &lt;&lt; "wtorek\n";
+        } else {
+            if (dt == 3) {
+                cout &lt;&lt; "środa\n";
+            } else {
+                if (dt == 4) {
+                    cout &lt;&lt; "czwartek\n";
+                } else {
+                    if (dt == 5) {
+                        cout &lt;&lt; "piątek\n";
+                    } else {
+                        cout &lt;&lt; "???\n";
+                    }
+                }
+            }
+        }
+    }
+}</code>
+
+                <p>
+                    Wielokrotnie zagnieżdżone instrukcje <code>if</code>-<code>else</code> w przypadku, gdy kolejne
+                    przypadki są &bdquo;równorzędne&rdquo; zapisuje się często bez
+                    zagnieżdżenia w następujący sposób:
+                </p>
+
+                <code class="block">if (dt == 1) {
+    cout &lt;&lt; "poniedziałek\n");
+} else if (dt == 2) {
+    cout &lt;&lt; "wtorek\n";
+} else if (dt == 3) {
+    cout &lt;&lt; "środa\n";
+} else if (dt == 4) {
+    cout &lt;&lt; "czwartek\n";
+} else if (dt == 5) {
+    cout &lt;&lt; "piątek\n";
+} else {
+    cout &lt;&lt; "???\n";
+}
+</code>
+
+                <p>
+                    lub, jeżeli sprawdzenie warunku jest wyborem wartości pewnego wyrażenia
+                    spośród wielu wartości, to za pomocą instrukcji <code>switch</code>.
+                </p>
+
+                <h4>Instrukcja <code>switch</code></h4>
+
+                <p>Podstawowa składnia instrukcji <code>switch</code>:</p>
+
+                <code class="block">switch (<var>wyrażenie</var>) {
+    case <var>wartość-1</var> {
+        <var>instrukcje-1;</var>
+        break;
+    }
+    case <var>wartość-2</var> {
+        <var>instrukcje-2</var>;
+        break;
+    }
+    ...
+    case <var>wartość-n</var> {
+        <var>instrukcje-n</var>;
+        break;
+    }
+    default: {
+        <var>inne-instrukcje</var>;
+    }
+}</code>
+
+                <p>
+                    Jeżeli wyrażenie ma wartość &bdquo;wartość-1&rdquo;, to wykonane są instrukcje
+                    &bdquo;instrukcje-1&rdquo;, jeżeli &bdquo;wartość-2&rdquo; &mdash; &bdquo;instrukcje-2&rdquo; itd.
+                    Jeżeli
+                    wyrażenie ma wartość inną niż wymienione, to wykonywane są instrukcje
+                    po &bdquo;default&rdquo;.
+                </p>
+
+                <p>Np. poprzednią zagnieżdżoną instrukcję if można zapisać tak:</p>
+
+                <code class="block">switch (dt) {
+    case 1: {
+        cout &lt;&lt; "poniedziałek\n";
+        break;
+    }
+    case 2: {
+        cout &lt;&lt; "wtorek\n";
+        break;
+    }
+    case 3: {
+        cout &lt;&lt; "środa\n";
+        break;
+    }
+    case 4: {
+        cout &lt;&lt; "czwartek\n";
+        break;
+    }
+    case 5: {
+        cout &lt;&lt; "piątek\n";
+        break;
+    }
+    default: {
+        cout &lt;&lt; "???\n";
+    }
+}</code>
+
+                <p>
+                    Instrukcje &bdquo;break&rdquo; na końcu każdego przypadku nie są tak naprawdę
+                    częścią składni instrukcji &bdquo;switch&rdquo;, ale powodują zakończenie
+                    wykonania instrukcji switch. Ich brak powoduje, że wykonany również
+                    zostanie kod odpowiadający wszystkim przypadkom po pasującym (łącznie
+                    z default). Np. W przypadku poniższego kodu i wartości zmiennej dt
+                    równej 3:
+                </p>
+
+                <code class="block">switch (dt) {
+    case 1: {
+        cout &lt;&lt; "poniedziałek\n";
+    }
+    case 2: {
+        cout &lt;&lt; "wtorek\n";
+    }
+    case 3: {
+        cout &lt;&lt; "środa\n";
+    }
+    case 4: {
+        cout &lt;&lt; "czwartek\n";
+    }
+    case 5: {
+        cout &lt;&lt; "piątek\n";
+    }
+    default: {
+        cout &lt;&lt; "???\n";
+    }
+}</code>
+
+                <p>zostanie wyświetlone:</p>
+
+<samp class="block">środa
+czwartek
+piątek
+???</samp>
+
+                <p>
+                    Instrukcja <code>switch</code> bez instrukcji <code>break</code> jest zazwyczaj złym pomysłem
+                    &mdash; może
+                    prowadzić do nieczytelnego kodu.
+                </p>
+
+                <p>
+                    Fraza <code>default</code> jest opcjonalna. W razie jej braku i wartości wyrażenia
+                    innej niż podane nic się nie wykona.
+                </p>
+
+
+                <h4>Wyrażenie warunkowe</h4>
+
+                <p>
+                    Wyrażenie warunkowe przypomina instrukcję <code>if</code>, ale jest wyrażeniem, a
+                    nie instrukcją (ma wartość, gałęzie selekcji są też wyrażeniami, a nie
+                    instrukcjami). Jego składnia to:
+                </p>
+
+                <code class="block">&lt;warunek&gt; ? &lt;wyrażenie-1&gt; : &lt;wyrażenie-2&gt;</code>
+
+                <p>
+                    Jeżeli wartość logiczna warunku to &bdquo;prawda&rdquo;, to wartością całego
+                    wyrażenia jest wartość pierwszego wyrażenia. W przeciwnym razie
+                    &mdash; drugiego.
+                </p>
+
+                <p>Przykład:</p>
+
+                <code class="block">int a = 3;
+int b = 4;
+
+int max_ab = (a &gt; b) ? a : b;</code>
+
+                <p>Powyżej pod zmienną <code>max_ab</code> zostanie podstawiona wartość 9.</p>
+
+                <h4>Podstawienie jako wyrażenie</h4>
+
+                <p>
+                    W językach C i C++ instrukcja podstawienia może być traktowana jak wyrażenie, którego wartością
+                    jest po prostu podstawiana wartość. Np. poniższa
+                    instrukcja:
+                </p>
+
+                <code class="block">a = (b = 3);
+</code>
+
+                <p>
+                    oznacza podstawienie pod zmienną <code>a</code> wartości wyrażenia <code>b = 3</code>.
+                    Cała instrukcja działa w następujący sposób:
+                </p>
+                <ul>
+                    <li>
+                        wykonana jest instrukcja podstawienia <code>b = 3</code>, czyli pod zmienną
+                        <code>b</code> podstawiana jest wartość <code>3</code>,
+                    </li>
+                    <li>
+                        jako wartość wyrażenia <code>b = 3</code> przyjmowana jest właśnie wartość <code>3</code>,
+                    </li>
+                    <li>
+                        wartość ta podstawiana jest pod zmienną <code>a</code>, czyli wykonywana jest instrukcja
+                        <code>a = 3</code>.
+                    </li>
+                </ul>
+
+                <p>
+                    Oznacza to, że powyższa instrukcja umożliwia po prostu jednoczesne podstawienie wybranej wartości
+                    pod wiele zmiennych.
+                </p>
+                <p>
+                    Dodatkowo operator podstawienia jest łączny prawostronnie, co oznacza, że powyższą instrukcję możemy
+                    zapisać po prostu jako
+                </p>
+                <code class="block">a = b = 3;
+</code>
+                <p>
+                    Przykładowo instrukcja:
+                </p>
+                <code class="block">a = b = c = d = 7;</code>
+                <p>
+                    Oznacza równoczesne podstawienie wartości <code>7</code> pod każdą ze zmiennych <code>a</code>,
+                    <code>b</code>, <code>c</code> i <code>d</code>.
+                </p>
+
+                <h5>Instrukcja podstawienia użyta jako warunek</h5>
+                <p>
+                    W C i C++ jako wartość logiczna może zostać użyta dowolna wartość liczbowa &mdash; zero traktowane
+                    jest wtedy jako <code>false</code>, a pozostałe wartości jako <code>true</code>.
+                    Np. w instrukcji:
+                </p>
+                <code class="block">int n;
+cin >> n;
+if (n) {
+    cout &lt;&lt; "Wpisałeś wartość różną od zera.\n" &lt;&lt; endl;
+}
+</code>
+                <p>
+                    <code>n</code> użyte jako warunek oznacza to samo co <code>n != 0</code>.
+                </p>
+
+                <p>
+                    Należy zatem uważać na omyłkowe użycie w warunku instrukcji podstawienia zamiast porównania. Np.
+                    poniższy kod:
+                </p>
+                <code class="block">int n;
+cin >> n;
+if (n = 0) {
+    cout &lt;&lt; "Wpisałeś zero.\n" &lt;&lt; endl;
+}
+</code>
+                <p>
+                    zostanie poprawnie skompilowany (w zależności od ustawień kompilator może co najwyżej wyświetlać
+                    ostrzeżenia), ale <code>n = 0</code> oznacza podstawienie zera pod zmienną <code>n</code>. Wartością
+                    wyrażenia <code>n = 0</code> będzie zawsze zero. Interpretacją tego jako wartości logicznej będzie
+                    wartość <code>false</code>. Zatem w powyższym przykładzie:
+                </p>
+                <ul>
+                    <li>komunikat nigdy nie zostanie wyświetlony, niezależnie od wpisanej przez użytkownika wartości,
+                    </li>
+                    <li>wpisana przez użytkownika wartość nie będzie nigdzie użyta, bo zostanie nadpisana od razu
+                        wartością <code>0</code>.
+                    </li>
+                </ul>
+
+            </li>
+            <li>
+                <h3 id="while">Pętle</h3>
+
+                <p>Składnia:</p>
+
+                <code class="block">while (warunek) {
+    instrukcje;
+}</code>
+
+                <p>Blok zawierający instrukcje nazywany jest <b>refrenem</b> pętli.</p>
+
+                <p>
+                    Podobnie jak w przypadku instrukcji <code>if</code> nawiasy klamrowe nie są częścią
+                    składni, ale ich stosowanie zawsze jest dobrą praktyką nawet jeżeli refrenem pętli
+                    jest pojedyncza instrukcja.
+                </p>
+
+                <p>Działanie:</p>
+                <p>
+                    Sprawdzany jest warunek. Jeżeli jego wartość logiczna to &bdquo;prawda&rdquo;, to wykonywany
+                    jest refren. Jeżeli nie, to cała instrukcja pętli kończy działanie. Czynność ta powtarzana
+                    jest aż do momentu, w którym obliczona wartość warunku będzie miała wartość logiczną
+                    &bdquo;fałsz&rdquo;.
+                </p>
+
+                <p>Np. instrukcja:</p>
+
+                <code class="block">int n = 0;
+while (n &lt; 3) {
+    cout &lt;&lt; n &lt;&lt; endl;
+    n += 1;
+}</code>
+
+                <p>wyświetli</p>
+
+                <samp class="block">0
+                    1
+                    2</samp>
+
+                <p>
+                    Uwaga: jeżeli refren pętli nigdy nie modyfikuje wartości zmiennych, których wartości brane
+                    są pod uwagę podczas obliczania warunku, to warunek nigdy nie zmieni wartości logicznej.
+                    Wtedy pętla nie wykona się ani razu lub program się &bdquo;zapętli&rdquo; (będzie się wykonywał
+                    bez końca).
+                </p>
+
+                <p>Np. poniższa pętla:</p>
+
+                <code class="block">while (n &lt; 3) {
+    cout &lt;&lt; n &lt;&lt; endl;
+}</code>
+
+                <p>
+                    zapętli się jeżeli przed rozpoczęciem wartość zmiennej <code>n</code> jest mniejsza niż trzy lub nie
+                    zrobi
+                    nic.
+                </p>
+
+                <h4>Instrukcja <code>do</code>-<code>while</code></h4>
+
+                <p>Składnia:</p>
+
+                <code class="block">do {
+    <var>instrukcje</var>;
+} while (<var>warunek</var>);</code>
+
+                <p>Instrukcja <code>do</code>-<code>while</code> jest w przybliżeniu odpowiednikiem poniższej pętli
+                    <code>while</code>:
+                </p>
+
+                <code class="block">instrukcje;
+while (warunek) {
+    instrukcje;
+}</code>
+
+                <p>Oznacza to, że refren pętli wykona się przynajmniej raz, niezależnie od wartości warunku.</p>
+
+                <h4>Zastosowanie instrukcji <code>break</code> i <code>continue</code> w pętlach</h4>
+
+                <p>
+                    Instrukcja <code>break</code> powoduje natychmiastowe zatrzymanie pętli (niezależnie od wartości
+                    warunku
+                    pętli). Przykład: szukamy liczby podzielnej przez 100 w zakresie zadanym przez zmienne
+                    <code>lewy</code>, <code>prawy</code>:
+                </p>
+
+                <code class="block">int liczba = lewy;
+while (liczba &lt;= prawy) {
+    if (liczba % 100 == 0) {
+        cout &lt;&lt; "Liczba " &lt;&lt; liczba &lt;&lt; " jest podzielna przez 100.\n";
+        cout &lt;&lt; "Koniec\n";
+        break;
+    }
+    cout &lt;&lt; "Liczba " &lt;&lt; liczba &lt;&lt; " nie jest podzielna przez 100.\n";
+    liczba += 1;
+}</code>
+
+                <p>
+                    Instrukcja <code>continue</code> powoduje natychmiastowe przerwanie refrenu pętli, ale nie samej
+                    pętli.
+                    Oznacza to, że po jej wykonaniu program przechodzi do kolejnego sprawdzenia warunku. Przykład:
+                    wyświetlamy wszystkie liczby z zakresu z wyjątkiem podzielnych przez 100:
+                </p>
+
+                <code class="block">int liczba = lewy - 1;
+while (liczba &lt; prawy) {
+    liczba += 1;
+    if (liczba % 100 == 0) {
+        continue;
+    }
+    cout &lt;&lt; "Liczba " &lt;&lt; liczba &lt;&lt; " jest podzielna przez 100.\n";
+}</code>
+
+                <h4>Pętla <code>for</code></h4>
+                <p>
+                    Instrukcja
+                </p>
+                <code class="block">for (i = 0; i &lt; 10; ++i) {
+    cout &lt;&lt; i &lt;&lt; endl;
+}
+</code>
+                <p>
+                    Oznacza to samo co
+                </p>
+                <code class="block">i = 0;
+while (i &lt; 10) {
+    cout &lt;&lt; i &lt;&lt; endl;
+    ++i;
+}
+</code>
+                <p>
+                    Zmienną <code>i</code> (licznik pętli) możemy zadeklarować bezpośrednio w pętli. Powoduje to, że jej
+                    zasięgiem
+                    będzie pętla &mdash; nie może ona zostać użyta nigdzie po zakończeniu pętli:
+                </p>
+                <code class="block">for (int i = 0; i &lt; 10; ++i) {
+    cout &lt;&lt; i &lt;&lt; endl;
+}
+cout &lt;&lt; i &lt;&lt; endl;   // To jest błąd.
+</code>
+                <p>
+                    Pętle <code>for</code> zostaną dokładniej omówione przy okazji omawiania tablic (i innych
+                    sekwencyjnych
+                    struktur danych).
+                </p>
+            </li>
+            <li>
+                <h3 id="funkcje">Funkcje</h3>
+                <p><b>Funkcje</b> są podstawowym narzędziem pozwalającym podzielić program na podzadania. Jest to
+                    wydzielony
+                    nazwany fragment programu (<b>podprogram</b>) przyjmujący
+                    określone dane (<b>parametry</b> funkcji)
+                    i zwracający wyniki (wartość zwracana z funkcji, instrukcja
+                    <code>return</code>).
+                </p>
+
+                <h4>Składnia definicji funkcji</h4>
+
+                <code class="block"><var>typ-wartości-zwracanej</var> <var>nazwa-funkcji</var>(<var>lista-parametrów</var>)
+{
+    <var>ciało-funkcji</var>
+}</code>
+
+                <p>np.</p>
+
+                <code class="block">double pole_prostopadloscianu(double a, double b, double c)
+{
+    double p1 = a * b;
+    double p2 = b * c;
+    double p3 = a * c;
+    return 2 * (p1 + p2 + p3);
+}</code>
+
+                <code class="block">int max(int a, int b)
+{
+    if (a &gt; b) {
+        return a;
+    } else {
+        return b;
+    }
+}</code>
+
+                <p>Kolejne parametry oddzielone są przecinkami i nie można ich grupować tak jak
+                    przy deklaracji zmiennych, np <code>double a, b, c</code>.</p>
+
+                <p>Użycie funkcji:</p>
+
+                <code class="block">double pole = pole_prostopadloscianu(3.0, 4.0, 5.0);</code>
+
+                <p>
+                    Wartości użyte jako parametry przy wywołaniu funkcji nazywane są
+                    <b>argumentami</b> wywołania
+                    funkcji. Tutaj parametrami są <code>a</code>, <code>b</code> i
+                    <code>c</code>, a argumentami <code>3.0</code>, <code>4.0</code> i
+                    <code>5.0</code>. Jako argumenty
+                    mogą być użyte dowolne wyrażenia, których wartością jest odpowiedni
+                    typ (typ parametru). Np.:
+                </p>
+
+                <code class="block">double x = 3.1, y = 5.2;
+
+pole_prostopadloscianu(x + 1.0, y - x, sqrt(x * x + y * y));</code>
+
+                <p>Parametry nazywane są też <b>parametrami formalnymi</b>, a
+                    argumenty &mdash; <b>parametrami aktualnymi</b>.</p>
+
+                <p>Instrukcja <code>return</code> określa wynik funkcji i przerywa natychmiast jej
+                    działanie.</p>
+
+                <p>Np. powyższą funkcję <code>max</code> można przepisać w następujący sposób:</p>
+
+                <code class="block">int max(int a, int b)
+{
+    if (a &gt; b) {
+        return a;
+    }
+    return b;
+}</code>
+
+                <p>Jeżeli warunek jest spełniony, to funkcja zakończy działanie napotykając pierwszą instrukcję
+                    return. Druga instrukcja <code>return</code> może być zatem wywołana wyłącznie jeżeli warunek nie
+                    jest
+                    spełniony (niezależnie od tego czy jest <code>else</code> czy
+                    nie).</p>
+
+                <p>Uwaga: w poniższa funkcja nie wyświetli informacji o zwróconej wartości
+                    &mdash; instrukcja <code>return</code> spowoduje wcześniej zakończenie
+                    działania funkcji:</p>
+
+                <code class="block">int f(int x)
+{
+    return x + 1;
+    cout &lt;&lt; "Zwrócono: " &lt;&lt; x + 1 &lt;&lt; endl;
+}</code>
+
+                <p>
+                    Kolejny przykład: funkcja zwracająca najmniejszą liczbę z zadanego zakresu podzielną
+                    przez 100, jeżeli nie znajdzie takiej, to zwraca -1:</p>
+
+                <code class="block">int najmniejsza_podzielna_przez_100(int lewy, int prawy)
+{
+    int liczba = lewy;
+    while (liczba &lt;= prawy) {
+        if (liczba % 100 == 0) {
+            return liczba
+        }
+        liczba += 1;
+    }
+    return -1;
+}</code>
+
+                <p>Zadaniem funkcji może nie być obliczenie wyniku, ale wykonanie pewnych
+                    zadań (np. wyświetlenie czegoś na ekranie. W takiej sytuacji
+                    określamy, że funkcja nie ma wyniku za pomocą słowa kluczowego
+                    <code>void</code> w miejscu określenia typu zwracanej wartości:
+                </p>
+
+                <code class="block">void wyswietl_wartosc_x(double x)
+{
+    cout &lt;&lt; "Wartość x = " &lt;&lt; x &lt;&lt; endl;
+}</code>
+
+                <p>W tej sytuacji nie możemy użyć wartości zwracanej przez funkcję jako
+                    wyrażenia. Np. możemy napisać:</p>
+
+                <code class="block">wyswietl_wartosc_x(3.4);</code>
+
+                <p>ale nie</p>
+
+                <code class="block">y = wyswietl_wartosc_x(3.4);</code>
+
+                <p>niezależnie od typu zmiennej <code>y</code> (zmienna nie może mieć typu
+                    <code>void</code>).
+                </p>
+
+                <h4>Przekazywanie argumentów do funkcji</h4>
+
+                <p>W języku C++ argumenty domyślnie przekazywane są <b>przez wartość</b>. Oznacza to,
+                    że na początku działania funkcji pod wartości wszystkich parametrów podstawiane są wartości użytych
+                    argumentów. Parametry traktowane są jak zmienne lokalne w funkcji.</p>
+                <p>Funkcja nie ma dostępu do zmiennych użytych do obliczenia wartości
+                    parametrów. Np. dla poniższej definicji funkcji:</p>
+
+                <code class="block">int nastepnik(int n)
+{
+    n += 1;
+    return n;
+}</code>
+
+                <p>i następującego fragmentu programu:</p>
+
+                <code class="block">int n = 5;
+int nast_n = nastepnik(n);</code>
+
+                <p>
+                    wartość zmiennej <code>n</code> nie zostanie zmodyfikowana &mdash;
+                    jej wartość zostanie użyta jako wartość parametru <code>n</code>, ale
+                    potem funkcja nie ma do niej dostępu.</p>
+                <p>
+                    Parametry możemy też przekazać przez referencję (użycie &amp; przed nazwą parametru):
+                </p>
+
+                <code class="block">void zwieksz_wartosc(int &amp;n)
+{
+    n += 1;
+}
+</code>
+
+                <p>Oznacza to, że np. dla poniższego kodu</p>
+                <code class="block">int m = 0;
+zwieksz_wartosc(m);
+cout &lt;&lt; m &lt;&lt; endl;
+</code>
+                <p>
+                    parametr <code>n</code> staje się wtedy podczas działania funkcji drugą nazwą dla zmiennej
+                    <code>m</code>. Zmiana jej wartości będzie widoczna po zakończeniu funkcji i powyższy kod
+                    powinien wyświetlić <code>1</code>.
+                </p>
+            </li>
+            <li>
+                <h3 id="struktury">Struktury</h3>
+
+                <p>
+                    Język C++ umożliwia definiowanie własnych typów danych. Jednym z mechanizmów pozwalających
+                    na to jest użycie klas/struktur (słowa kluczowe <code>struct</code> i <code>class</code>).
+                    W języku C dostępna jest wyłącznie możliwość definiowania struktur (<code>struct</code>).
+                    Język C++ umożliwia <a target="_blank" href="https://pl.wikipedia.org/wiki/Programowanie_obiektowe">
+                        Programowanie obiektowe</a>. Typy definiowane za pomocą <code>struct</code> (oraz
+                    <code>class</code>) mają w związku z tym dużo większe możliwości niż <code>struct</code> w C.
+                    W programowaniu obiektowym nowo tworzone typy nazywa się zazwyczaj klasami i do ich definiowania
+                    używa się raczej słowa kluczowego <code>class</code>. W C++ typy definiowane za pomocą
+                    słów kluczowych <code>class</code> i <code>struct</code> mają dokładnie te same możliwości.
+                    Progamowanie obiektowe wykracza poza zakres omawianego tutaj materiału. Zostaną tutaj omówione
+                    podstawowe mechanizmy związane z definiowaniem struktur dostępne również w języku C.
+                </p>
+                <p>
+                    Załóżmy, że chcemy w programie reprezentować przechowywać informacje o punkcie na płaszczyźnie
+                    (dwie współrzędne kartezjańskie &mdash; <var>x</var> i <var>y</var>). Możemy to zrobić za pomocą
+                    dwóch zmienych typu <code>double</code>. Jeżeli chcielibyśmy np. napisać funkcję obliczającą
+                    odległość między dwoma punktami, to musiałaby ona mieć cztery parametry &mdash; współrzędne dwóch
+                    punktów. Przykład użycia takiej funkcji mógłby wyglądać tak:
+                    <code>odleglosc(3.1, 2.5, 4.2, -3.1)</code>.
+                    Patrząc na samo wywołanie nie mamy pewności który argument co oznacza &mdash; nie wiemy jaka jest
+                    kolejność
+                    współrzędnych, nie wiemy czy pierwsze dwa parametry oznaczają współrzędne tego samego punktu
+                    czy może pierwsze współrzędne obu punktów. Żeby się upewnić musimy sprawdzić definicję tej funkcji.
+                    Problem będzie jeszcze większy jeżeli do opisania pewnego obiektu będziemy potrzebowali jeszcze
+                    więcej danych. Jeżeli np. chcemy napisać funkcję porównującą dwie daty (reprezentowane
+                    przez trzy liczby: rok, miesiąc i dzień), to funkcja taka będzie potrzebowała sześciu
+                    parametrów (dwóch dat).
+                </p>
+                <p>
+                    Rozwiązaniem problemu może być zdefiniowanie typów reprezentujących punkt lub datę, np.
+                </p>
+                <code class="block">struct Punkt {
+    double x;
+    double y;
+};
+
+struct Data {
+    int rok;
+    int miesiac;
+    int dzien;
+};
+</code>
+                <p>
+                    Definicje te oznaczają, że możemy teraz definiować zmienne typu <code>Punkt</code> lub
+                    <code>Data</code>.
+                    Zmienna typu <code>Punkt</code> będzie składała się z dwóch informacji (pól) o nazwach
+                    <code>x</code>
+                    i <code>y</code>.
+                    Definicja takiej zmiennej będzie wyglądała tak samo jak definicje zmiennych typów prostych:
+                </p>
+                <code class="block">Punkt p;
+</code>
+                <p>
+                    Taka definicja zmiennej będzie oznaczała, <code>p</code> ma dwa pola. Odwołujemy się teraz do nich
+                    z użyciem nazwy zmiennej, kropki i nazwy pola: <code>p.x</code> i <code>p.y</code>.
+                    Możemy np. teraz podstawić wartości pod pola:
+                </p>
+                <code class="block">p.x = 3.5;
+p.y = -2.3;
+</code>
+                <p>
+                    Wartość zmiennej możemy też zainicjować od razu w jej definicji. Powyższą definicję wraz z
+                    zainicjowaniem
+                    wartości możemy zapisać tak:
+                </p>
+                <code class="block">Punkt p = {3.5, -2.3};</code>
+
+                <p>
+                    Teraz funkcja obliczająca odległość między dwoma punktami może mieć dwa parametry typu <code>Punkt</code>:
+                </p>
+<code class="block">double odleglosc(Punkt p1, Punkt p2)
+{
+    double dx = p1.x - p2.x;
+    double dy = p1.y - p2.y;
+    return sqrt(dx * dx + dy * dy);
+}</code>
+                <p>
+                    Przykład użycia tej funkcji może wyglądać tak:
+                </p>
+<code class="block">Punkt p1 = {0.0, 0.0};
+Punkt p2 = {3.0, 4.0};
+
+cout &lt;&lt; "odległość: " &lt;&lt; odleglosc(p1, p2) &lt;&lt; endl;
+</code>
+
+                <p>
+                    Typu <code>Punkt</code> możemy użyć również jako typu wartości zwracanej przez funkcję. Np. funkcja
+                    zwracająca środek odcinka o końcach w zadanych punktach może wyglądać tak:
+                </p>
+
+<code class="block">Punkt srodek_odcinka(Punkt p1, Punkt p2)
+{
+    Punkt srodek = { 0.5 * (p1.x + p2.x), 0.5 * (p1.y + p2.y) };
+    return srodek;
+}
+</code>
+                <p>
+                    Użycie jej może wyglądać tak:
+                </p>
+<code class="block">Punkt p1 = {0.0, 0.0};
+Punkt p2 = {3.0, 4.0};
+
+Punkt srodek = srodek_odcinka(p1, p2);
+
+cout &lt;&lt; "Środek odcinka leży w punkcie (" &lt;&lt; srodek.x &lt;&lt; ", " &lt;&lt; srodek.y &lt;&lt; ")." &lt;&lt; endl;
+</code>
+                <p>
+                    Zdefiniujmy teraz klasę <code>Wektor</code> reprezentującą wektory swobodne na płaszczyźnie. Wektor taki,
+                    podobnie jak punkt, wyznaczony jest przez dwie współrzędne. Suma dwóch wektorów zdefiniowana jest jako
+                    wektor, którego współrzędne są sumą odpowiednich współrzędnych obu wektorów. Mnożenie wektora przez liczbę
+                    polega na pomnożeniu przez tę liczbę obu jego współrzędnych.
+                </p>
+                <p>
+                    Poniżej znajduje się przykładowa definicja typu <code>Wektor</code> i funkcji zwracającej sumę wektorów
+                    oraz funkcji zwracającej iloczyn wektora przez liczbę.
+                </p>
+
+<code class="block">struct Wektor {
+    double x;
+    double y;
+};
+
+Wektor suma_wektorow(Wektor w1, Wektor w2)
+{
+    Wektor suma = { w1.x + w2.x, w1.y + w2.y };
+    return suma;
+}
+
+Wektor iloczyn_wektora_przez_liczbe(Wektor w, double a)
+{
+    Wektor iloczyn = { w.x * a, w.y * a };
+    return iloczyn;
+}
+</code>
+                <p>
+                    Jeżeli funkcja zwraca wartość typu <code>Wektor</code>, to wynik jej wywołania możemy
+                    przekazać od razu jako argument kolejnej funkcji (podobnie jak w przypadku typów prostych), np.
+                    sumę trzech wektorów <var>a</var>, <var>b</var> i <var>c</var> możemy zaprogramować tak:
+                </p>
+<code class="block">Wektor suma_ab = suma_wektorow(a, b);
+Wektor suma_abc = suma_wektorow(suma_ab, c);
+</code>
+                <p>
+                    Ale możemy też zrobić to tak:
+                </p>
+<code class="block">Wektor suma_abc = suma_wektorow(suma_wektorow(a, b), c);</code>
+
+                <p>
+                    Poniżej jest bardziej złożony przykład użycia zdefiniowanych powyżej funkcji. Zdefiniowane zostały wektory
+                    <var>u</var>, <var>v</var> i <var>w</var> oraz obliczony został
+                    wektor 2&middot;(<var>u</var> &plus; <var>v</var> &plus; 3&middot;<var>w</var>).
+                </p>
+<code class="block">Wektor u = {1.0, 2.0};
+Wektor v = {-1.0, 1.5};
+Wektor w = {-2.9, 3.1};
+
+Wektor wynik = iloczyn_wektora_przez_liczbe(suma_wektorow(suma_wektorow(u, v), iloczyn_wektora_przez_liczbe(w, 3.0)), 2.0);
+</code>
+                <p>
+                    Zapis ten jest niezbyt czytelny. Zdecydowanie czytelniejszy byłby zapis za pomocą operatorów, np.:
+                </p>
+<code class="block">Wektor wynik = 2 * (u + v + 3 * w);</code>
+
+                <p>
+                    Żeby zapis taki był możliwy wystarczy zmienić odpowiednio nazwy zdefiowanych uprzednio funkcji &mdash;
+                    funkcję dodającą wektory musimy nazwać <code>operator+</code>, a funkcję odpowiedzialną za iloczyn:
+                    <code>operator*</code>. Wtedy zapis <code>a + b</code> będzie dla kompilatora skrótem od
+                    <code>operator+(a, b)</code>.
+                </p>
+
+                <p>
+                    Uwaga: ważna jest łączoność operatorów: operator <code>+</code> jest łączny lewostronnie, co oznacza, że
+                    zapis <code>a + b + c</code> oznacza dla kompilatora to samo co <code>(a + b) + c</code> czyli
+                    <code>operator+(operator+(a, b), c)</code>.
+                </p>
+
+                <p>
+                    Poniżej znajdują się odpowiednie definicje:
+                </p>
+
+
+<code class="block">Wektor operator+(Wektor w1, Wektor w2)
+{
+    Wektor suma = {
+        w1.x + w2.x, w1.y + w2.y
+    };
+    return suma;
+}
+
+Wektor operator*(double liczba, Wektor w)
+{
+    Wektor iloczyn = {
+        liczba * w.x, liczba * w.y
+    }
+    return iloczyn;
+}
+</code>
+                <p>
+                    Jeżeli w przypadku mnożenia chcemy mieć możliwość zarówno zapisu <code>2 * w</code> jak i <code>w * 2</code>,
+                    to musimy zdefiniować dwie wersje funkcji &mdash; z różną kolejnością parametrów. Druga wersja może wyglądać
+                    tak:
+                </p>
+
+<code class="block">Wektor operator*(Wektor w, double liczba)
+{
+    return operator*(liczba, wektor);
+}</code>
+                <p>
+                    Odwołujemy się tutaj do uprzednio zdefiniowanej funkcji z inną kolejnością parametrów. Możemy to również
+                    zapisać krócej:
+                </p>
+<code class="block">Wektor operator*(Wektor w, double liczba)
+{
+    return liczba * wektor;
+}</code>
+
+</code>
+                <p>W podobny sposób możemy definiować działanie innych operatorów, np. <code>==</code>, <code>&lt;</code>,
+                <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. Przykład:</p>
+<code class="block">bool operator==(Wektor w1, Wektor w2)
+{
+    return w1.x == w2.x &amp;&amp; w1.y == w2.y;
+}
+</code>
+
+            </li>
+
+            <h3>Referencje</h3>
+
+            <p>
+                W języku C++ możemy definiować zmienne będące <i>referencją</i>
+                do innej zmiennej. Referencja staje się drugą nazwą tej samej zmiennej &mdash;
+                wszystkie operacje na referencji są tak naprawdę operacjami na zmiennej, do której
+                jest ona referencją. Deklarując referencję trzeba od razu wskazać zmienną, do której
+                ma być ona referencją. W deklaracji referencji poprzedzamy jej nazwę znakiem
+                <code>&amp;</code>. Przykład:
+            </p>
+
+<code class="block">int n = 10;
+int &r = n;
+cout &lt;&lt; endl;
+
+r = 5;
+cout &lt;&lt; r &lt;&lt;endl;
+cout &lt;&lt; n &lt;&lt; endl;
+</code>
+
+            <p>
+                Nie da się zmienić referencji tak, żeby wskazywała na inną zmienną. Np.
+                w poniższym kodzie instrukcja podstawienia <code>r = b</code> oznacza podstawienie
+                wartości zmiennej <code>b</code> pod zmienną, do której referencją jest
+                <code>r</code>, czyli do zmiennej <code>a</code>. Dlatego wyświetlona zostanie
+                wartość 2.
+            </p>
+<code class="block">int a = 1;
+int b = 2;
+int &r = a;
+r = b;
+cout &lt;&lt; a &lt;&lt; endl;
+</code>
+
+            <h4>Przekazywanie parametrów przez referencję</h4>
+
+<code class="block">void zwieksz(int &n)
+{
+    n += 1;
+}
+</code>
+<code class="block">int a = 5;
+zwieksz(a);
+cout &lt;&lt; a &lt;&lt; endl;
+</code>
+
+
+            <p>
+                Przekazywanie parametrów przez wartość działa dla struktur tak samo jak dla
+                typów prostych. Mechanizm ten możemy wykorzystać np. w definicji dodawania 
+                wektorów (używamy zdefiniowanego wcześniej typu <code>Wektor</code>).
+                Zamiast tworzyć nową zmienną pomocniczą możemy wykorzystać parametry:
+                </p>
+    
+    <code class="block">Wektor operator+(Wektor w1, Wektor w2)
+    {
+        w1.x += w2.x;
+        w1.y += w2.y;
+        return w1;
+    }
+    </code>
+                       
+            <p>
+                Spróbujmy jednak napisać teraz funkcję odwracającą wektor (zmieniającą
+                wartości jego współrzędnych na przeciwne):
+            </p>
+
+<code class="block">void odwroc(Wektor w)
+{
+    w.x = -w.x;
+    w.y = -w.y;
+}</code>
+
+            <p>
+                Niestety funkcja nie będzie działała. Wypróbujmy następujący kod:
+            </p>
+
+<code class="block">Wektor a = {3.5, 4.5};
+odwroc(a);
+cout &lt;&lt; a.x &lt;&lt; endl;
+</code>
+
+                
+            <p>
+                Wyświetlona zostanie wartość <samp>3.5</samp> zamiast <samp>-3.5</samp>.
+                Dzieje się tak dlatego, że parametr <code>w</code> w powyższym wywołaniu
+                stanie się kopią wektora <code>a</code>. Funkcja modyfikuje kopię (która
+                przestaje istnieć po zakończeniu działania funkcji), ale nie ma to wpływu
+                na oryginalny wektor. 
+                Żeby funkcja działała tak jak oczekujemy, musimy
+                przekazać parametr przez referencję:
+            </p>
+<code class="block">void odwroc(Wektor &w)
+{
+    w.x = -w.x;
+    w.y = -w.y;
+}</code>
+            <h4>Przekazywanie parametrów przez referencję do stałej</h4>
+
+<code class="block">struct Wektor {
+    double x;
+    double y;
+};
+</code>
+
+<code class="block">double odleglosc_od_srodka(Wektor w)
+{
+    return math.sqrt(w.x * w.x + w.y * w.y);
+};
+</code>
+
+            <p>
+                <!-- Możemy przepisać tak: -->
+            </p>
+
+<code class="block">double odleglosc_od_srodka(Wektor w)
+{
+    return math.sqrt(w.x * w.x + w.y * w.y);
+};
+</code>
+
+
+            <p>Na to kompilator nie pozwoli:</p>
+<code class="block">Wektor operator+(const Wektor &w1, const Wektor &w2)
+{
+    w1.x += w2.x;
+    w1.y += w2.y;
+    return w1;
+};
+</code>
+
+
+            <h3>Wskaźniki</h3>
+
+            <p>
+                <!--
+                    Co to jest wskaźnik (pointer)?
+                    Deklaracja zmiennej wskaźnikowej.
+                    Operatory & i * - przykłady
+                -->
+            </p>
+
+            <h3>Tablice</h3>
+            <p>
+                <!--
+                    Deklaracja,
+                    Tablice na stosie - co może określać rozmiar
+                      int tab[n] - czym może być n.
+                    Tablice a wskaźniki,
+                    Przekazywanie tablic do funkcji
+                      - notacja wskaźnikowa i tablicowa,
+                      - użycie rozmiaru tablicy w deklaracji parametrów (ignorowane)
+                    Pamięć alokowana dynamicznie:
+                      new, delete, tablice
+                    Arytmetyka na wskaźnikach
+                -->
+
+            </p>
+
+            <p>
+                <!-- 
+                    Struktury wielowymiarowe:
+                        tablica tablic,
+                        tablica wskaźników,
+                        wskaźnik do tablicy,
+                        wskaźnik do wskaźnika
+                    skomplikowane deklaracje - uwzględnić const
+                -->
+            </p>
+
+            <h3>Napisy</h3>
+
+            <p>
+                <!--
+                    Napisy w stylu C,
+                    NULL, 0, '\0', nullptr
+                       uwaga na '0' - to jest coś zupełnie innego
+                    std::string
+                      - różnice - łatwość użycia, przykładowe funkcje
+                      - getline z std::string
+                      - konwersje z napisów do innych typów i na odwrót
+                        - wspomnieć o funkcjach z C (?)
+                -->
+            </p>
+
+        </ol>
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+http://mklisow.matrix.umcs.pl/pp/
+
+Harmonogram zajęć
+=================
+      wykład + laboratoria
+1.  12.10   5 + 3  
+2.  26.10   4 + 6
+3.  09.11   4 + 6
+4.  30.11   4 + 6  - uwaga: zmiana terminu zajęć z 23.11 na 30.11
+5.  07.12   2 + 4  - próbne kolokwium
+6.  14.12   2 + 4  - kolokwium na drugiej części zajęć (z materiału do zajęć 30.11 - włącznie)
+7.  11.01   2 + 4  - zadanie indywidualnych projektów programistycznych do obrony na egzaminie
+8.  18.01   3 + 3
+9.  25.01   3 + 3
+10. 01.02   1 + 6  - egzamin ustny - omówienie technik użytych w projekcie oraz innych tematów poruszonych na wykładzie
+
+
+Ocena z laboratoriów - kolokwium + projekt
+Ocena z wykładu - egzamin
+
+
+12.10.2023
+==========
+Wykład:
+  - sprawy organizacyjne
+    - kontakt: mklisowski@nauka.panschelm.edu.pl
+  - wstęp do programowania
+  - języki C/C++
+
+Elementy języka
+  - pierwszy program (tzw. "Hello World")
+  - pojęcie typu danych,
+  - zmienne, stałe, deklaracja zmiennych i stałych, inicjowanie zmiennych.
+    - problem niezainicjowanej zmiennej
+  - statyczne i dynamiczne typowanie
+  - typy danych prostych, operacje na tych typach, użycie funkcji z biblioteki standardowej,
+  - pobieranie danych od użytkownika, wyświetlanie danych. 
+  - dzielenie, dzielenie przez zero
+    - typy liczbowe,
+      - typy całkowite i ich charakterystyka (signed, unsigned), literały całkowite
+        - przyrostki w literałach
+      - typ char, literały znakowe, literały specjalne, np. '\n', '\t', '\0'
+      - typy zmiennoprzecinkowe i ich charakterystyka (float, double)
+        - problemy zaokrągleń (0.1 + 0.2 == 0.3), 
+          brak przemienności dodawania zmiennoprzecnikowego 
+          - przykład z liczeniem sumy i dodawania wielu małych składników do dużego
+      - operatory arytmetyczne, priorytety operatorów, funkcje matematyczne
+
+26.10.2023
+==========
+	- operatory porównań
+  - typy logiczne, operatory logiczne, sposób obliczania warunków
+  - instrukcje podstawienia,
+  - sekwencja instrukcji;
+  - selekcja, if, else, switch, ?:
+    - wcięcia i użycie klamer w kodzie
+    - pułapka z "wiszącym else"
+
+9.11.2023
+=========
+  - pętle while i do-while, for - będzie dokładnie omówione później
+  - funkcje,
+    - przekazywanie argumentów przez wartość
+    - przekazywanie argumentów przez referencję  
+
+30.11.2023
+==========
+  - funkcje - przypomnienie
+  - struktury (struct/class),
+    - odwołanie do pola struktury,
+    - inicjowanie struktur,
+  - przeładowanie podstawowych operatorów,
+
+
+07.12.2023
+==========
+  - referencje, referencje do stałych (const),
+  - podstawy wskaźników,
+    - operator & - adres zmiennej (wskaźnik na zmienną),
+    - operator * (jednoargumentowy) - wartość zmiennej wskazywanej przez wskaźnik,
+  - pamięć alokowana dynamicznie,
+  - tablice, tablice alokowane dynamicznie
+  - tablice jako argumenty funkcji,
+
+??.??.????
+==========
+  - napisy jako tablice znaków zakończone zerem,
+  - typ std::string,
+  - typ std::vector,
+    - vector jako argument funkcji
+  - wektory struktur, wektory jako elementy struktur
+
+  - operacje na plikach tekstowych,
+  - operacje wejścia/wyjścia (>> i <<) i formatowanie danych,
+  - obsługa błędów operacji wejścia/wyjścia
+

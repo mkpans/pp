@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8">
+  <title>Zadania na kolokwium</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/pp.css">
+</head>
+<body>
+
+    <p>Liczba punktów za każde zadanie oprócz ostatniego podana jest na początku jego treści w nawiasach.</p>
+
+    <p>
+        <strong>Uwaga: programy nie muszą sprawdzać poprawności danych jeżeli nie jest to jawnie powiedziane
+        w treści konkretnego zadania.</strong>
+    </p>
+
+    <ol>
+
+        <li>
+            <p>
+                <strong>(2 pkt.)</strong> Napisz program, który pobierze od użytkownika przebytą drogę w metrach oraz czas w sekundach
+                i wyświetli średnią prędkość w metrach na sekundę.
+            </p>
+            <p>
+                Przykładowe użycie programu:
+            </p>
+            <samp class="block">Podaj przebytą drogę (m): <kbd>30</kbd>
+Podaj czas (s): <kbd>40</kbd>
+Średnia prędkość: 0.75 m/s</samp>
+        </li>
+
+        <li>
+            <p>
+                <strong>(3 pkt.)</strong> Napisz program, który pobierze od użytkownika przebytą drogę w metrach oraz czas w sekundach
+                i wyświetli średnią prędkość w kilometrach na godzinę.
+            </p>
+            <p>
+                Przykładowe użycie programu:
+            </p>
+            <samp class="block">Podaj przebytą drogę (m): <kbd>30</kbd>
+Podaj czas (s): <kbd>40</kbd>
+Średnia prędkość: 2.7 km/h</samp>
+        </li>
+
+        <li>
+            <p>
+                <strong>(3 pkt.)</strong> Napisz program, który pobierze od użytkownika liczbę całkowitą nieujemną i wyświetli jej cyfrę
+                tysięcy.
+            </p>
+            <p>Przykłady użycia programu:</p>
+            <samp class="block">Podaj liczbę całkowitą dodatnią: <kbd>3002</kbd>
+Cyfra tysięcy: 3</samp>
+            <br>
+            <samp class="block">Podaj liczbę całkowitą dodatnią: <kbd>1234567</kbd>
+Cyfra tysięcy: 4</samp>
+            <br>
+            <samp class="block">Podaj liczbę całkowitą dodatnią: <kbd>34</kbd>
+Cyfra tysięcy: 0</samp>
+            </li>
+
+            <li>
+                <p>
+                    <strong>(4 pkt.)</strong> Napisz program, który pobierze od użytkownika wartości dwóch liczb <var>a</var> i <var>b</var>
+                    a następnie wyświetli wartość wyrażenia
+                    <img class="equation" src="img/z01.gif" alt="">.
+                </p>
+                <p>Przykłady użycia progamu:</p>
+                <samp class="block">a = <kbd>4</kbd>
+b = <kbd>5</kbd>
+0.333333</samp>
+                <br>
+<samp class="block">a = <kbd>4</kbd>
+b = <kbd>-5</kbd>
+3</samp>
+                <br>
+                <samp class="block">a = <kbd>5.33</kbd>
+b = <kbd>0</kbd>
+1</samp>
+
+            </li>
+            <li>
+                <p>
+                    <strong>(3 pkt.)</strong> Napisz program, który pobierze od użytkownika liczbę całkowitą
+                    nieujemną a następnie wyświetli informację o tym czy liczba ta jest podzielna przez 10.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <strong>(5 pkt.)</strong> Napisz program, który pobierze od użytkownika cenę w złotych
+                    i groszach, a następnie wyświetli informację o tym czy cena mieści się w zakresie od 10 zł 50 gr
+                    do 20 zł 20 gr (włącznie).
+                </p>
+                <p>Przykłady użycia programu</p>
+                <samp class="block">zł: <kbd>9</kbd>
+gr: <kbd>90</kbd>
+Cena spoza zakresu.</samp>
+                <br>
+                <samp class="block">zł: <kbd>10</kbd>
+gr: <kbd>50</kbd>
+Cena mieści się w zakresie.</samp>
+                <br>
+                <samp class="block">zł: <kbd>15</kbd>
+gr: <kbd>20</kbd>
+Cena mieści się w zakresie.</samp>
+                <br>
+                <samp class="block">zł: <kbd>20</kbd>
+gr: <kbd>20</kbd>
+Cena mieści się w zakresie.</samp>
+                <br>
+                <samp class="block">zł: <kbd>20</kbd>
+gr: <kbd>50</kbd>
+Cena spoza zakresu.</samp>
+            </li>
+            <li>
+                <p>
+                    <strong>(6 pkt.)</strong> Kalendarzowa wiosna zaczyna się 21 marca, lato &mdash; 22 czerwca, jesień &mdash; 23 września,
+                    a zima &mdash; 22 grudnia.
+                </p>
+                <p>
+                    Napisz program, który pobierze od użytkownika datę &mdash; miesiąc i dzień (jako liczby).
+                    Następnie program wyświetli porę roku przypadającą na ten dzień.
+                </p>
+                <p>
+                    Przykłady działania programu:
+                </p>
+                <samp class="block">miesiąc: <kbd>10</kbd>
+dzień: <kbd>25</kbd>
+pora roku: jesień</samp>
+                <br>
+                <samp class="block">miesiąc: <kbd>1</kbd>
+dzień: <kbd>2</kbd>
+pora roku: zima</samp>
+            </li>
+
+            <li>
+                <p>
+                    <strong>(6 pkt.)</strong> Napisz program, który pobierze od użytkownika liczbę dni w danym miesiącu oraz numer dnia,
+                    w który wypada pierwsza niedziela w tym miesiącu. Progam wyświetla numery dni wszystkich
+                    niedziel w miesiącu.
+                </p>
+                <p>
+                    Przykłady użycia:
+                </p>
+                <samp class="block">Podaj liczbę dni w miesiącu: <kbd>31</kbd>
+Podaj dzień pierwszej niedzieli w miesiącu: <kbd>3</kbd>
+Niedziele:
+3
+10
+17
+24
+31</samp>
+                <br>
+                <samp class="block">Podaj liczbę dni w miesiącu: <kbd>28</kbd>
+Podaj dzień pierwszej niedzieli w miesiącu: <kbd>5</kbd>
+Niedziele:
+5
+12
+19
+26</samp>
+            </li>
+
+            <li>
+                <p>
+                    <strong>(7 pkt.) </strong>Napisz program, który pobiera od użytkownika kolejne liczby całkowite dodatnie,
+                    a następnie wyświetla liczbę podanych przez użytkownika liczb parzystych i liczbę
+                    podanych liczb nieparzystych.
+                    Program kończy działanie po podaniu przez użytkownika liczby 0 (zero podane na końcu nie jest uwzględniane
+                    w liczeniu).
+                </p>
+                <p>
+                    Przykład pracy z programem może wyglądać tak:
+                </p>
+
+<samp class="block">Podaj kolejną liczbę: <kbd>5</kbd>
+Podaj kolejną liczbę: <kbd>33</kbd>
+Podaj kolejną liczbę: <kbd>2</kbd>
+Podaj kolejną liczbę: <kbd>4</kbd>
+Podaj kolejną liczbę: <kbd>1</kbd>
+Podaj kolejną liczbę: <kbd>12</kbd>
+Podaj kolejną liczbę: <kbd>11</kbd>
+Podaj kolejną liczbę: <kbd>10</kbd>
+Podaj kolejną liczbę: <kbd>123457</kbd>
+Podaj kolejną liczbę: <kbd>0</kbd>
+liczb parzystych: 4
+liczb nieparzystych: 5</samp>
+              </li>
+
+              <li>
+                <p>
+                    <strong>(7 pkt.)</strong> Napisz program pobierający od użytkownika wartość liczb <var>a</var>
+                    (typu <code>double</code> ) oraz <var>n</var> (całkowita) i wyświetlający
+                    wartość wyrażenia <img class="equation" src="img/z07.png" height="70" alt=""> .
+                </p>
+                <p>Przykład działania programu:</p>
+                <samp class="block">a: <kbd>3.5</kbd>
+n: <kbd>10</kbd>
+wynik: 143.839</samp>
+              </li>
+
+
+              <li>
+                <p>
+                    <strong>(8 pkt.)</strong> Napisz program pobierający od użytkownika wartość liczby całkowitej <var>n</var> i wyświetlający
+                    wartość wyrażenia <img class="equation" src="img/z02.gif" alt=""> .
+                </p>
+                <p>Przykład działania programu:</p>
+                <samp class="block">n: <kbd>2</kbd>
+wynik: 0.666667</samp>
+              </li>
+
+              <li>
+                <p>
+                    <strong>(5 pkt.)</strong> Napisz funkcję mającą dwa
+                    parametry typu <code>double</code> &mdash;
+                    <code>x</code> i <code>y</code>. Funkcja
+                    zwraca wartość <img class="equation" src="img/z03.gif" alt="">.
+                </p>
+              </li>
+                <li>
+                    <p>
+                        <strong>(10 pkt.)</strong> Napisz program pobierający od użytkownika wyniki zawodów biegowych
+                        i wyświetlający informacje o najszybszym oraz najwolniejszym zawodniku
+                        i różnicy w czasie między nimi.
+                    </p>
+                    <p>
+                        Program najpierw pobiera od użytkownika liczbę zawodników.
+                        Następnie pobiera czasy kolejnych zawodników (program ma wyświetlać
+                        numer zawodnika, którego czas pobiera; zawodnicy ponumerowani są od 1).
+                        Czas pobierany jest w godzinach, minutach i sekundach. Po zakończeniu
+                        pobierania danych program wyświetla numer i czas najszybszego zawodnika,
+                        numer i czas najwolniejszego zawodnika oraz różnicę ich czasów.
+                        Wszystkie czasy wyświetlane są w godzinach, minutach i sekundach.
+                    </p>
+                    <p>
+                        Podczas pobierania danych program wymusza na użytkowniku podawanie poprawnych
+                        danych (liczba zawodników musi być dodatnia, liczba godzin musi być
+                        nieujemna, liczba minut i sekund musi być z zakresu 0&mdash;59).
+                    </p>
+                    <p>
+                        Przykładowa sesja z programem może wyglądać tak:
+                    </p>
+<samp class="block">Podaj liczbę zawodników: <kbd>0</kbd>
+Liczba zawodnikow musi być dodatnia.
+Podaj liczbę zawodników: <kbd>-3</kbd>
+Liczba zawodnikow musi być dodatnia.
+Podaj liczbę zawodników: <kbd>5</kbd>
+Podaj czas 1. zawodnika.
+godziny: <kbd>-3</kbd>
+Podaj liczbę nieujemną: <kbd>-4</kbd>
+Podaj liczbę nieujemną: <kbd>3</kbd>
+minuty: <kbd>60</kbd>
+Podaj liczbę z zakresu 0-59: <kbd>0</kbd>
+sekundy: <kbd>-4</kbd>
+Podaj liczbę z zakresu 0-59: <kbd>70</kbd>
+Podaj liczbę z zakresu 0-59: <kbd>59</kbd>
+Podaj czas 2. zawodnika.
+godziny: <kbd>3</kbd>
+minuty: <kbd>40</kbd>
+sekundy: <kbd>40</kbd>
+Podaj czas 3. zawodnika.
+godziny: <kbd>2</kbd>
+minuty: <kbd>30</kbd>
+sekundy: <kbd>50</kbd>
+Podaj czas 4. zawodnika.
+godziny: <kbd>10</kbd>
+minuty: <kbd>10</kbd>
+sekundy: <kbd>10</kbd>
+Podaj czas 5. zawodnika.
+godziny: <kbd>4</kbd>
+minuty: <kbd>5</kbd>
+sekundy: <kbd>6</kbd>
+Najszybszy zawodnik: 3
+Czas: 2 g. 30 m. 50 s.
+Najwolniejszy zawodnik: 4
+Czas: 10 g. 10 m. 10 s.
+Różnica w czasie: 7 g. 39 m. 20 s.</samp>
+        </li>
+
+    </ol>
+
+</body>
+</html>
