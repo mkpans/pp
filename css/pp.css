@@ -87,6 +87,7 @@ samp.block kbd {
 
 img.equation {
     vertical-align: middle;
+    padding-left: 1em;
 }
 
 li.odnosnik {
