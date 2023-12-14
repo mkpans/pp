@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <title>Zadania na kolokwium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pp.css">
+</head>
+
+<body>
+
+    <p>Liczba punktów za każde zadanie oprócz ostatniego podana jest na początku jego treści w nawiasach.</p>
+
+    <p>
+        <strong>Uwaga: programy nie muszą sprawdzać poprawności danych jeżeli nie jest to jawnie powiedziane
+            w treści konkretnego zadania.</strong>
+    </p>
+
+    <ol class="zadania">
+
+        <li>
+            <p>
+                <strong>(2 pkt.)</strong> W Stanach Zjednoczonych zużycie paliwa podaje się zazwyczaj w milach na galon
+                (MPG &mdash; <i>miles per gallon</i>). Wartość MPG określa ile mil można przejechać na jednym galonie
+                paliwa.
+                Napisz program, który pobierze od użytkownika ilość paliwa w baku na początku podróży (w galonach),
+                ilość paliwa na końcu podróży (również w galonach), przejechany dystans (w milach), a następnie
+                wyświetli średnie spalanie paliwa podczas podróży (w MPG).
+            </p>
+            <p>
+                Przykładowe użycie programu:
+            </p>
+            <p>
+                <samp class="block">Ilość paliwa na początku (w galonach): <kbd>10</kbd>
+Ilość paliwa na początku (w galonach): <kbd>9</kbd>
+Przejechana droga (w milach): <kbd>30</kbd>
+Spalanie (MPG): 30</samp>
+            </p>
+            <p>
+                <samp class="block">Ilość paliwa na początku (w galonach): <kbd>30.5</kbd>
+Ilość paliwa na początku (w galonach): <kbd>29</kbd>
+Przejechana droga (w milach): <kbd>100</kbd>
+Spalanie (MPG): 66.6667</samp>
+            </p>
+        </li>
+
+        <li>
+            <p>
+                <strong>(3 pkt.)</strong>Napisz program, który pobierze od użytkownika ilość paliwa w baku na początku podróży (w galonach),
+                ilość ilość paliwa na końcu podróży (również w galonach), przejechany dystans (w milach), a następnie
+                wyświetli średnie spalanie paliwa podczas podróży (w litrach na 100 kilometrów &mdash; l/100 km).
+            </p>
+            <p>
+                Przyjmij, że jedna mila to 1,609344 km, a jeden galon to 3,78542 l.
+            </p>
+            <p>
+                Przykładowe użycie programu:
+            </p>
+            <p>
+                <samp class="block">Ilość paliwa na początku (w galonach): <kbd>10</kbd>
+Ilość paliwa na początku (w galonach): <kbd>9</kbd>
+Przejechana droga (w milach): <kbd>30</kbd>
+Spalanie (l/100 km): 7.84052</samp>
+            </p>
+            <p>
+                <samp class="block">Ilość paliwa na początku (w galonach): <kbd>30.5</kbd>
+Ilość paliwa na początku (w galonach): <kbd>29</kbd>
+Przejechana droga (w milach): <kbd>100</kbd>
+Spalanie (l/100 km): 3.52824</samp>
+            </p>
+        </li>
+
+        <li>
+            <p>
+                <strong>(3 pkt.)</strong> Pewna osoba założyła, że z każdej otrzymanej sumy pieniędzy końcówkę będzie zawsze odkładać do oszczędności. Otrzymana kwota składa się zawsze ze złotych i groszy. Odkładana kwota jest zawsze liczbą złożoną z dwóch ostatnich cyfr liczby złotych. Grosze nie są nigdy odkładane. Np. dla kwoty 1234 złotych i 56 groszy odłożone zostaną 34 złote.
+            </p> 
+            <p>
+                Napisz program, który pobierze od użytkownika otrzymaną kwotę w groszach, a następnie wyświetli odłożoną kwotę w złotych. 
+            </p>                
+            <p>Przykłady użycia programu:</p>
+            <p>
+                <samp class="block">Podaj otrzymaną kwotę w groszach: <kbd>123456</kbd>
+Odłożona kwota w złotych: 34</samp>
+            </p>   
+            <p>
+                <samp class="block">Podaj otrzymaną kwotę w groszach: <kbd>99</kbd>
+Odłożona kwota w złotych: 0</samp>
+            </p>   
+            <p>
+                <samp class="block">Podaj otrzymaną kwotę w groszach: <kbd>10357</kbd>
+Odłożona kwota w złotych: 3</samp>
+            </p>   
+            <p>
+                <samp class="block">Podaj otrzymaną kwotę w groszach: <kbd>123</kbd>
+Odłożona kwota w złotych: 1</samp>
+            </p>   
+         </li>
+
+        <li>
+            <p>
+                <strong>(4 pkt.)</strong> Napisz program, który pobierze od użytkownika wartości dwóch liczb
+                <var>x</var> i <var>y</var>
+                a następnie wyświetli wartość wyrażenia
+                <img class="equation" src="img/k23_01.png" height="50" alt="">.
+            </p>
+            <p>Przykłady użycia progamu:</p>
+            <p>
+            <samp class="block">x = <kbd>4</kbd>
+y = <kbd>5</kbd>
+wynik = 0.047619</samp>
+            </p>
+            <p>
+            <samp class="block">x = <kbd>35</kbd>
+y = <kbd>35</kbd>
+wynik = 0</samp>
+            </p>
+            <p>
+            <samp class="block">x = <kbd>-0.1</kbd>
+y = <kbd>0.2</kbd>
+wynik = 0.558901</samp>
+            </p>
+        </li>
+        <li>
+            <p>
+                <strong>(3 pkt.)</strong> Napisz program, który pobierze od użytkownika liczbę całkowitą
+                nieujemną &mdash; liczbę pełnych godzin, jaka minęła od północy. Program ma wyświetlić informację o tym czy jest jeszcze przed południem, czy nie. Godziny przedpołudniowe to godziny od 0 do 11. 
+            </p>
+            <p>Przykład użycia:</p>
+            <p>
+                <samp class="block">Ile minęło godzin: <kbd>0</kbd>
+Jest przed południem.</samp>
+            </p>
+            <p>
+                <samp class="block">Ile minęło godzin: <kbd>11</kbd>
+Jest przed południem.</samp>
+            </p>
+            <p>
+                <samp class="block">Ile minęło godzin: <kbd>12</kbd>
+Jest po południu.</samp>
+            </p>
+            <p>
+                <samp class="block">Ile minęło godzin: <kbd>23</kbd>
+Jest po południu.</samp>
+            </p>
+            <p>
+                <samp class="block">Ile minęło godzin: <kbd>49</kbd>
+Jest przed południem.</samp>
+            </p>
+            <p>
+                <samp class="block">Ile minęło godzin: <kbd>545</kbd>
+Jest po południu.</samp>
+            </p>
+            </li>
+        <li>
+            <p>
+                <strong>(5 pkt.)</strong> Napisz program, który pobierze od użytkownika szerokość geograficzną w stopniach i minutach (minuta to sześćdziesiąta część stopnia), a następnie wyświetli informację o tym, czy podana szerokość mieści się w zakresie szerokości geograficznych pomiędzy Krakowem a Warszawą. Załóż, że zakres nie obejmuje miast, których szerokość jest równa (z dokładnością do minuty) szerokości geograficznej Krakowa lub Warszawy. Szerokość geograficzna Krakowa to 50&deg;03&prime; (50 stopni i 3 minuty), a Warszawy 52&deg;14&prime;.
+            </p>
+            <p>Przykłady użycia programu</p>
+            <p>
+            <samp class="block">stopnie: <kbd>50</kbd>
+minuty: <kbd>3</kbd>
+Szerokość spoza zakresu.</samp>
+            </p>
+            <p>
+                <samp class="block">stopnie: <kbd>51</kbd>
+minuty: <kbd>50</kbd>
+Szerokość mieści się w zakresie.</samp>
+            </p>
+            <p>
+            <samp class="block">stopnie: <kbd>52</kbd>
+minuty: <kbd>14</kbd>
+Szerokość Spoza zakresu.</samp>
+            </p>
+            <p>
+            <samp class="block">stopnie: <kbd>53</kbd>
+minuty: <kbd>2</kbd>
+Szerokość spoza zakresu.</samp>
+            </p>
+        </li>
+        <li>
+            <p>
+                <strong>(6 pkt.)</strong> Klasyfikacja medalowa polega na uszeregowaniu państw pod względem liczby zdobytych medali na pewnych zawodach sportowych (np. na igrzyskach olimpijskich). Porównanie polega na tym, że państwo, które zdobyło więcej złotych medali jest wyżej w klasyfikacji (niezależnie od liczby pozostałych). W przypadku równej liczby złotych medali pod uwagę brane są srebrne, a jeżeli ich liczba również jest równa, to pod uwagę brane są medale brązowe.
+            </p>
+            <p>
+                Napisz program, który pobierze od użytkownika liczbę medali każdego rodzaju zdobytych przez dwa państwa, a następnie wyświetli informację o tym, które państwo jest wyżej w klasyfikacji medalowej (lub o tym, że są w niej na tej samej pozycji). Program nie może zakładać żadnego ograniczenia na liczbę możliwych do zdobycia medali każdego rodzaju.
+            </p>
+            <p>
+                Przykłady działania programu:
+            </p>
+            <p>
+            <samp class="block">Pierwsze państwo:
+złote medale: <kbd>10</kbd>
+srebrne medale: <kbd>13</kbd>
+brązowe medale: <kbd>87</kbd>
+Drugie państwo:
+złote medale: <kbd>11</kbd>
+srebrne medale: <kbd>3</kbd>
+brązowe medale: <kbd>2</kbd>
+Drugie państwo jest wyżej w klasyfikacji.</samp>
+            </p>
+            <p>
+                <samp class="block">Pierwsze państwo:
+złote medale: <kbd>0</kbd>
+srebrne medale: <kbd>3</kbd>
+brązowe medale: <kbd>5</kbd>
+Drugie państwo:
+złote medale: <kbd>0</kbd>
+srebrne medale: <kbd>3</kbd>
+brązowe medale: <kbd>5</kbd>
+Państwa mają równą pozycję w klasyfikacji.</samp>
+                </p>
+            </li>
+
+        <li>
+            <p>
+                <strong>(6 pkt.)</strong> Napisz program, który pobierze od użytkownika pewną kwotę (liczba całkowita nieujemna w pełnych złotych) oraz cenę pewnego towaru (liczba całkowita dodatnia w pełnych złotych). Program wyświetla po kolei informację o tym ile pozostanie z podanej kwoty po zakupie jednej sztuki towaru, dwóch sztuk, itd. Program zakłada, że nie można przekroczyć podanej kwoty (pozostała po zakupie danej liczby sztuk kwota nie może być ujemna).
+            </p>
+            <p>
+                Przykłady użycia:
+            </p>
+            <p>
+            <samp class="block">kwota (zł): <kbd>49</kbd>
+cena towaru (zł): <kbd>12</kbd>
+1 szt. - zostanie 37 zł.
+2 szt. - zostanie 25 zł.
+3 szt. - zostanie 13 zł.
+4 szt. - zostanie 1 zł.
+</samp>
+            </p>
+            <p>
+                <samp class="block">kwota (zł): <kbd>50</kbd>
+cena towaru (zł): <kbd>60</kbd></samp>
+                </p>
+            </li>
+
+        <li>
+            <p>
+                <strong>(7 pkt.) </strong>Napisz program, który pobiera od użytkownika kolejne liczby całkowite
+                nieujemne, aż ich suma osiągnie wartość co najmniej 21.
+                Następnie program wyświetla ich sumę oraz informację o tym ile spośród nich miało wartość mniejszą niż 5.
+            </p>
+            <p>
+                Przykład pracy z programem może wyglądać tak:
+            </p>
+
+            <samp class="block">Podaj kolejną liczbę: <kbd>5</kbd>
+Podaj kolejną liczbę: <kbd>0</kbd>
+Podaj kolejną liczbę: <kbd>6</kbd>
+Podaj kolejną liczbę: <kbd>2</kbd>
+Podaj kolejną liczbę: <kbd>4</kbd>
+Podaj kolejną liczbę: <kbd>1</kbd>
+Podaj kolejną liczbę: <kbd>12</kbd>
+suma: 30
+liczb mniejszych niż 5: 4   </samp>
+        </li>
+
+        <li>
+            <p>
+                <strong>(7 pkt.)</strong> Napisz program pobierający od użytkownika wartość liczb <var>a</var>
+                (typu <code>double</code>) oraz <var>n</var> (całkowita dodatnia) i wyświetlający
+                wartość wyrażenia <img class="equation" height="60" src="img/k23_02.png" height="70" alt=""> .
+            </p>
+            <p>Przykład działania programu:</p>
+            <p>
+            <samp class="block">a = <kbd>2</kbd>
+n = <kbd>1</kbd>
+wynik = 5</samp>
+            </p>
+            <p>
+                <samp class="block">a = <kbd>1.5</kbd>
+n = <kbd>10</kbd>
+wynik = 50.8294</samp>
+                </p>
+            </li>
+
+
+        <li>
+            <p>
+                <strong>(8 pkt.)</strong> Napisz program pobierający od użytkownika wartość liczby całkowitej dodatniej
+                <var>n</var> i wyświetlający
+                wartość wyrażenia <img class="equation" height="70" src="img/k23_03.png" alt="">.
+            </p>
+            <p>Przykład działania programu:</p>
+            <p>
+            <samp class="block">n = <kbd>1</kbd>
+wynik = 2</samp>
+            </p>
+            <p>
+            <samp class="block">n = <kbd>2</kbd>
+wynik = 5</samp>
+            </p>
+            <p>
+            <samp class="block">n = 10<kbd>1</kbd>
+wynik = 99429.5</samp>
+            </p>
+        </li>
+
+        <li>
+            <p>
+                <strong>(5 pkt.)</strong> Napisz funkcję mającą parametr <code>n</code> typu <code>int</code> i parametr <code>x</code> typu <code>double</code>. Funkcja
+                zwraca część całkowitą (tzw. <i>podłogę</i>) z wartości <img class="equation" height="40" src="img/k23_04.png" alt="">.
+            </p>
+            <p>
+
+            </p>
+        </li>
+        <li>
+            <p>
+                <strong>(10 pkt.)</strong> Napisz program pobierający od użytkownika wyniki zawodów biegowych i limit czasu ich ukończenia oraz
+                wyświetlający czas i numer najszybszego zawodnika oraz informację o tym ilu zawodników ukończyło zawody w podanym limicie.
+            </p>
+            <p>
+                Program najpierws pobiera limit czasowy w godzinach, minutach i sekundach.
+                Potem pobiera od użytkownika liczbę zawodników.
+                Następnie pobiera czasy kolejnych zawodników (program ma wyświetlać
+                numer zawodnika, którego czas pobiera; zawodnicy ponumerowani są od 1).
+                Czas pobierany jest w godzinach, minutach i sekundach. Po zakończeniu
+                pobierania danych program wyświetla numer i czas najszybszego zawodnika,
+                oraz liczbę zawodników, którzy zmieścili się w limicie czasowym.
+                Czas zawodnika wyświetlany jest w w godzinach, minutach i sekundach.
+                Załóż, że zawodnik, którego czas jest dokładnie taki jak limit zmieścił się w czasie. 
+            </p>
+            <p>
+                Podczas pobierania danych program wymusza na użytkowniku podawanie poprawnych
+                danych (liczba zawodników musi być dodatnia, liczba godzin musi być
+                nieujemna, liczba minut i sekund musi być z zakresu 0&mdash;59).
+            </p>
+            <p>
+                Przykładowa sesja z programem może wyglądać tak:
+            </p>
+            <samp class="block">Podaj limit czasowy.
+godziny: <kbd>3</kbd>
+minuty: <kbd>45</kbd>
+sekundy: <kbd>0</kbd>
+
+Podaj liczbę zawodników: <kbd>0</kbd>
+Liczba zawodnikow musi być dodatnia.
+Podaj liczbę zawodników: <kbd>-3</kbd>
+Liczba zawodnikow musi być dodatnia.
+Podaj liczbę zawodników: <kbd>5</kbd>
+
+Podaj czas 1. zawodnika.
+godziny: <kbd>-3</kbd>
+Podaj liczbę nieujemną: <kbd>-4</kbd>
+Podaj liczbę nieujemną: <kbd>3</kbd>
+minuty: <kbd>60</kbd>
+Podaj liczbę z zakresu 0-59: <kbd>0</kbd>
+sekundy: <kbd>-4</kbd>
+Podaj liczbę z zakresu 0-59: <kbd>70</kbd>
+Podaj liczbę z zakresu 0-59: <kbd>59</kbd>
+
+Podaj czas 2. zawodnika.
+godziny: <kbd>3</kbd>
+minuty: <kbd>45</kbd>
+sekundy: <kbd>0</kbd>
+
+Podaj czas 3. zawodnika.
+godziny: <kbd>2</kbd>
+minuty: <kbd>30</kbd>
+sekundy: <kbd>50</kbd>
+
+Podaj czas 4. zawodnika.
+godziny: <kbd>10</kbd>
+minuty: <kbd>10</kbd>
+sekundy: <kbd>10</kbd>
+
+Podaj czas 5. zawodnika.
+godziny: <kbd>4</kbd>
+minuty: <kbd>5</kbd>
+sekundy: <kbd>6</kbd>
+
+Najszybszy zawodnik: 3
+Czas: 2 g. 30 m. 50 s.
+
+Liczba zawodników, którzy zmieścili się w limicie: 3</samp>
+        </li>
+
+    </ol>
+
+</body>
+
+</html>
