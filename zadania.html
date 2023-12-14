@@ -759,6 +759,85 @@ Najniższa cena: 3 zł i 50 gr
 Najwyższa cena: 5 zł 95 gr
 </samp>
   </li>
+  <li>
+    <p>
+      Napisz program, który pobiera od użytkownika liczbę całkowitą nieujemną <var>n</var>,
+      pobiera od użytkownika <var>n</var> liczb, a następnie wyświetla te liczby w odwrotnej
+      kolejności.
+    </p>
+  </li>
+  <li>
+    <p>
+      Zastanów się nad zdefiniowaniem typu <code>Wektor</code> mogącego przechowywać wektory
+      swobodne. Wektory swobodne reprezentowane są jako pewien ciąg współrzędnych. Wektory na
+      płaszczyźnie reprezentowane są przez dwie współrzędne, w przestrzeni &mdash; przez trzy,
+      natomiast typ <code>Wektor</code> ma umożliwiać reprezentowanie wektora o dowolnej 
+      dodatniej liczbie współrzędnych. Współrzędne wektora przechowuj w tablicy alokowanej
+      dynamicznie.
+    </p>
+    <p>
+      Napisz funkcje realizujące wymienione poniżej operacje. Zastanów się nad liczbą i typami
+      parametrów oraz nad typem zwracanej wartości. Funkcje nie muszą sprawdzać poprawności
+      parametrów (np. tego, czy zadany indeks współrzędnej nie jest ujemny).
+    </p>
+    <ul>
+      <li>
+        <p>
+          Stworzenie wektora zerowego (wszystkie współrzędne równe zero) o zadanej liczbie współrzędnych.
+        </p>
+      </li>
+      <li>
+        <p>
+          Usunięcie wektora, tzn. zwolnienie używanej przez wektor pamięci zaalokowanej dynamicznie.
+        </p>
+      </li>
+      <li>
+        <p>
+          Wyświetlenie wektora w postaci <samp>[<var>x</var><sub>0</sub>,
+          <var>x</var><sub>1</sub>, ..., <var>x</var><sub><var>n</var>-1</sub>]</samp>,
+          gdzie <var>x</var><sub><var>i</var></sub> jest <var>i</var>-tą współrzędną wektora,
+          a <var>n</var> &mdash; liczbą jego współrzędnych.
+        </p>
+      </li>
+      <li>
+        <p>
+          Zwrócenie wartości współrzędnej wektora o zadanym nieujemnym indeksie (współrzędne indeksowane od zera). Operacja powinna zwrócić zero jeżeli wartość indeksu spoza
+          zakresu indeksów przechowywanych współrzędnych (wektor o zadanej liczbie współrzędnych
+          możemy utożsamiać z wektorem o większej liczbie współrzędnych, ale z wartościami końcowych
+          współrzędnych równymi zero).
+        </p>          
+      </li>
+      <li>
+        <p>
+          Zmiana wartości współrzędnej wektora o zadanym nieujemnym indeksie. Zastanów się co
+          zrobić jeżeli indeks jest spoza zakresu indeksów przechowywanych współrzędnych. Jeżeli
+          zaalokowana na współrzędne tablica jest za mała, to możesz zaalokować nową większą tablicę,
+          przepisać odpowiednie wartości ze starej, ustawić wartość zadanej współrzędnej i zwolnić
+          starą tablicę.
+        </p>
+      </li>
+      <li>
+        <p>
+            Dodawanie wektorów. Jeżeli składniki (wektory) mają różną liczbę współrzędnych, to wynik powinien mieć tyle współrzędnych co składnik z większą liczbą współrzędnych.
+        </p>
+      </li>
+    </ul>
+    <p>
+      Napisz program pobierający od użytkownika dane dwóch wektorów &mdash; liczbę współrzędnych i współrzędne,
+      a następnie wyświetla ich sumę. Program może np. działać tak:
+    </p>
+<samp class="block">Podaj liczbę współrzędnych pierwszego wektora: <kbd>3</kbd>
+Podaj 1. współrzędna: <kbd>3.4</kbd>
+Podaj 2. współrzędna: <kbd>-2</kbd>
+Podaj 3. współrzędna: <kbd>1.1</kbd>
+
+Podaj liczbę współrzędnych drugiego wektora: <kbd>3</kbd>
+Podaj 1. współrzędna: <kbd>-1</kbd>
+Podaj 2. współrzędna: <kbd>3.5</kbd>
+
+suma wektorów: [2.4, 1.5, 1.1]
+</samp>
+  </li>
 <!--
   <li>
     <p>Napisz program, który pobiera od użytkownika liczbę <var>n</var> oraz <var>n</var> liczb rzeczywistych
