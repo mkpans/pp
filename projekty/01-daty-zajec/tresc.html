@@ -1,22 +1,69 @@
-<meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="pl">
 
-<pre>
-Dane:
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/pp.css">
+    <script src="../../src/textfile.js" defer></script>
+    <title>Daty zajęć</title>
+</head>
 
-Plik z dniami wolnymi od zajęć, np.
-24.12.2022
-25.12.2022
-01.01.2023
-06.01.2023
+<body>
+    <p>
+        Pewne zajęcia odbywają się co tydzień, z wyłączeniem wybranych dni wolnych. Zajęć musi się odbyć określona
+        liczba. Napisz program, który pomoże wyznaczyć dni zajęć.
+    </p>
+    <p>
+        Dni wolne od zajęć zapisane są w pliku tekstowym &mdash; każdy w osobnym wierszu. Każdy dzień zadany jest jako
+        trzy liczby oddzielone kropkami w kolejności rok, miesiąc, dzień. Przykładowy plik może wyglądać tak (<span
+            data-file="dni-wolne"></span>):
+    </p>
+    <div data-file="dni-wolne"></div>
+    <p>
+        Pierwszy dzień zajęć oraz liczba zajęć pobierane są od użytkownika. Program wyświetla informację o tym, w jaki
+        dzień tygodnia odbywają się zajęcia (jako napis, np. <samp>poniedziałek</samp>, <samp>wtorek</samp>, &hellip;)
+        oraz zapisuje do pliku wynikowego daty wszystkich dni zajęć. Format pliku wynikowego jest taki jak pliku z
+        dniami wolnymi.
+    </p>
+    <p>
+        Sposób obliczania dnia tygodnia dla zadanej daty: <a target="_blank"
+            href="https://www.tondering.dk/claus/cal/chrweek.php#calcdow"><samp>https://www.tondering.dk/claus/cal/chrweek.php#calcdow</samp></a>.
+    </p>
+    <p>
+        Program musi uwzględniać różną liczbę dni w miesiącu, oraz to, że luty ma 28 lub 29 dni w zależności od tego,
+        czy rok jest przestępny.
+    </p>
+    <p>
+        Program może np. działać tak:
+    </p>
+    <pre class="samp">
+        Podaj pierwszy dzień zajęć:
+        rok: <kbd>2023</kbd>
+        miesiąc: <kbd>12</kbd>
+        dzień: <kbd>4</kbd>
+        Podaj liczbę tygodni zajęć: <kbd>7</kbd>
+        Dzień zajęć: poniedziałek
+    </pre>
+    <p>
+        Dla podanego wcześniej przykładowego pliku z dniami wolnymi program powinien stworzyć plik wynikowy (<span
+            data-file="dni-zajec"></span>) z następującą zawartością:
+    </p>
 
-Od użytkownika:
-dzień pierwszych zajęć, liczba zajęć.
+    <div data-file="dni-zajec"></div>
 
-Zakładamy, że zajęcia są co tydzień, z wyłączeniem dni wolnych.
+    <p>
+        Dni i miesiące mają być zapisane w pliku wynikowym za pomocą dokładnie dwóch cyfr (np. <samp>04.08.2023</samp>
+        zamiast <samp>4.8.2023</samp>).
+    </p>
 
-Wynik:
-* Na standardowym wyjściu: dzień tygodnia zajęć (https://www.tondering.dk/claus/cal/chrweek.php#calcdow)
-jako napis (np. wtorek, czwartek).
+    <p>
+        Nazwy plików mogą być pobierane przez program od użytkownika, ale mogą być też po prostu wpisane &bdquo;na
+        sztywno&rdquo; w kodzie programu. Program powinien w miarę możliwości wykrywać błędy takie jak np. brak
+        możliwości otwarcia zadanego pliku lub błędy podczas czytania danych z pliku. W przypadku wykrycia błędu program
+        powinien po prostu wyświetlić odpowiednią informację i zakończyć działanie.
+    </p>
 
-* Plik z dniami zajęć, w formacie takim jak plik wejściowy.
-</pre>
+</body>
+
+</html>

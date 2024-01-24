@@ -1,0 +1,11 @@
+100, szafka nocna, 500, meble, Lublin
+110, kajak, 5000, sporty wodne, Chełm
+158, rower szosowy, 2500, rowery, Warszawa
+134, robot kuchenny, 300, agd, Lublin
+224, pralka, 1800, agd, Poznań
+103, rower wodny, 2000, sporty wodne, Warszawa
+101, stół kuchenny, 400, meble, Chełm
+287, licznik rowerowy, 150, rowery, Warszawa
+333, rower górski, 4200, rowery, Warszawa
+102, rower górski, 3500, rowery, Lublin
+234, fotel bujany, 999, meble, Chełm

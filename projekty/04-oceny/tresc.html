@@ -1,36 +1,87 @@
-<meta charset="utf-8">
-<pre>
-Dane:
+<!DOCTYPE html>
+<html lang="pl">
 
-Plik wejściowy z imionami, nazwiskami i ocenami.
-Ocen w skali 1-6, mogą być z +, np. 3+, 4+, ale nie ma oceny 6+.
-Plusy traktowane są jak połówki. Np. 4+ oznacza 4 i pół.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/pp.css">
+    <script src="../../src/textfile.js" defer></script>
+    <title>Oceny</title>
+</head>
 
-Przykład:
+<body>
+    <p>
+        Napisz program, który dla pliku tekstowego z imionami, nazwiskami i ocenami uczniów stworzy plik z wystawionymi
+        ocenami końcowymi. Każdy uczeń może mieć wiele ocen. Imię, nazwisko i oceny oddzielone są od siebie spacjami.
+        Oceny są w skali 1&ndash;6, ale mogą być z plusem, np. <samp>3+</samp>, <samp>4+</samp>. Nie ma oceny
+        <samp>6+</samp>. Przy liczeniu średniej plusy traktowane są jak połówki, np. <samp>4+</samp> ma wartość 4,5
+        (cztery i pół).
+    </p>
 
-Mariusz Witkowski 3 3+ 4+ 5 6 2
-Antoni Sobczak 2 5
-Zuzanna Sokołowska 1 1 3 3 2+
-Jadwiga Pietrzak 6 6 5+ 4 5+
-Martyna Górecka
-Maurycy Duda
-Cyprian Bąk 3 4 4 4+ 2
-Leszek Jasiński 4 4 4 3 3 3 3
-Kaja Przybylska 6 4+ 6 6 6
-Aleksandra Mróz 4+
+    <p>Przykładowy plik z ocenami (<span data-file="oceny"></span>):</p>
 
+    <div data-file="oceny"></div>
 
-Wynik:
-Plik z wystawionymi ocenami na podstawie zaokrąglonej w górę średniej. Jeżeli ktoś nie ma ocen, to w wyniku w miejsce oceny ma znak "?".
+    <p>
+        W pliku wynikowym oceny wystawione są na podstawie zaokrąglonej w górę średniej. Jeżeli ktoś nie ma ocen, to
+        zamiast oceny jest znak <samp>?</samp>.
+    </p>
 
-Mariusz Witkowski 4  
-Antoni Sobczak 4
-Zuzanna Sokołowska 2
-Jadwiga Pietrzak 5
-Martyna Górecka ?
-Maurycy Duda ?
-Cyprian Bąk 4
-Leszek Jasiński 3
-Kaja Przybylska 6
-Aleksandra Mróz 5
-</pre>
+    <p>
+        Przed zapisaniem oceny końcowej ucznia przez program do pliku wynikowego, użytkownik ma możliwość poprawienia
+        jej, ale tylko o jeden w górę lub w dół. Oceny <samp>6</samp> nie można poprawić w górę, a oceny <samp>1</samp>
+        w dół. Nie można poprawić oceny osobom, które nie mają żadnych ocen.
+    </p>
+
+    <p>
+        Program powinien wymuszać podanie poprawnych danych przez użytkownika.
+    </p>
+
+    <p>
+        Działanie programu może wyglądać tak:
+    </p>
+
+    <pre class="samp">
+        Mariusz Witkowski, wypada ocena: 4
+        Wpisz ocenę końcową (3/4/5): <kbd>4</kbd>
+        
+        Antoni Sobczak, wypada ocena: 4
+        Wpisz ocenę końcową (3/4/5): <kbd>5</kbd>
+        
+        Zuzanna Sokołowska, wypada ocena: 2
+        Wpisz ocenę końcową (1/2/3): <kbd>2</kbd>
+        
+        Jadwiga Pietrzak, wypada ocena: 5
+        Wpisz ocenę końcową (4/5/6): <kbd>5</kbd>
+        
+        Cyprian Bąk, wypada ocena: 4
+        Wpisz ocenę końcową (3/4/5): <kbd>4</kbd>
+        
+        Leszek Jasiński, wypada ocena: 3
+        Wpisz ocenę końcową (2/3/4): <kbd>5</kbd>
+        Nie możesz wystawić takiej oceny.
+        Wpisz ocenę końcową (2/3/4): <kbd>C</kbd>
+        Nie możesz wystawić takiej oceny.
+        Wpisz ocenę końcową (2/3/4): <kbd>3</kbd>
+        
+        Kaja Przybylska, wypada ocena: 6
+        Wpisz ocenę końcową (5/6): <kbd>6</kbd>
+        
+        Aleksandra Mróz, wypada ocena: 1
+        Wpisz ocenę końcową (1/2): <kbd>2</kbd>
+    </pre>
+
+    <p>Plik wynikowy (<span data-file="wystawione-oceny"></span>):</p>
+
+    <div data-file="wystawione-oceny"></div>
+
+    <p>
+        Nazwy plików mogą być pobierane przez program od użytkownika, ale mogą być też po prostu wpisane &bdquo;na
+        sztywno&rdquo; w kodzie programu. Program powinien w miarę możliwości wykrywać błędy takie jak np. brak
+        możliwości otwarcia zadanego pliku lub błędy podczas czytania danych z pliku. W przypadku wykrycia błędu program
+        powinien po prostu wyświetlić odpowiednią informację i zakończyć działanie.
+    </p>
+
+</body>
+
+</html>

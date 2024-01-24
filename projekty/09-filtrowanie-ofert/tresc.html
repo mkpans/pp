@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/pp.css">
+    <script src="../../src/textfile.js" defer></script>
+    <title>Filtrowanie danych</title>
+</head>
+
+<body>
+
+    <p>
+        Każda oferta w serwisie ogłoszeniowym opisana jest przez
+    </p>
+
+    <ul>
+        <li>identyfikator &mdash; liczba całkowita dodatnia; każda oferta ma inny,</li>
+        <li>tytuł &mdash; dowolny napis niezawierający przecinka,</li>
+        <li>cenę &mdash; w pełnych złotych &mdash; liczba całkowita dodatnia,</li>
+        <li>kategoria &mdash; dowolny napis niezawierający przecinka,</li>
+        <li>miasto &mdash; dowolny napis</li>
+    </ul>
+
+    <p>
+        Oferty zapisane są w pliku tekstowym. Każda oferta opisana jest w osobnym wierszu, a kolejne elementy opisu
+        oddzielone są przecinkami. Przykładowy plik <span data-file="oferty"></span>:
+    </p>
+
+    <div data-file="oferty"></div>
+
+    <p>
+        Oferty można filtrować na podstawie:
+    </p>
+    <ul>
+        <li>wyrazu występującego w tytule,</li>
+        <li>ceny minimalnej,</li>
+        <li>ceny maksymalnej,</li>
+        <li>kategorii,</li>
+        <li>miasta.</li>
+    </ul>
+
+    <p>
+        Zestaw filtrów opisany jest plikiem tekstowym. Każdy wiersz pliku zawiera opis jednego filtra i składa się z nazwy filtra i odpowiedniej wartości oddzielonych od siebie dwukropkiem. Nazwy filtrów do odpowiednio <samp>wyraz</samp>, <samp>cena min</samp>, <samp>cena maks</samp>, <samp>kategoria</samp>, <samp>miasto</samp>. Przykładowy plik (<span data-file="filtr"></span>) może wyglądać tak:
+    </p>
+
+    <div data-file="filtr"></div>
+
+    <p>
+        Napisz program, który umożliwia na podstawie pliku o ofertami i pliku z filtrem, stworzenie pliku zawierającego wyłącznie oferty pasujące do filtra. Plik wynikowy jest w takiej samej postaci jak plik z danymi. Np. dla powyższych przykładowych plików z ofertami i filtrem wynik (<span data-file="oferty-filtr"></span>) będzie wyglądał tak:
+    </p>
+
+    <div data-file="oferty-filtr"></div>
+
+    <p>
+        Filtr na podstawie wyrazów występujących w tytule bierze pod uwagę całe wyrazy. Dlatego np. w powyższym pliku wynikowym nie ma oferty dotyczącej licznika rowerowego.
+    </p>
+
+    <p>
+        Program pobiera od użytkownika nazwy kolejnych plików z filtrem i dla każdego z nich tworzy plik wynikowy o nazwie <samp>oferty-<i>nazwa-pliku-z-filtrem</i>.txt</samp>.
+    </p>
+    
+    <p>
+        Nazwa pliku z ofertami może być pobierana przez program od użytkownika, ale może być też po prostu wpisana &bdquo;na
+        sztywno&rdquo; w kodzie programu. Program powinien w miarę możliwości wykrywać błędy takie jak np. brak
+        możliwości otwarcia zadanego pliku lub błędy podczas czytania danych z pliku. W przypadku wykrycia błędu program
+        powinien po prostu wyświetlić odpowiednią informację i zakończyć działanie.
+    </p>
+
+
+</body>
+
+</html>

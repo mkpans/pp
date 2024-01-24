@@ -1,29 +1,62 @@
-<meta charset="utf-8">
-<pre>
-Dane wejsciowe:
+<!DOCTYPE html>
+<html lang="pl">
 
-Plik z obliczeniami na ułamkach. Ulamki zapisane są licznik/mianownik. np. 3/4, -3/-5. Działania, to "+", "-", "*", "/" (dodawanie, odejmowanie, mnożenie, dzielenie).
-Ułamki i operatory oddzielone są spacją.
-Przykładowy plik:
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/pp.css">
+    <script src="../../src/textfile.js" defer></script>
+    <title>Ułamki</title>
+</head>
 
-3/4 + 1/2
--4/-2 * 0/5
-10/-12 - 3/5
-10/5 + 10/5
-2/3 / 2/3
-15/1 / 17/2
+<body>
 
-Wyniki:
+    <p>
+        Napisz program wykonujący działania na ułamkach (dodawanie, odejmowanie, mnożenie i dzielenie).
+    </p>
 
-Plik z wynikami:
+    <p>
+        Działania do wykonania zapisane są w pliku tekstowym. W każdym wierszu pliku zapisane jest jedno działanie do
+        wykonania. Ułamki zapisane są jako <samp><i>licznik</i>/<i>mianownik</i></samp>, np. <samp>3/4</samp>,
+        <samp>-3/-5</samp>. Licznik i mianownik są liczbami całkowitymi. Wokół znaku <samp>/</samp> pełniącego rolę
+        kreski ułamkowe nie ma spacji. Odpowiednie operatory (dodawanie, odejmowanie, mnożenie i dzielenie) zapisane są
+        jako <samp>+</samp>, <samp>-</samp>, <samp>*</samp> i <samp>:</samp>. Ułamki i operatory oddzielone są spacją.
+    </p>
+    <p>
+        Przykładowy plik z działaniami (<span data-file="dane"></span>):
+    </p>
 
-5/4
-0/1
--43/30
-4/1
-1/1
-30/17
+    <div data-file="dane"></div>
 
-Uwaga: ułamki w pliku wynikowym muszą być znormalizowane, tzn. muszą być skrócone, mianownik musi być dodatni, jeżeli licznik wynosi 0,
-to mianownik powinien wynosić 1.
-</pre>
+    <p>
+        Plik wynikowy powinien zawierać wyniki działań (ułamki). Każdy wynik zapisany jest w osobnym wierszu.
+    </p>
+    <p>
+        Różnie zapisane ułamki mogą oznaczać tę samą liczbę (np. ułamki <samp>1/2</samp>, <samp>-1/-2</samp> i <samp>2/4</samp> bądź <samp>0/1</samp>, <samp>0/5</samp> i <samp>0/-3</samp>). W pliku z danymi ułamki mogą być zapisane dowolnie, ale w pliku wynikowym powinny mieć postać &bdquo;znormalizowaną&rdquo;, tzn.
+    </p>
+
+    <ul>
+        <li>powinny być skrócone,</li>
+        <li>mianownik powinien być dodatni,</li>
+        <li>jeżeli licznik jest równy zero, to mianownik jest równy 1.</li>
+    </ul>
+
+    <p>
+        Np. postacią znormalizowaną ułamków <samp>-25/15</samp> i <samp>3/-5</samp> jest <samp>-5/3</samp>, a ułamków <samp>0/-1</samp> i <samp>0/7</samp> jest <samp>0/1</samp>.
+    </p>
+
+    <p>Plik wynikowy dla działań z przykładowego pliku z działaniami (<span data-file="wyniki"></span>):</p>
+
+    <div data-file="wyniki"></div>
+
+    <p>
+        Nazwy plików mogą być pobierane przez program od użytkownika, ale mogą być też po prostu wpisane &bdquo;na
+        sztywno&rdquo; w kodzie programu. Program powinien w miarę możliwości wykrywać błędy takie jak np. brak
+        możliwości otwarcia zadanego pliku lub błędy podczas czytania danych z pliku. W przypadku wykrycia błędu program
+        powinien po prostu wyświetlić odpowiednią informację i zakończyć działanie.
+    </p>
+
+
+</body>
+
+</html>

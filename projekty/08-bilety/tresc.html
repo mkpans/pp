@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/pp.css">
+    <script src="../../src/textfile.js" defer></script>
+    <title>Bilety do muzeum</title>
+</head>
+
+<body>
+    <p>
+        Napisz program pomagający obliczyć kwotę do zapłaty za bilety wstępu do muzeum dla całej grupy osób. Osoby
+        poniżej siódmego roku życia i osoby od siedemdziesiątego roku życia wchodzą za darmo. Dzieci i młodzież w wieku
+        7&ndash;17 lat mogą kupić bilet ulgowy za połowę ceny (zaokrągloną w dół do pełnych złotych).
+    </p>
+
+    <p>
+        Program oblicza kwotę na podstawie danych z pliku tekstowego. Pierszy wiersz pliku zawiera datę wstępu do
+        muzeum. W drugim znajduje się cena biletu normalnego (w pełnych złotych).
+        W kolejnych wierszach znajdują się daty urodzenia kolejnych osób z grupy. Każda data składa się z trzech liczb
+        całkowitych dodatnich oddzielonych kropką. Liczby oznaczają kolejno rok, miesiąc i dzień.
+    </p>
+
+    <p>
+        Wynik zapisywany jest do pliku tekstowego i zawiera następujące informacje:
+    <ul>
+        <li>ile osób ma wstęp darmowy,</li>
+        <li>ile osób kupuje bilet ulgowy,</li>
+        <li>ile osób kupuje bilet normalny,</li>
+        <li>pełna kwota do zapłacenia.</li>
+    </ul>
+    </p>
+
+    <p>
+        Osoba nabywa lub traci prawo do ulgi dokładnie w dniu urodzin (siódmych, osiemnastych lub siedemdziesiątych).
+        Np. za wstęp do muzemu w dniu 2024.01.18 osoba urodzona w dniu 1954.01.19 płaci pełną kwotę, a urodzona w dniu
+        1954.01.18 nie płaci nic.
+    </p>
+
+    <p>
+        Przykładowy plik z danymi może wyglądać tak (<span data-file="dane"></span>):
+    </p>
+
+    <div data-file="dane"></div>
+
+    <p>
+        Plik wynikowy dla powyższych danych mógłby wyglądać tak (<span data-file="wyniki"></span>):
+    </p>
+
+    <div data-file="wyniki"></div>
+
+    <p>
+        Nazwy plików mogą być pobierane przez program od użytkownika, ale mogą być też po prostu wpisane &bdquo;na
+        sztywno&rdquo; w kodzie programu. Program powinien w miarę możliwości wykrywać błędy takie jak np. brak
+        możliwości otwarcia zadanego pliku lub błędy podczas czytania danych z pliku. W przypadku wykrycia błędu program
+        powinien po prostu wyświetlić odpowiednią informację i zakończyć działanie.
+    </p>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/pp.css">
+    <script src="../../src/textfile.js" defer></script>
+    <title>Działki</title>
+</head>
+
+<body>
+
+    <p>
+        W pliku tekstowym opisane są działki &mdash; ich położenie, kształt i cena za metr kwadratowy.
+        Każda działka jest wielokątem.
+        Każde kolejne dwa
+        wiersze opisują jedną działkę. Pierwszy z dwóch wierszy zawiera jedną liczbę całkowitą &mdash; cenę za jeden
+        metr kwadratowy działki. Drugi wiersz zawiera współrzędne kolejnych wierzchołków wielokąta opisującego działkę.
+        Ostatni punkt powinien pokrywać się z pierwszym. Każdy punkt opisany jest przez dwie liczby w nawiasach
+        oddzielone od siebie spacją. Przykładowy opis położenia działki może wyglądać tak <samp>(0.0 0.0) (1.0 0.0) (1.0
+            1.0) (0.0 1.0) (0.0 0.0)</samp>. Współrzędne wyrażone są w pewnym prostokątnym układzie współrzędnych
+        prostokątnych, w którym jednostką jest metr.
+    </p>
+
+    <p>
+        Przykładowy plik z działkami <span data-file="dzialki"></span>:
+    </p>
+
+    <div data-file="dzialki"></div>
+
+    <p>
+        Pole powierzchni działki możesz policzyć ze wzoru (<a href="https://en.wikipedia.org/wiki/Shoelace_formula"
+            target="_blank"><samp>https://en.wikipedia.org/wiki/Shoelace_formula</samp></a>)
+    </p>
+
+    <p><img src="p1.png" alt="" style="height: 1.8em; vertical-align: middle;">,</p>
+
+    <p>przy czym</p>
+
+    <p><img src="p2.png" alt="" style="height: 1.4em; vertical-align: middle;">.</p>
+
+    <p>Np. dla prostokąta będzie to</p>
+
+    <p>
+        <img src="p3.png" alt="" style="height: 1.6em; vertical-align: middle;">.
+    </p>
+
+    <p>
+        Jeżeli ze wzoru wyjdzie wartość ujemna, to należy wziąć z niej wartość bezwzględną.
+    </p>
+
+    <p>
+        W pliku wynikowym mają się znaleźć wartości działek (cena za metr kwadratowy pomnożona przez powierzchnię)
+        &mdash; każda w osobnym wierszu. Wartości mają być zapisane z dwoma miejscami po przecinku.
+    </p>
+
+    <p>
+        Plik wynikowy dla przykładowego pliku z działkami (<span data-file="ceny"></span>):
+    </p>
+
+    <div data-file="ceny"></div>
+
+    <p>
+        Nazwy plików mogą być pobierane przez program od użytkownika, ale mogą być też po prostu wpisane &bdquo;na
+        sztywno&rdquo; w kodzie programu. Program powinien w miarę możliwości wykrywać błędy takie jak np. brak
+        możliwości otwarcia zadanego pliku lub błędy podczas czytania danych z pliku. W przypadku wykrycia błędu program
+        powinien po prostu wyświetlić odpowiednią informację i zakończyć działanie.
+    </p>
+
+</body>
+
+</html>

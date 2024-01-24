@@ -1,0 +1,2 @@
+158, rower szosowy, 2500, rowery, Warszawa
+103, rower wodny, 2000, sporty wodne, Warszawa

@@ -1,48 +1,69 @@
-<meta charset="utf-8">
-<pre>
-Dane:
-Plik z numerami zawodników, godziną startu i płcią, np.
+<!DOCTYPE html>
+<html lang="pl">
 
-1 7:15 m
-2 7:30 k
-6 7:30 m
-7 7:00 m
-3 7:00 m
-4 7:15 m
-5 7:15 k
-8 7:00 k
-9 7:00 k
-10 7:15 m 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/pp.css">
+    <script src="../../src/textfile.js" defer></script>
+    <title>Zawody</title>
+</head>
 
-Plik z numerami zawodników i godziną dotarcia na metę, np.:
+<body>
 
-3 13:23
-2 13:20
-4 13:01
-5 13:55
-7 12:45 
-6 13:40
-1 13:19
-10 12:56
-8 12:48
-9 13:03
+    <p>
+        Program dostaje plik z numerami zawodników, godziną startu i płcią. Informacja o każdym zawodniku jest w osobnym
+        wierszu. Każdy wiersz zawiera numer zawodnika (liczba całkowita dodatnia), godzinę startu (godzina i minuta
+        oddzielone dwukropkiem) i płeć (<samp>k</samp> &mdash; kobieta lub <samp>m</samp> &mdash; mężczyzna). Kolejne
+        elementy wiersza oddzielone są spacjami. Przykład (<span data-file="zawodnicy"></span>):
+    </p>
 
-Pliki wejściowe nie muszą być w żaden sposób posortowane.
+    <div data-file="zawodnicy"></div>
 
-Wyniki:
+    <p>
+        Program dostaje również plik z numerami zawodników i godziną dotarcia na metę. Plik ma taki sam format jak
+        poprzedni, ale nie ma w nim informacji o płci. Przykład
+        (<span data-file="wyniki"></span>):
+    </p>
 
-2 pliki - podium (trzy najlepsze osoby) w kategorii kobiet i w kategorii mężczyzn. W pliku
-wynikowym są numery startowe i czas przejazdu, np. dla powyższych plików:
+    <div data-file="wyniki"></div>
 
-wyniki mężczyzn:
-10 05:41
-7 05:45
-4 05:46
+    <p>Pliki wejściowe nie muszą być w żaden sposób posortowane.</p>
 
-wyniki kobiet:
-8 05:48
-2 05:50
-9 06:03
+    <p>
+        Wynikiem działania programu mają być dwa pliki wynikowe &mdash; plik z informacją o podium (trzy najlepsze
+        osoby) w kategorii kobiet i plik z informacją o podium w kategorii mężczyzn. W pliku wynikowym są numery
+        startowe
+        i czas zawodnika (różnica między czasem startu a czasem dotarcia na metę). Dane w plikach wynikowych mają taki
+        sam format jak dane w plikach z danymi, ale są posortowane w kolejności od najlepszego do najgorszego zawodnika.
+        Np. dla powyższych plików z danymi pliki wynikowe będą miały postać:
+    </p>
 
-Należy uwzględnić to, że na liście startowej może być mniej niż trzech mężczyzn lub mniej niż trzy kobiety.
-</pre>
+    <p>
+        Wyniki mężczyzn (<span data-file="podium-mezczyzni"></span>):
+    </p>
+
+    <div data-file="podium-mezczyzni"></div>
+
+    <p>
+        Wyniki kobiet (<span data-file="podium-kobiety"></span>):
+    </p>
+
+    <div data-file="podium-kobiety"></div>
+
+    <p>
+        Należy uwzględnić to, że na liście startowej może być mniej niż trzech mężczyzn lub mniej niż trzy kobiety. W
+        pliku wynikowym będzie wtedy odpowiednio mniej wierszy.
+    </p>
+
+    <p>
+        Nazwy plików mogą być pobierane przez program od użytkownika, ale mogą być też po prostu wpisane &bdquo;na
+        sztywno&rdquo; w kodzie programu. Program powinien w miarę możliwości wykrywać błędy takie jak np. brak
+        możliwości otwarcia zadanego pliku lub błędy podczas czytania danych z pliku. W przypadku wykrycia błędu program
+        powinien po prostu wyświetlić odpowiednią informację i zakończyć działanie.
+    </p>
+
+
+</body>
+
+</html>

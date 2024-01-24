@@ -25,6 +25,7 @@ dt, dfn {
 .biezace {
     font-size: x-large;
     display: inline-block;
+    font-weight: bold;
     padding: 0.5em 0em 0.5em 0em;
 }
 
@@ -52,13 +53,13 @@ h1 {
     font-size: 2em;
 }
 
-code, samp {
+code, samp, pre.code, pre.samp {
     font-family: monospace;
     font-size: inherit;
     background-color: rgb(235, 235, 235);
 }
 
-code.block, samp.block {
+code.block, samp.block, pre.code, pre.samp {
     display: block;
     white-space: pre;
     padding: 1em;
@@ -81,7 +82,7 @@ ol.zadania > li {
     margin-bottom: 2em;
 }
 
-samp.block kbd {
+samp.block kbd, pre.samp kbd {
     font-weight: bold;
 }
 

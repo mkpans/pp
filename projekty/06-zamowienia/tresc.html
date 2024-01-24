@@ -1,25 +1,49 @@
-<meta charset="utf-8">
-<pre>
-Dane:
-Plik z towarami i cenami. Ceny są po przecinku w zl i gr, np.
-Nazwy towarów mogą zawierać spacje:
+<!DOCTYPE html>
+<html lang="pl">
 
-Komputer, 4500 zl 50 gr
-Krzesło, 200 zl 05 gr
-Bardzo wygodne krzesło, 500 zl 00 gr
-Długopis, 5 zl 20 gr
-Kawa Jacobs, 26 zl 17 gr
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/pp.css">
+    <script src="../../src/textfile.js" defer></script>
+    <title>Zamówienia</title>
+</head>
 
+<body>
+    <p>
+        W pliku tekstowym opisane są towary &mdash; ich nazwa oraz cena w złotych i groszach. Każdy towar opisany jest w
+        osobnym wierszu. Nazwa może zawierać spacje i odzielona jest od ceny przecinkiem. Cena zapisana jest w formacie
+        <samp><i>a</i> zl + <i>b</i> gr</samp>, gdzie <samp><i>a</i></samp> jest liczbą całkowitą nieujemną, a
+        <samp><i>b</i></samp> &mdash; liczbą całkowitą z zakresu 0&ndash;99.
+    </p>
+    <p>
+        Przykładowy plik z opisem towarów (<span data-file="towary"></span>) może wyglądać tak:
+    </p>
 
-Plik z zamówieniem. Plik zawiera najpierw liczbę zamówionych towarów danego typu, a następnie nazwę towaru, np.
+    <div data-file="towary"></div>
 
-1 Komputer
-2 Bardzo wygodne krzesło
-5 Długopis
+    <p>
+        Zamówienie opisane jest kolejnym plikiem tekstowym. W każdym wierszu jest liczba całkowita dodatnia (liczba zadanych towarów w zamówieniu), oraz nazwa towaru (po pojednyczej spacji).
+        Przykładowy plik (<span data-file="zamowienie"></span>):
+    </p>
 
+    <div data-file="zamowienie"></div>
 
-Wynik: wartość zamówienia na standardowym wyjściu. Np. dla powyższego zamówienia:
+    <p>
+        Napisz program, który dla pliku z cenami towarów oraz pliku z zamówieniem wyświetli wartość zamówienia.
+    </p>
 
-5526 zl 50 gr
+    <p>Np. dla powyższych plików program powinien wyświetlić:</p>
+    
+    <pre class="samp">5526 zl 50 gr</pre>
 
-</pre>
+    <p>
+        Nazwy plików mogą być pobierane przez program od użytkownika, ale mogą być też po prostu wpisane &bdquo;na
+        sztywno&rdquo; w kodzie programu. Program powinien w miarę możliwości wykrywać błędy takie jak np. brak
+        możliwości otwarcia zadanego pliku lub błędy podczas czytania danych z pliku. W przypadku wykrycia błędu program
+        powinien po prostu wyświetlić odpowiednią informację i zakończyć działanie.
+    </p>
+
+</body>
+
+</html>

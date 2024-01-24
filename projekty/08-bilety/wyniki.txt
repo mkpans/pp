@@ -1,0 +1,4 @@
+Liczba osób ze wstępem darmowym: 7
+Liczba biletów ulgowych: 4
+Liczba biletów normalnych: 6
+Całkowity koszt biletów: 118 zł
