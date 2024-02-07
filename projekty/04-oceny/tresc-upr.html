@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/pp.css">
+    <script src="../../src/textfile.js" defer></script>
+    <title>Oceny</title>
+</head>
+
+<body>
+    <ol>
+        <li>
+            <p>
+                Napisz program, który pobierze od użytkownika imię i nazwisko ucznia, a następnie dwie oceny. Oceny
+                są liczbami całkowitymi. Program wyświetla imię i nazwisko ucznia oraz jego średnią ocen.
+            </p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Imię: <kbd>Jan</kbd>
+                Nazwisko: <kbd>Kowalski</kbd>
+                Podaj pierwszą ocenę: <kbd>3</kbd>
+                Podaj drugą ocenę: <kbd>4</kbd>
+                Jan Kowalski, średnia ocen: 3.5
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby wymuszał podanie oceny z zakresu 1&ndash;6, tzn. żeby prosił do skutku o podanie
+                poprawnej oceny.
+            </p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Imię: <kbd>Jan</kbd>
+                Nazwisko: <kbd>Kowalski</kbd>
+                Podaj pierwszą ocenę: <kbd>-1</kbd>
+                Podaj liczbę z zakresu 1-6: <kbd>0</kbd>
+                Podaj liczbę z zakresu 1-6: <kbd>7</kbd>
+                Podaj liczbę z zakresu 1-6: <kbd>3</kbd>
+                Podaj drugą ocenę: <kbd>4</kbd>
+                Jan Kowalski, średnia ocen: 3.5
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby najpierw pytał o liczbę ocen i wymuszał przy tym podanie liczby dodatniej.
+            </p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Imię: <kbd>Jan</kbd>
+                Nazwisko: <kbd>Kowalski</kbd>
+                Podaj liczbę ocen: <kbd>-1</kbd>
+                Podaj liczbę dodatnią: <kbd>0</kbd>
+                Podaj liczbę dodatnią: <kbd>4</kbd>
+                1. ocena: <kbd>2</kbd>
+                2. ocena: <kbd>-1</kbd>
+                Podaj liczbę z zakresu 1-6: <kbd>0</kbd>
+                Podaj liczbę z zakresu 1-6: <kbd>7</kbd>
+                Podaj liczbę z zakresu 1-6: <kbd>3</kbd>
+                3. ocena: <kbd>4</kbd>
+                4. ocena: <kbd>6</kbd>
+                Jan Kowalski, średnia ocen: 3.75
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby zamiast średniej wyświetlał ocenę końcową. Ocena końcowa jest liczbą całkowitą &mdash; zaokrągloną w górę średnią.
+            </p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Imię: <kbd>Jan</kbd>
+                Nazwisko: <kbd>Kowalski</kbd>
+                Podaj liczbę ocen: <kbd>-1</kbd>
+                Podaj liczbę dodatnią: <kbd>0</kbd>
+                Podaj liczbę dodatnią: <kbd>4</kbd>
+                1. ocena: <kbd>2</kbd>
+                2. ocena: <kbd>-1</kbd>
+                Podaj liczbę z zakresu 1-6: <kbd>0</kbd>
+                Podaj liczbę z zakresu 1-6: <kbd>7</kbd>
+                Podaj liczbę z zakresu 1-6: <kbd>3</kbd>
+                3. ocena: <kbd>4</kbd>
+                4. ocena: <kbd>6</kbd>
+                Jan Kowalski, ocena końcowa: 4
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby program wyświetlał również informację o tym, czy uczeń zdał (ocena końcowa większa niż 1), czy nie (ocena końcowa równa 1).
+            </p>
+            <p>
+                Przykłady działania:
+            </p>
+            <pre class="samp">
+                Imię: <kbd>Jan</kbd>
+                Nazwisko: <kbd>Kowalski</kbd>
+                Podaj liczbę ocen: <kbd>2</kbd>
+                1. ocena: <kbd>2</kbd>
+                2. ocena: <kbd>3</kbd>
+                Jan Kowalski, ocena końcowa: 3, uczeń zdał.
+            </pre>
+            <pre class="samp">
+                Imię: <kbd>Jan</kbd>
+                Nazwisko: <kbd>Kowalski</kbd>
+                Podaj liczbę ocen: <kbd>3</kbd>
+                1. ocena: <kbd>1</kbd>
+                2. ocena: <kbd>1</kbd>
+                3. ocena: <kbd>2</kbd>
+                Jan Kowalski, ocena końcowa: 1, uczeń nie zdał.
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby umożliwiał podanie zera jako liczby ocen. Natomiast w takiej sytuacji oprócz imienia i nazwiska wyświetlana jest wyłącznie informacja o tym, że uczeń jest nieklasyfikowany.
+            </p>
+            <p>
+                Przykłady działania:
+            </p>
+            <pre class="samp">
+                Imię: <kbd>Jan</kbd>
+                Nazwisko: <kbd>Kowalski</kbd>
+                Podaj liczbę ocen: <kbd>2</kbd>
+                1. ocena: <kbd>2</kbd>
+                2. ocena: <kbd>3</kbd>
+                Jan Kowalski, ocena końcowa: 3, uczeń zdał.
+            </pre>
+            <pre class="samp">
+                Imię: <kbd>Jan</kbd>
+                Nazwisko: <kbd>Kowalski</kbd>
+                Podaj liczbę ocen: <kbd>3</kbd>
+                1. ocena: <kbd>1</kbd>
+                2. ocena: <kbd>1</kbd>
+                3. ocena: <kbd>2</kbd>
+                Jan Kowalski, ocena końcowa: 1, uczeń nie zdał.
+            </pre>
+            <pre class="samp">
+                Imię: <kbd>Jan</kbd>
+                Nazwisko: <kbd>Kowalski</kbd>
+                Podaj liczbę ocen: <kbd>0</kbd>
+                Jan Kowalski, uczeń nieklasyfikowany.
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby po pobraniu danych ucznia pytał użytkownika o to, czy chce podać dane kolejnego (dane pierwszego ucznia pobierane są zawsze).
+            </p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Imię: <kbd>Jan</kbd>
+                Nazwisko: <kbd>Kowalski</kbd>
+                Podaj liczbę ocen: <kbd>2</kbd>
+                1. ocena: <kbd>2</kbd>
+                2. ocena: <kbd>3</kbd>
+                Jan Kowalski, ocena końcowa: 3, uczeń zdał.
+                Czy chcesz podać oceny kolejnego ucznia (t/n)? <kbd>t</kbd>
+                Imię: <kbd>Anna</kbd>
+                Nazwisko: <kbd>Nowak</kbd>
+                Podaj liczbę ocen: <kbd>3</kbd>
+                1. ocena: <kbd>1</kbd>
+                2. ocena: <kbd>1</kbd>
+                3. ocena: <kbd>2</kbd>
+                Anna Nowak, ocena końcowa: 1, uczeń nie zdał.
+                Czy chcesz podać oceny kolejnego ucznia (t/n)? <kbd>t</kbd>
+                Imię: <kbd>Piotr</kbd>
+                Nazwisko: <kbd>Wójtowicz</kbd>
+                Podaj liczbę ocen: <kbd>0</kbd>
+                Piotr Wójtowicz, uczeń nieklasyfikowany.
+                Czy chcesz podać oceny kolejnego ucznia (t/n)? <kbd>n</kbd>
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby na końcu wyświetlał informację o tym ilu uczniów zdało, ilu nie zdało i ilu jest nieklasyfikowanych.
+            </p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Imię: <kbd>Jan</kbd>
+                Nazwisko: <kbd>Kowalski</kbd>
+                Podaj liczbę ocen: <kbd>2</kbd>
+                1. ocena: <kbd>2</kbd>
+                2. ocena: <kbd>3</kbd>
+                Jan Kowalski, ocena końcowa: 3, uczeń zdał.
+                Czy chcesz podać oceny kolejnego ucznia (t/n)? <kbd>t</kbd>
+                Imię: <kbd>Anna</kbd>
+                Nazwisko: <kbd>Nowak</kbd>
+                Podaj liczbę ocen: <kbd>3</kbd>
+                1. ocena: <kbd>1</kbd>
+                2. ocena: <kbd>1</kbd>
+                3. ocena: <kbd>2</kbd>
+                Anna Nowak, ocena końcowa: 1, uczeń nie zdał.
+                Czy chcesz podać oceny kolejnego ucznia (t/n)? <kbd>t</kbd>
+                Imię: <kbd>Piotr</kbd>
+                Nazwisko: <kbd>Wójtowicz</kbd>
+                Podaj liczbę ocen: <kbd>0</kbd>
+                Piotr Wójtowicz, uczeń nieklasyfikowany.
+                Czy chcesz podać oceny kolejnego ucznia (t/n)? <kbd>t</kbd>
+                Imię: <kbd>Katarzyna</kbd>
+                Nazwisko: <kbd>Grzegorczyk</kbd>
+                Podaj liczbę ocen: <kbd>2</kbd>
+                1. ocena: <kbd>5</kbd>
+                2. ocena: <kbd>5</kbd>
+                Katarzyna Grzegorczyk, ocena końcowa: 5, uczeń zdał.
+                Czy chcesz podać oceny kolejnego ucznia (t/n)? <kbd>n</kbd>
+                Liczba uczniów, którzy zdali: 2
+                Liczba uczniów, którzy nie zdali: 1
+                Liczba uczniów nieklasyfikowanych: 1
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program z zadania <b>piątego</b> tak, żeby dane pobierał z pliku tekstowego. Pierwszy wiersz pliku zawiera imię i nazwisko, drugi wiersz &mdash; wyłącznie liczbę ocen, trzeci wiersz &mdash; oceny.
+            </p>
+            <p>
+                Przykładowa zawartość pliku z danymi:
+            </p>
+            <pre class="samp">
+                Jan Kowalski
+                3
+                1 1 2
+            </pre>
+            <p>
+                Program wyświetla informacje takie same jak w zadaniu piątym, np. dla powyższego pliku powinien wyświetlić:
+            </p>
+            <pre class="samp">
+                Jan Kowalski, ocena końcowa: 1, uczeń nie zdał.
+            </pre>
+            <p>
+                W przypadku błędnych danych (liczba ocen nie jest dodatnia, któraś z ocen jest spoza zakresu) program wyświetla tylko o tym informację i kończy działanie.
+            </p>
+        </li>
+    </ol>
+
+</body>
+
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/pp.css">
+    <script src="../../src/textfile.js" defer></script>
+    <title>Bilety do muzeum</title>
+</head>
+
+<body>
+
+    <ol>
+        <li>
+            <p>
+                Osoby poniżej siódmego roku życia i osoby od siedemdziesiątego roku życia wchodzą do muzemu za darmo. Dzieci i młodzież w wieku 7&ndash;17 lat mogą kupić bilet ulgowy za połowę ceny (zaokrągloną w dół do pełnych złotych). Napisz program, który pobiera od użytkownika jego wiek w pełnych latach oraz cenę pełnego biletu (w pełnych złotych) i wyświetla cenę jaką należy zapłacić za bilet.
+            </p>
+            <p>
+                Przykłady działania:
+            </p>
+            <pre class="samp">
+                Cena pełnego biletu: <kbd>15</kbd>
+                Wiek: <kbd>6</kbd>
+                Do zapłaty: 0 zł
+            </pre>
+            <pre class="samp">
+                Cena pełnego biletu: <kbd>15</kbd>
+                Wiek: <kbd>7</kbd>
+                Do zapłaty: 7 zł
+            </pre>
+            <pre class="samp">
+                Cena pełnego biletu: <kbd>20</kbd>
+                Wiek: <kbd>18</kbd>
+                Do zapłaty: 20 zł
+            </pre>
+            <pre class="samp">
+                Cena pełnego biletu: <kbd>35</kbd>
+                Wiek: <kbd>70</kbd>
+                Do zapłaty: 0 zł
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby wymuszał podanie dodatniej ceny biletu oraz nieujemnego wieku.
+            </p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Cena pełnego biletu: <kbd>-35</kbd>
+                Podaj liczbę dodatnią: <kbd>0</kbd>
+                Podaj liczbę dodatnią: <kbd>35</kbd>
+                Wiek: <kbd>-3</kbd>
+                Podaj liczbę nieujemną: <kbd>0</kbd>
+                Do zapłaty: 0 zł
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby pobierał od użytkownika datę wstępu do muzeum oraz datę urodzenia osoby(osobno rok, miesiąc i dzień). Wiek osoby powinien być policzony na podstawie podanych dat. Program nie musi sprawdzać poprawności podanych dat, tzn. nie ma znaczenia jak zachowa się program, jeżeli podane liczby nie tworzą poprawnej daty lub jeżeli data urodzenia osoby jest późniejsza niż data wstępu do muzeum. Program ma działać poprawnie jeżeli daty są poprawne. 
+            </p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Podaj datę wstępu do muzeum.
+                Rok: <kbd>2024</kbd>
+                Miesiąc: <kbd>2</kbd>
+                Dzień: <kbd>6</kbd>
+                Cena pełnego biletu: <kbd>15</kbd>
+                Podaj datę urodzenia.
+                Rok: <kbd>2010</kbd>
+                Miesiąc: <kbd>5</kbd>
+                Dzień: <kbd>20</kbd>
+                Do zapłaty: 7 zł
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program z zadania <b>drugiego</b> tak, żeby po pobraniu ceny biletu pytał o liczbę osób. Następnie program pyta o wiek każdej z osób i wyświetla kwotę do zapłaty za tę osobę. Program wymusza podanie nieujemnej liczby osób.
+            </p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Cena pełnego biletu: <kbd>15</kbd>
+                Podaj liczbę osób: <kbd>-5</kbd>
+                Podaj liczbę nieujemną: <kbd>-1</kbd>
+                Podaj liczbę nieujemną: <kbd>5</kbd>
+                Wiek: <kbd>6</kbd>
+                Do zapłaty: 0 zł
+                Wiek: <kbd>7</kbd>
+                Do zapłaty: 7 zł
+                Wiek: <kbd>18</kbd>
+                Do zapłaty: 15 zł
+                Wiek: <kbd>35</kbd>
+                Do zapłaty: 15 zł
+                Wiek: <kbd>70</kbd>
+                Do zapłaty: 0 zł
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby na końcu wyświetlał ile osób ma wstęp darmowy, ile musi kupić bilet ulgowy, ile osób musi kupić pełny bilet, oraz pełną kwotę do zapłacenia. 
+            </p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Cena pełnego biletu: <kbd>15</kbd>
+                Podaj liczbę osób: <kbd>5</kbd>
+                Wiek 1. osoby: <kbd>6</kbd>
+                Do zapłaty: 0 zł
+                Wiek 2. osoby: <kbd>7</kbd>
+                Do zapłaty: 7 zł
+                Wiek 3. osoby: <kbd>18</kbd>
+                Do zapłaty: 15 zł
+                Wiek 4. osoby:: <kbd>35</kbd>
+                Do zapłaty: 15 zł
+                Wiek 5. osoby: <kbd>70</kbd>
+                Do zapłaty: 0 zł
+                Liczba osób ze wstępem darmowym: 2
+                Liczba biletów ulgowych: 1
+                Liczba biletów normalnych: 2
+                Całkowity koszt biletów: 37 zł
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby tak jak w zadaniu trzecim pobierał od użytkownika datę wstępu do muzeum oraz daty urodzenia kolejnych osób. Ten program również nie musi sprawdzać poprawności dat.
+            </p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Podaj datę wstępu do muzeum.
+                Rok: <kbd>2024</kbd>
+                Miesiąc: <kbd>2</kbd>
+                Dzień: <kbd>6</kbd>
+                Cena pełnego biletu: <kbd>15</kbd>
+                Podaj liczbę osób: <kbd>3</kbd>
+                Podaj datę urodzenia 1. osoby.
+                Rok: <kbd>2020</kbd>
+                Miesiąc: <kbd>5</kbd>
+                Dzień: <kbd>20</kbd>
+                Do zapłaty: 0 zł
+                Podaj datę urodzenia 2. osoby.
+                Rok: <kbd>2005</kbd>
+                Miesiąc: <kbd>2</kbd>
+                Dzień: <kbd>6</kbd>
+                Do zapłaty: 15 zł
+                Podaj datę urodzenia 3. osoby.
+                Rok: <kbd>2000</kbd>
+                Miesiąc: <kbd>12</kbd>
+                Dzień: <kbd>23</kbd>
+                Do zapłaty: 15 zł
+                Liczba osób ze wstępem darmowym: 1
+                Liczba biletów ulgowych: 0
+                Liczba biletów normalnych: 2
+                Całkowity koszt biletów: 30 zł
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby po wczytaniu daty urodzenia osoby pytał użytkownika, czy chce podać datę urodzenia kolejnej osoby (data urodzenia pierwszej osoby pobierana jest zawsze). 
+            </p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Podaj datę wstępu do muzeum.
+                Rok: <kbd>2024</kbd>
+                Miesiąc: <kbd>2</kbd>
+                Dzień: <kbd>6</kbd>
+                Cena pełnego biletu: <kbd>15</kbd>
+                Podaj datę urodzenia 1. osoby.
+                Rok: <kbd>2020</kbd>
+                Miesiąc: <kbd>5</kbd>
+                Dzień: <kbd>20</kbd>
+                Do zapłaty: 0 zł
+                Kolejna osoba (t/n)? <kbd>t</kbd>
+                Podaj datę urodzenia 2. osoby.
+                Rok: <kbd>2005</kbd>
+                Miesiąc: <kbd>2</kbd>
+                Dzień: <kbd>6</kbd>
+                Do zapłaty: 15 zł
+                Kolejna osoba (t/n)? <kbd>t</kbd>
+                Podaj datę urodzenia 3. osoby.
+                Rok: <kbd>2000</kbd>
+                Miesiąc: <kbd>12</kbd>
+                Dzień: <kbd>23</kbd>
+                Do zapłaty: 15 zł
+                Kolejna osoba (t/n)? <kbd>n</kbd>
+                Liczba osób ze wstępem darmowym: 1
+                Liczba biletów ulgowych: 0
+                Liczba biletów normalnych: 2
+                Całkowity koszt biletów: 30 zł
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby wstęp do muzeum w dniu urodzin (czyli miesiąc i dzień urodzenia osoby jest taki sam jak miesiąc i dzień wstępu do muzemu) był za darmo, niezależnie od wieku. 
+            </p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Podaj datę wstępu do muzeum.
+                Rok: <kbd>2024</kbd>
+                Miesiąc: <kbd>2</kbd>
+                Dzień: <kbd>6</kbd>
+                Cena pełnego biletu: <kbd>15</kbd>
+                Podaj datę urodzenia 1. osoby.
+                Rok: <kbd>2020</kbd>
+                Miesiąc: <kbd>5</kbd>
+                Dzień: <kbd>20</kbd>
+                Do zapłaty: 0 zł
+                Kolejna osoba (t/n)? <kbd>t</kbd>
+                Podaj datę urodzenia 2. osoby.
+                Rok: <kbd>2005</kbd>
+                Miesiąc: <kbd>2</kbd>
+                Dzień: <kbd>6</kbd>
+                Do zapłaty: 0 zł
+                Kolejna osoba (t/n)? <kbd>t</kbd>
+                Podaj datę urodzenia 3. osoby.
+                Rok: <kbd>2000</kbd>
+                Miesiąc: <kbd>12</kbd>
+                Dzień: <kbd>23</kbd>
+                Do zapłaty: 15 zł
+                Kolejna osoba (t/n)? <kbd>n</kbd>
+                Liczba osób ze wstępem darmowym: 2
+                Liczba biletów ulgowych: 0
+                Liczba biletów normalnych: 1
+                Całkowity koszt biletów: 15 zł
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program z zadania <b>trzeciego</b> tak, żeby dane pobierał z pliku tekstowego. Pierwszy wiersz pliku zawiera datę wstępu do muzeum (rok, miesiąc i dzień), drugi wiersz &mdash; cenę pełnego biletu, trzeci wiersz &mdash; datę urodzenia (rok, miesiąc i dzień).
+            </p>
+            <p>
+                Przykładowa zawartość pliku z danymi:
+            </p>
+            <pre class="samp">
+                2024 2 6
+                15
+                2010 5 20
+            </pre>
+            <p>
+                Program wyświetla informacje takie same jak w zadaniu trzecim, np. dla powyższego pliku powinien wyświetlić:
+            </p>
+            <pre class="samp">
+                Do zapłaty: 7 zł
+            </pre>
+            <p>
+                W przypadku błędnych danych (cena biletu nie jest dodatnia) program wyświetla tylko o tym informację i kończy działanie.
+            </p>
+        </li>
+
+    </ol>
+
+</body>
+
+</html>

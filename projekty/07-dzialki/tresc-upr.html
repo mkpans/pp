@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/pp.css">
+    <script src="../../src/textfile.js" defer></script>
+    <title>Działki</title>
+</head>
+
+<body>
+
+    <ol>
+        <li>
+            <p>
+                Napisz program pobierający od użytkownika najpier cenę w złotych za metr kwadratowy działki (liczba całkowita), a następnie powierzchnię działki w arach (liczba zmiennoprzecinkowa, jeden ar to 100 metrów kwadratowych). Program wyświetla cenę działki zaokrągloną w dół do pełnych złotych.
+            </p>
+            <p>
+                Przykłady działania:
+            </p>
+            <pre class="samp">
+                Cena za metr kwadratowy działki: <kbd>75</kbd>
+                Powierzchnia działki (w arach): <kbd>8.33</kbd>
+                Cena działki: 62475 zł
+            </pre>
+            <pre class="samp">
+                Cena za metr kwadratowy działki: <kbd>75</kbd>
+                Powierzchnia działki (w arach): <kbd>8.8425</kbd>
+                Cena działki: 66318 zł
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby wymuszał na użytkowniku podanie liczby nieujemnej jako ceny działki oraz liczby dodatniej jako powierzchni działki.
+            </p>
+            <p>
+                Przykłady działania:
+            </p>
+            <pre class="samp">
+                Cena za metr kwadratowy działki: <kbd>-3</kbd>
+                Podaj liczbę nieujemną: <kbd>-75</kbd>
+                Podaj liczbę nieujemną: <kbd>75</kbd>
+                Powierzchnia działki (w arach): <kbd>8.33</kbd>
+                Cena działki: 62475 zł
+            </pre>
+            <pre class="samp">
+                Cena za metr kwadratowy działki: <kbd>-3</kbd>
+                Podaj liczbę nieujemną: <kbd>0</kbd>
+                Powierzchnia działki (w arach): <kbd>8.33</kbd>
+                Cena działki: 0 zł
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby nie pytał o powierzchnię działki w przypadku, gdy cena za metr kwadratowy wynosi zero.
+            </p>
+            <p>
+                Przykłady działania:
+            </p>
+            <pre class="samp">
+                Cena za metr kwadratowy działki: <kbd>75</kbd>
+                Powierzchnia działki (w arach): <kbd>8.33</kbd>
+                Cena działki: 62475 zł
+            </pre>
+            <pre class="samp">
+                Cena za metr kwadratowy działki: <kbd>0</kbd>
+                Cena działki: 0 zł
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby najpierw pytał o liczbę działek (i wymuszał na użytkowniku podanie liczby dodatniej).
+            </p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Podaj liczbę działek: <kbd>-1</kbd>
+                Podaj liczbę dodatnią: <kbd>0</kbd>
+                Podaj liczbę dodatnią: <kbd>3</kbd>
+                Podaj dane 1. działki.
+                Cena za metr kwadratowy działki: <kbd>75</kbd>
+                Powierzchnia działki (w arach): <kbd>8.33</kbd>
+                Cena działki: 62475 zł
+                Podaj dane 2. działki.
+                Cena za metr kwadratowy działki: <kbd>0</kbd>
+                Cena działki: 0 zł
+                Podaj dane 3. działki.
+                Cena za metr kwadratowy działki: <kbd>125</kbd>
+                Powierzchnia działki (w arach): <kbd>67.5</kbd>
+                Cena działki: 843750 zł
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby wyświetlał na końcu cenę najtańszej i najdroższej działki oraz sumę cen wszystkich działek.
+            </p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Podaj liczbę działek: <kbd>-1</kbd>
+                Podaj liczbę dodatnią: <kbd>0</kbd>
+                Podaj liczbę dodatnią: <kbd>3</kbd>
+                Podaj dane 1. działki.
+                Cena za metr kwadratowy działki: <kbd>75</kbd>
+                Powierzchnia działki (w arach): <kbd>8.33</kbd>
+                Cena działki: 62475 zł
+                Podaj dane 2. działki.
+                Cena za metr kwadratowy działki: <kbd>110</kbd>
+                Powierzchnia działki (w arach): <kbd>2</kbd>
+                Cena działki: 2200 zł
+                Podaj dane 3. działki.
+                Cena za metr kwadratowy działki: <kbd>125</kbd>
+                Powierzchnia działki (w arach): <kbd>67.5</kbd>
+                Cena działki: 843750 zł
+                Najtańsza działka: 2200 zł
+                Najdroższa działka: 843750 zł
+                Suma cen: 908425 zł
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby po wczytaniu danych działki pytał użytkownika, czy chce podać dane kolejnej (dane pierwszej działki pobierane są zawsze). 
+            </p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Podaj dane 1. działki.
+                Cena za metr kwadratowy działki: <kbd>75</kbd>
+                Powierzchnia działki (w arach): <kbd>8.33</kbd>
+                Cena działki: 62475 zł
+                Czy chcesz podać dane kolejnej działki (t/n)? <kbd>t</kbd>
+                Podaj dane 2. działki.
+                Cena za metr kwadratowy działki: <kbd>110</kbd>
+                Powierzchnia działki (w arach): <kbd>2</kbd>
+                Cena działki: 2200 zł
+                Czy chcesz podać dane kolejnej działki (t/n)? <kbd>t</kbd>
+                Podaj dane 3. działki.
+                Cena za metr kwadratowy działki: <kbd>125</kbd>
+                Powierzchnia działki (w arach): <kbd>67.5</kbd>
+                Cena działki: 843750 zł
+                Czy chcesz podać dane kolejnej działki (t/n)? <kbd>n</kbd>
+                Najtańsza działka: 2200 zł
+                Najdroższa działka: 843750 zł
+                Suma cen: 908425 zł
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program z zadania <b>drugiego</b> tak, żeby zakładał, że działka jest czworokątem i zamiast powierzchni działki pobierał od użytkownika współrzędne wierzchołków. Współrzędne wyrażone są w pewnym prostokątnym układzie współrzędnych prostokątnych, w którym jednostką jest metr. Program ma wyświetlać powierzchnię działki w arach i cenę działki.
+            </p>
+            <p>
+                Pole powierzchni czworokąta o wierzchołkach w punktach (<var>x</var><sub>0</sub>, <var>y</var><sub>0</sub>), (<var>x</var><sub>1</sub>, <var>y</var><sub>1</sub>), (<var>x</var><sub>2</sub>, <var>y</var><sub>2</sub>) i (<var>x</var><sub>3</sub>, <var>y</var><sub>3</sub>) wynosi
+            </p>
+            <p>
+                <img src="p3.png" alt="" style="height: 1.6em; vertical-align: middle;">.
+            </p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Cena za metr kwadratowy działki: <kbd>75</kbd>
+                Podaj współrzędne 1. wierzchołka.
+                x: <kbd>746956.25</kbd>
+                y: <kbd>381388.34</kbd>
+                Podaj współrzędne 2. wierzchołka.
+                x: <kbd>746971.25</kbd>
+                y: <kbd>381388.34</kbd>
+                Podaj współrzędne 3. wierzchołka.
+                x: <kbd>746971.25</kbd>
+                y: <kbd>381403.34</kbd>
+                Podaj współrzędne 4. wierzchołka.
+                x: <kbd>746956.25</kbd>
+                y: <kbd>381403.34</kbd>
+                Powierzchnia działki: 2.25 a
+                Cena działki: 16875 zł
+            </pre>
+        </li>
+        <li>
+            <p>
+                Popraw program tak, żeby zakładał, że działka jest dowolnym wielokątem. Liczba wierzchołków wielokąta jest pobierana od użytkownika. Progam ma wymuszać podanie liczby większej niż dwa.
+            </p>
+            <p>
+                Pole powierzchni działki możesz policzyć ze wzoru (<a href="https://en.wikipedia.org/wiki/Shoelace_formula"
+                    target="_blank"><samp>https://en.wikipedia.org/wiki/Shoelace_formula</samp></a>)
+            </p>
+        
+            <p><img src="p1.png" alt="" style="height: 1.8em; vertical-align: middle;">,</p>
+        
+            <p>przy czym</p>
+        
+            <p><img src="p2.png" alt="" style="height: 1.4em; vertical-align: middle;">.</p>
+            <p>
+                Przykład działania:
+            </p>
+            <pre class="samp">
+                Cena za metr kwadratowy działki: <kbd>75</kbd>
+                Podaj liczbę wierzchołków wielokąta opisującego działkę: <kbd>1</kbd>
+                Liczba wierzchołków musi być większa niż dwa: <kbd>2</kbd>
+                Liczba wierzchołków musi być większa niż dwa: <kbd>5</kbd>
+                Podaj współrzędne 1. wierzchołka.
+                x: <kbd>746956.25</kbd>
+                y: <kbd>381388.34</kbd>
+                Podaj współrzędne 2. wierzchołka.
+                x: <kbd>746971.25</kbd>
+                y: <kbd>381388.34</kbd>
+                Podaj współrzędne 3. wierzchołka.
+                x: <kbd>746971.25</kbd>
+                y: <kbd>381403.34</kbd>
+                Podaj współrzędne 4. wierzchołka.
+                x: <kbd>746963.75</kbd>
+                y: <kbd>381410.84</kbd>
+                Podaj współrzędne 5. wierzchołka.
+                x: <kbd>746956.25</kbd>
+                y: <kbd>381403.34</kbd>
+                Powierzchnia działki: 2.8125 a
+                Cena działki: 21093 zł
+            </pre>
+        </li>
+
+        <li>
+            <p>
+                Popraw program z zadania <b>siódmego</b> tak, żeby pobierał dane z pliku. W pierwszym wierszu pliku znajduje się cena za metr kwadratowy działki, w kolejnych &mdash; współrzędne wierzchołków czworokąta.
+            </p>
+            <p>
+                Przykładowa zawartość pliku z danymi:
+            </p>
+            <pre class="samp">
+                75
+                746956.25 381388.34
+                746971.25 381388.34
+                746971.25 381403.34
+                746956.25 381403.34
+            </pre>
+            <p>
+                Dla powyższego pliku program powinien wyświetlić
+            </p>
+            <pre class="samp">
+                Powierzchnia działki: 2.25 a
+                Cena działki: 16875 zł
+            </pre>
+            <p>
+                W przypadku błędnych danych w pliku (ujemna cena) program wyświetla tylko odpowiedni komunikat i kończy działanie.
+            </p>
+    </ol>
+
+</body>
+
+</html>

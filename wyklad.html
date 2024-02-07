@@ -56,6 +56,8 @@
             <li><a href="#while">Pętle</a></li>
             <li><a href="#funkcje">Funkcje</a></li>
             <li><a href="#struktury">Struktury</a></li>
+            <li><a href="#tablice">Tablice, wskaźniki, napisy, wektory</a></li>
+            <li><a href="#io">Operacje wejścia/wyjścia</a></li>
         </ol>
         <hr>
     </nav>
@@ -63,7 +65,7 @@
         <h2>Materiał omówiony na wykładzie</h2>
         <ol>
             <li>
-                <h3 id="wstep"> Wstęp i omówienie cech języka</h3>
+                <h3 id="wstep">Wstęp i omówienie cech języka</h3>
 
                 <h4>Pojęcie algorytmu</h4>
                 <p>
@@ -402,22 +404,44 @@ int main()
 
                     <li>
                         <p>Podstawowe funkcje matematyczne (plik nagłówkowy
-                            <a target="_blank" href="https://en.cppreference.com/w/cpp/header/cmath"><code>cmath</code></a>).
+                            <a target="_blank"
+                                href="https://en.cppreference.com/w/cpp/header/cmath"><code>cmath</code></a>).
                         </p>
 
                         <ul>
-                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/cos" target="_blank"><code>double cos(double x)</code></a> &mdash; sinus</li>
-                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/sin" target="_blank"><code>double sin(double x)</code></a> &mdash; cosinus</li>
-                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/tan" target="_blank"><code>double tan(double x)</code></a> &mdash; tangens</li>
-                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/exp" target="_blank"><code>double exp(double x)</code></a> &mdash; <var>e</var><sup>x</sup></li>
-                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/log" target="_blank"><code>double log(double x)</code></a> &mdash; logarytm naturalny</li>
-                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/log10" target="_blank"><code>double log10(double x)</code></a> &mdash; logarytm dziesiętny</li>
-                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/pow" target="_blank"><code>double pow(double x, double y)</code></a> &mdash; x do potęgi y</li>
-                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/sqrt" target="_blank"><code>double sqrt(double x)</code></a> &mdash; pierwiastek kwadratowy</li>
-                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/ceil" target="_blank"><code>double ceil(double x)</code></a> &mdash; tzw. &bdquo;sufit&rdquo; z x</li>
-                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/floor" target="_blank"><code>double floor(double x)</code></a> &mdash; tzw. &bdquo;podłoga&rdquo; z x</li>
-                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/round" target="_blank"><code>double round(double x</code></a> &mdash; zakrąglenie do najbliższej wartości całkowitej</li>
-                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/fabs" target="_blank"><code>double fabs(double x)</code></a> &mdash; wartość bezwględna z <var>x</var></li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/cos"
+                                    target="_blank"><code>double cos(double x)</code></a> &mdash; sinus</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/sin"
+                                    target="_blank"><code>double sin(double x)</code></a> &mdash; cosinus</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/tan"
+                                    target="_blank"><code>double tan(double x)</code></a> &mdash; tangens</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/exp"
+                                    target="_blank"><code>double exp(double x)</code></a> &mdash;
+                                <var>e</var><sup>x</sup></li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/log"
+                                    target="_blank"><code>double log(double x)</code></a> &mdash; logarytm naturalny
+                            </li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/log10"
+                                    target="_blank"><code>double log10(double x)</code></a> &mdash; logarytm dziesiętny
+                            </li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/pow"
+                                    target="_blank"><code>double pow(double x, double y)</code></a> &mdash; x do potęgi
+                                y</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/sqrt"
+                                    target="_blank"><code>double sqrt(double x)</code></a> &mdash; pierwiastek
+                                kwadratowy</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/ceil"
+                                    target="_blank"><code>double ceil(double x)</code></a> &mdash; tzw.
+                                &bdquo;sufit&rdquo; z x</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/floor"
+                                    target="_blank"><code>double floor(double x)</code></a> &mdash; tzw.
+                                &bdquo;podłoga&rdquo; z x</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/round"
+                                    target="_blank"><code>double round(double x</code></a> &mdash; zakrąglenie do
+                                najbliższej wartości całkowitej</li>
+                            <li><a href="https://en.cppreference.com/w/cpp/numeric/math/fabs"
+                                    target="_blank"><code>double fabs(double x)</code></a> &mdash; wartość bezwględna z
+                                <var>x</var></li>
                         </ul>
                         <p>
                             Składnia <code><i>typ1</i> nazwa_funkcji(<i>typ2</i>, <i>typ3</i>)</code> oznacza, że
@@ -825,10 +849,10 @@ cout &lt;&lt; (a / b) &lt;&lt; endl;
 
                 <p>zostanie wyświetlone:</p>
 
-<samp class="block">środa
-czwartek
-piątek
-???</samp>
+                <samp class="block">środa
+                    czwartek
+                    piątek
+                    ???</samp>
 
                 <p>
                     Instrukcja <code>switch</code> bez instrukcji <code>break</code> jest zazwyczaj złym pomysłem
@@ -1347,9 +1371,10 @@ p.y = -2.3;
                 <code class="block">Punkt p = {3.5, -2.3};</code>
 
                 <p>
-                    Teraz funkcja obliczająca odległość między dwoma punktami może mieć dwa parametry typu <code>Punkt</code>:
+                    Teraz funkcja obliczająca odległość między dwoma punktami może mieć dwa parametry typu
+                    <code>Punkt</code>:
                 </p>
-<code class="block">double odleglosc(Punkt p1, Punkt p2)
+                <code class="block">double odleglosc(Punkt p1, Punkt p2)
 {
     double dx = p1.x - p2.x;
     double dy = p1.y - p2.y;
@@ -1358,7 +1383,7 @@ p.y = -2.3;
                 <p>
                     Przykład użycia tej funkcji może wyglądać tak:
                 </p>
-<code class="block">Punkt p1 = {0.0, 0.0};
+                <code class="block">Punkt p1 = {0.0, 0.0};
 Punkt p2 = {3.0, 4.0};
 
 cout &lt;&lt; "odległość: " &lt;&lt; odleglosc(p1, p2) &lt;&lt; endl;
@@ -1369,7 +1394,7 @@ cout &lt;&lt; "odległość: " &lt;&lt; odleglosc(p1, p2) &lt;&lt; endl;
                     zwracająca środek odcinka o końcach w zadanych punktach może wyglądać tak:
                 </p>
 
-<code class="block">Punkt srodek_odcinka(Punkt p1, Punkt p2)
+                <code class="block">Punkt srodek_odcinka(Punkt p1, Punkt p2)
 {
     Punkt srodek = { 0.5 * (p1.x + p2.x), 0.5 * (p1.y + p2.y) };
     return srodek;
@@ -1378,7 +1403,7 @@ cout &lt;&lt; "odległość: " &lt;&lt; odleglosc(p1, p2) &lt;&lt; endl;
                 <p>
                     Użycie jej może wyglądać tak:
                 </p>
-<code class="block">Punkt p1 = {0.0, 0.0};
+                <code class="block">Punkt p1 = {0.0, 0.0};
 Punkt p2 = {3.0, 4.0};
 
 Punkt srodek = srodek_odcinka(p1, p2);
@@ -1386,17 +1411,21 @@ Punkt srodek = srodek_odcinka(p1, p2);
 cout &lt;&lt; "Środek odcinka leży w punkcie (" &lt;&lt; srodek.x &lt;&lt; ", " &lt;&lt; srodek.y &lt;&lt; ")." &lt;&lt; endl;
 </code>
                 <p>
-                    Zdefiniujmy teraz klasę <code>Wektor</code> reprezentującą wektory swobodne na płaszczyźnie. Wektor taki,
-                    podobnie jak punkt, wyznaczony jest przez dwie współrzędne. Suma dwóch wektorów zdefiniowana jest jako
-                    wektor, którego współrzędne są sumą odpowiednich współrzędnych obu wektorów. Mnożenie wektora przez liczbę
+                    Zdefiniujmy teraz klasę <code>Wektor</code> reprezentującą wektory swobodne na płaszczyźnie. Wektor
+                    taki,
+                    podobnie jak punkt, wyznaczony jest przez dwie współrzędne. Suma dwóch wektorów zdefiniowana jest
+                    jako
+                    wektor, którego współrzędne są sumą odpowiednich współrzędnych obu wektorów. Mnożenie wektora przez
+                    liczbę
                     polega na pomnożeniu przez tę liczbę obu jego współrzędnych.
                 </p>
                 <p>
-                    Poniżej znajduje się przykładowa definicja typu <code>Wektor</code> i funkcji zwracającej sumę wektorów
+                    Poniżej znajduje się przykładowa definicja typu <code>Wektor</code> i funkcji zwracającej sumę
+                    wektorów
                     oraz funkcji zwracającej iloczyn wektora przez liczbę.
                 </p>
 
-<code class="block">struct Wektor {
+                <code class="block">struct Wektor {
     double x;
     double y;
 };
@@ -1418,20 +1447,21 @@ Wektor iloczyn_wektora_przez_liczbe(Wektor w, double a)
                     przekazać od razu jako argument kolejnej funkcji (podobnie jak w przypadku typów prostych), np.
                     sumę trzech wektorów <var>a</var>, <var>b</var> i <var>c</var> możemy zaprogramować tak:
                 </p>
-<code class="block">Wektor suma_ab = suma_wektorow(a, b);
+                <code class="block">Wektor suma_ab = suma_wektorow(a, b);
 Wektor suma_abc = suma_wektorow(suma_ab, c);
 </code>
                 <p>
                     Ale możemy też zrobić to tak:
                 </p>
-<code class="block">Wektor suma_abc = suma_wektorow(suma_wektorow(a, b), c);</code>
+                <code class="block">Wektor suma_abc = suma_wektorow(suma_wektorow(a, b), c);</code>
 
                 <p>
-                    Poniżej jest bardziej złożony przykład użycia zdefiniowanych powyżej funkcji. Zdefiniowane zostały wektory
+                    Poniżej jest bardziej złożony przykład użycia zdefiniowanych powyżej funkcji. Zdefiniowane zostały
+                    wektory
                     <var>u</var>, <var>v</var> i <var>w</var> oraz obliczony został
                     wektor 2&middot;(<var>u</var> &plus; <var>v</var> &plus; 3&middot;<var>w</var>).
                 </p>
-<code class="block">Wektor u = {1.0, 2.0};
+                <code class="block">Wektor u = {1.0, 2.0};
 Wektor v = {-1.0, 1.5};
 Wektor w = {-2.9, 3.1};
 
@@ -1440,17 +1470,19 @@ Wektor wynik = iloczyn_wektora_przez_liczbe(suma_wektorow(suma_wektorow(u, v), i
                 <p>
                     Zapis ten jest niezbyt czytelny. Zdecydowanie czytelniejszy byłby zapis za pomocą operatorów, np.:
                 </p>
-<code class="block">Wektor wynik = 2 * (u + v + 3 * w);</code>
+                <code class="block">Wektor wynik = 2 * (u + v + 3 * w);</code>
 
                 <p>
-                    Żeby zapis taki był możliwy wystarczy zmienić odpowiednio nazwy zdefiowanych uprzednio funkcji &mdash;
+                    Żeby zapis taki był możliwy wystarczy zmienić odpowiednio nazwy zdefiowanych uprzednio funkcji
+                    &mdash;
                     funkcję dodającą wektory musimy nazwać <code>operator+</code>, a funkcję odpowiedzialną za iloczyn:
                     <code>operator*</code>. Wtedy zapis <code>a + b</code> będzie dla kompilatora skrótem od
                     <code>operator+(a, b)</code>.
                 </p>
 
                 <p>
-                    Uwaga: ważna jest łączoność operatorów: operator <code>+</code> jest łączny lewostronnie, co oznacza, że
+                    Uwaga: ważna jest łączoność operatorów: operator <code>+</code> jest łączny lewostronnie, co
+                    oznacza, że
                     zapis <code>a + b + c</code> oznacza dla kompilatora to samo co <code>(a + b) + c</code> czyli
                     <code>operator+(operator+(a, b), c)</code>.
                 </p>
@@ -1460,7 +1492,7 @@ Wektor wynik = iloczyn_wektora_przez_liczbe(suma_wektorow(suma_wektorow(u, v), i
                 </p>
 
 
-<code class="block">Wektor operator+(Wektor w1, Wektor w2)
+                <code class="block">Wektor operator+(Wektor w1, Wektor w2)
 {
     Wektor suma = {
         w1.x + w2.x, w1.y + w2.y
@@ -1477,47 +1509,51 @@ Wektor operator*(double liczba, Wektor w)
 }
 </code>
                 <p>
-                    Jeżeli w przypadku mnożenia chcemy mieć możliwość zarówno zapisu <code>2 * w</code> jak i <code>w * 2</code>,
-                    to musimy zdefiniować dwie wersje funkcji &mdash; z różną kolejnością parametrów. Druga wersja może wyglądać
+                    Jeżeli w przypadku mnożenia chcemy mieć możliwość zarówno zapisu <code>2 * w</code> jak i
+                    <code>w * 2</code>,
+                    to musimy zdefiniować dwie wersje funkcji &mdash; z różną kolejnością parametrów. Druga wersja może
+                    wyglądać
                     tak:
                 </p>
 
-<code class="block">Wektor operator*(Wektor w, double liczba)
+                <code class="block">Wektor operator*(Wektor w, double liczba)
 {
     return operator*(liczba, wektor);
 }</code>
                 <p>
-                    Odwołujemy się tutaj do uprzednio zdefiniowanej funkcji z inną kolejnością parametrów. Możemy to również
+                    Odwołujemy się tutaj do uprzednio zdefiniowanej funkcji z inną kolejnością parametrów. Możemy to
+                    również
                     zapisać krócej:
                 </p>
-<code class="block">Wektor operator*(Wektor w, double liczba)
+                <code class="block">Wektor operator*(Wektor w, double liczba)
 {
     return liczba * wektor;
 }</code>
 
-</code>
-                <p>W podobny sposób możemy definiować działanie innych operatorów, np. <code>==</code>, <code>&lt;</code>,
-                <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. Przykład:</p>
-<code class="block">bool operator==(Wektor w1, Wektor w2)
+                </code>
+                <p>W podobny sposób możemy definiować działanie innych operatorów, np. <code>==</code>,
+                    <code>&lt;</code>,
+                    <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. Przykład:
+                </p>
+                <code class="block">bool operator==(Wektor w1, Wektor w2)
 {
     return w1.x == w2.x &amp;&amp; w1.y == w2.y;
 }
 </code>
 
-            </li>
 
-            <h3>Referencje</h3>
+                <h4>Referencje</h4>
 
-            <p>
-                W języku C++ możemy definiować zmienne będące <i>referencją</i>
-                do innej zmiennej. Referencja staje się drugą nazwą tej samej zmiennej &mdash;
-                wszystkie operacje na referencji są tak naprawdę operacjami na zmiennej, do której
-                jest ona referencją. Deklarując referencję trzeba od razu wskazać zmienną, do której
-                ma być ona referencją. W deklaracji referencji poprzedzamy jej nazwę znakiem
-                <code>&amp;</code>. Przykład:
-            </p>
+                <p>
+                    W języku C++ możemy definiować zmienne będące <i>referencją</i>
+                    do innej zmiennej. Referencja staje się drugą nazwą tej samej zmiennej &mdash;
+                    wszystkie operacje na referencji są tak naprawdę operacjami na zmiennej, do której
+                    jest ona referencją. Deklarując referencję trzeba od razu wskazać zmienną, do której
+                    ma być ona referencją. W deklaracji referencji poprzedzamy jej nazwę znakiem
+                    <code>&amp;</code>. Przykład:
+                </p>
 
-<code class="block">int n = 10;
+                <code class="block">int n = 10;
 int &r = n;
 cout &lt;&lt; endl;
 
@@ -1526,118 +1562,131 @@ cout &lt;&lt; r &lt;&lt;endl;
 cout &lt;&lt; n &lt;&lt; endl;
 </code>
 
-            <p>
-                Nie da się zmienić referencji tak, żeby wskazywała na inną zmienną. Np.
-                w poniższym kodzie instrukcja podstawienia <code>r = b</code> oznacza podstawienie
-                wartości zmiennej <code>b</code> pod zmienną, do której referencją jest
-                <code>r</code>, czyli do zmiennej <code>a</code>. Dlatego wyświetlona zostanie
-                wartość 2.
-            </p>
-<code class="block">int a = 1;
+                <p>
+                    Nie da się zmienić referencji tak, żeby wskazywała na inną zmienną. Np.
+                    w poniższym kodzie instrukcja podstawienia <code>r = b</code> oznacza podstawienie
+                    wartości zmiennej <code>b</code> pod zmienną, do której referencją jest
+                    <code>r</code>, czyli do zmiennej <code>a</code>. Dlatego wyświetlona zostanie
+                    wartość 2.
+                </p>
+                <code class="block">int a = 1;
 int b = 2;
 int &r = a;
 r = b;
 cout &lt;&lt; a &lt;&lt; endl;
 </code>
 
-            <h4>Przekazywanie parametrów przez referencję</h4>
+                <h4>Przekazywanie parametrów przez referencję</h4>
 
-<code class="block">void zwieksz(int &n)
+                <code class="block">void zwieksz(int &n)
 {
     n += 1;
 }
 </code>
-<code class="block">int a = 5;
+                <code class="block">int a = 5;
 zwieksz(a);
 cout &lt;&lt; a &lt;&lt; endl;
 </code>
 
 
-            <p>
-                Przekazywanie parametrów przez wartość działa dla struktur tak samo jak dla
-                typów prostych. Mechanizm ten możemy wykorzystać np. w definicji dodawania 
-                wektorów (używamy zdefiniowanego wcześniej typu <code>Wektor</code>).
-                Zamiast tworzyć nową zmienną pomocniczą możemy wykorzystać parametry:
+                <p>
+                    Przekazywanie parametrów przez wartość działa dla struktur tak samo jak dla
+                    typów prostych. Mechanizm ten możemy wykorzystać np. w definicji dodawania
+                    wektorów (używamy zdefiniowanego wcześniej typu <code>Wektor</code>).
+                    Zamiast tworzyć nową zmienną pomocniczą możemy wykorzystać parametry:
                 </p>
-    
-    <code class="block">Wektor operator+(Wektor w1, Wektor w2)
+
+                <code class="block">Wektor operator+(Wektor w1, Wektor w2)
     {
         w1.x += w2.x;
         w1.y += w2.y;
         return w1;
     }
     </code>
-                       
-            <p>
-                Spróbujmy jednak napisać teraz funkcję odwracającą wektor (zmieniającą
-                wartości jego współrzędnych na przeciwne):
-            </p>
 
-<code class="block">void odwroc(Wektor w)
+                <p>
+                    Spróbujmy jednak napisać teraz funkcję odwracającą wektor (zmieniającą
+                    wartości jego współrzędnych na przeciwne):
+                </p>
+
+                <code class="block">void odwroc(Wektor w)
 {
     w.x = -w.x;
     w.y = -w.y;
 }</code>
 
-            <p>
-                Niestety funkcja nie będzie działała. Wypróbujmy następujący kod:
-            </p>
+                <p>
+                    Niestety funkcja nie będzie działała. Wypróbujmy następujący kod:
+                </p>
 
-<code class="block">Wektor a = {3.5, 4.5};
+                <code class="block">Wektor a = {3.5, 4.5};
 odwroc(a);
 cout &lt;&lt; a.x &lt;&lt; endl;
 </code>
 
-                
-            <p>
-                Wyświetlona zostanie wartość <samp>3.5</samp> zamiast <samp>-3.5</samp>.
-                Dzieje się tak dlatego, że parametr <code>w</code> w powyższym wywołaniu
-                stanie się kopią wektora <code>a</code>. Funkcja modyfikuje kopię (która
-                przestaje istnieć po zakończeniu działania funkcji), ale nie ma to wpływu
-                na oryginalny wektor. 
-                Żeby funkcja działała tak jak oczekujemy, musimy
-                przekazać parametr przez referencję:
-            </p>
-<code class="block">void odwroc(Wektor &w)
+
+                <p>
+                    Wyświetlona zostanie wartość <samp>3.5</samp> zamiast <samp>-3.5</samp>.
+                    Dzieje się tak dlatego, że parametr <code>w</code> w powyższym wywołaniu
+                    stanie się kopią wektora <code>a</code>. Funkcja modyfikuje kopię (która
+                    przestaje istnieć po zakończeniu działania funkcji), ale nie ma to wpływu
+                    na oryginalny wektor.
+                    Żeby funkcja działała tak jak oczekujemy, musimy
+                    przekazać parametr przez referencję:
+                </p>
+                <code class="block">void odwroc(Wektor &w)
 {
     w.x = -w.x;
     w.y = -w.y;
 }</code>
-            <h4>Przekazywanie parametrów przez referencję do stałej</h4>
+                <h4>Przekazywanie parametrów przez referencję do stałej</h4>
 
-<code class="block">struct Wektor {
+                <code class="block">struct Wektor {
     double x;
     double y;
 };
 </code>
 
-<code class="block">double odleglosc_od_srodka(Wektor w)
+                <code class="block">double odleglosc_od_srodka(Wektor w)
 {
     return math.sqrt(w.x * w.x + w.y * w.y);
 };
 </code>
 
-            <p>
-                <!-- Możemy przepisać tak: -->
-            </p>
+                <p>
+                    <!-- Możemy przepisać tak: -->
+                </p>
 
-<code class="block">double odleglosc_od_srodka(Wektor w)
-{
-    return math.sqrt(w.x * w.x + w.y * w.y);
-};
-</code>
+                <code class="block">double odleglosc_od_srodka(Wektor w)
+    {
+        return math.sqrt(w.x * w.x + w.y * w.y);
+    };
+    </code>
 
 
-            <p>Na to kompilator nie pozwoli:</p>
-<code class="block">Wektor operator+(const Wektor &w1, const Wektor &w2)
+                <p>Na to kompilator nie pozwoli:</p>
+                <code class="block">Wektor operator+(const Wektor &w1, const Wektor &w2)
 {
     w1.x += w2.x;
     w1.y += w2.y;
     return w1;
 };
 </code>
+            </li>
 
-<!--
+            <li>
+                <h3 id="tablice">Tablice, wskaźniki, napisy, wektory</h3>
+            </li>
+
+            <li>
+                <h3 id="io">Operacje wejścia/wyjścia</h3>
+
+            <!-- <h4>Przydatne klasy i funkcje</h4>
+            <ul>
+                <li><a target="_blank" href="https://en.cppreference.com/w/cpp/string/byte/isdigit"><code>isdigit</code></a> &mdash; plik nagłówkowy <code>cctype</code></li>
+            </ul> -->
+            </li>
+            <!--
             <h3>Wskaźniki</h3>
 
             <p>
